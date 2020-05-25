@@ -93,7 +93,7 @@ ___
 
 2. 開発環境エミュレート方式（<ruby>Cygwin<rt>シグウィン</rt></ruby>、<ruby>msys2<rt>エムシスツー</rt></ruby>）
 
-3.  WSL2 (Windows Subsystem for Linux 2)機能を利用する
+3. WSL2 (Windows Subsystem for Linux 2)機能を利用する
 
 4. オンライン（Webブラウザ）上でプログラミング・実行できる環境を利用する
 
@@ -106,7 +106,7 @@ Perl入学式online版では、「自力で1,2,3の環境が構築できる方�
 
 1or2 の環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md">2019年度資料の「第1回　第1部」</a>にて公開しています。
 
-3 が利用できる環境であれば、★★Perlが既にインストールされています。
+3 WSL2はWindows上でLinuxを動作させる機能です。これが利用できる環境であれば、WSL2上で実行できる★★Perlが既にインストールされています。
 
 4 のWebブラウザでのプログラミング・実行環境は<a href="https://wandbox./org">wandbox</a>を利用します。ブラウザでwandboxのページを開き、左上の言語を選ぶボックスから、Perl 5.30.1 を選択して下さい。
 
