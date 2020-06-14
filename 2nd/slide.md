@@ -506,6 +506,16 @@ print $buz . "\n";          # hoge123
 
 ___
 ## 四則演算と文字列連結
+### 練習問題(strconcat.pl)
+以下のコードをコピペして、正しく出力される様に変数を連結するコードを続けて書いてみましょう。
+
+my $str1 = "名前は";
+my $str2 = "猫である。";
+my $str3 = "まだ無い。";
+my $str4 = "吾輩は";
+___
+
+## 四則演算と文字列連結
 ### 数値演算と文字列連結は分ける
 
 演算の優先順位と結合方向(演算の向き)はperldocの[perlop](http://perldoc.jp/docs/perl/5.22.1/perlop.pod#Operator32Precedence32and32Associativity)の項に詳細が記載されています。
