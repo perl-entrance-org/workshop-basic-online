@@ -934,7 +934,7 @@ my $small  = 10;
 my $medium = 20;
 my $large  = 30;
 
-if ( $small < $medium <= $large ) { # Perl 5.30未満のバージョンではエラーになる
+if ( $small < $medium <= $large ) { # Perl 5.30までのバージョンではエラーになる
     print "小さい順に並んでます\n";
 }
 ```
