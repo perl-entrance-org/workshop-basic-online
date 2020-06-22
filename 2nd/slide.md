@@ -934,7 +934,7 @@ my $small  = 10;
 my $medium = 20;
 my $large  = 30;
 
-if ( $small < $medium < $large ) { # Perl 5.30までのバージョンではエラーになる
+if ( $small < $medium <= $large ) { # Perl 5.30未満のバージョンではエラーになる
     print "小さい順に並んでます\n";
 }
 ```
@@ -962,7 +962,7 @@ if ( $small < $medium <= $large ) { # 不等号が2種類ある
 
 不等号をはじめ、演算子には[優先順位](https://perldoc.jp/docs/perl/perlop.pod)があります。
 
-上記の例のように、優先順位が異なる不等号 `<`, `<=` が条件式にある場合、以下のように解釈されます。
+上記の例の場合、以下のように解釈されます。
 ```perl
 $small < $medium  && $medium <= $large
 ```
