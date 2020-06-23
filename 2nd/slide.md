@@ -934,16 +934,38 @@ my $small  = 10;
 my $medium = 20;
 my $large  = 30;
 
-if ( $small < $medium < $large ) {    # 間違った条件式！
+if ( $small < $medium <= $large ) { # Perl 5.30までのバージョンではエラーになる
     print "小さい順に並んでます\n";
 }
 ```
 
-`$small < $medium < $large` のよう、に3つ以上の値を同時に比較することはできません。
+`$small < $medium < $large` のように、に3つ以上の値を同時に比較することはできません。
 
 下記のようなエラーとなります。
 
     syntax error at sample.pl line 5, near "$medium <"
+
+ただし、2020年にリリースされた Perl 5.32 より、3つ以上の値を同時に比較することが可能になりました。
+
+___
+## 論理演算子
+### 3つ以上の値を比較したい場合(Perl 5.32 以降)
+```perl
+my $small  = 10;
+my $medium = 20;
+my $large  = 30;
+
+if ( $small < $medium <= $large ) { # 不等号が2種類ある
+    print "小さい順に並んでます\n";
+}
+```
+
+不等号をはじめ、演算子には[優先順位](https://perldoc.jp/docs/perl/perlop.pod)があります。
+
+上記の例の場合、以下のように解釈されます。
+```perl
+$small < $medium  && $medium <= $large
+```
 
 ___
 ## 論理演算子
@@ -953,11 +975,11 @@ my $small  = 10;
 my $medium = 20;
 my $large  = 30;
 
-if ( $small < $medium && $medium < $large ) {
+if ( $small < $medium && $medium <= $large ) {
     print "小さい順に並んでます\n";
 }
 ```
-`$small < $medium` かつ `$medium < $large` というように、論理演算子を使って比較します。
+`$small < $medium` かつ `$medium <= $large` というように、論理演算子を使って比較することも可能です。
 
 ___
 ## 練習問題(question\_num.pl)
