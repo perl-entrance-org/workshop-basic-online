@@ -1590,7 +1590,7 @@ print "@words\n";    # ('I', 'Love', 'Perl.')
 - `/ /` は正規表現リテラルと呼ばれるものです。この二つのスラッシュ  `/` の間 にあるもので文字列を分割します。上記の例では、アンダースコア（下線）で文字列を区切っています。
 
 ___
-## 練習問題 (1/2)
+## 練習問題 (1/4)
 次の処理をする `join.pl` を作りましょう。
 
 1. `("0120", "123", "XXX")` という配列を作ってください。
@@ -1598,10 +1598,35 @@ ___
 2. 作成した配列をjoin関数を利用して `-` で連結して表示してください。
 
 ___
-## 練習問題 (2/2)
+## 練習問題 (2/4)
 次の処理をする `split.pl` を作りましょう。
 
 - "There's more than one way to do it." という文字列を作り、split関数で `" "`（半角スペース）ごとに分割して配列 `@array` に格納し、すべて出力してください。
+
+___
+## 練習問題 (3/4)
+次の処理をする `join2.pl` を作りましょう。
+`@array` の中身の数字を、半角スペース区切りの文字列として画面に表示しましょう。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my @array = (2, 8, 10, 203 , 8760);
+```
+
+___
+## 練習問題 (4/4)
+次の処理をする `split2.pl` を作りましょう。
+変数 $log には、カンマ区切りのデータが格納されています。各要素を配列に格納しましょう。
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $log = "2020-7-10,12:30:55,GET /css-combinators/ HTTP/1.1,200,7974,http://webllica.com/feed-icon-by-html-css/,Mozilla/5.0 (Windows NT 6.0)";
+```
 
 ___
 ## 配列の関数
@@ -1659,6 +1684,26 @@ print "$element" . "\n";     # Chris
 
 ___
 ## 配列の関数
+### 練習問題(pushpop.pl)
+次のコードに `push`、`pop` 関数を使って、 `@array` の中身の順番を正しくするプログラムを書きましょう。
+`$temp` 変数は、一時的にデータを仮置するために使用する変数です。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $elements = "second";
+my $temp;
+my @array = ( 'first', 'third' );
+
+<<ここにコードを書く>>
+
+print "@array\n";
+```
+
+___
+## 配列の関数
 ### unshift / shift
 unshift / shift は配列の先頭の値を操作する関数です。
 ```perl
@@ -1676,14 +1721,34 @@ print "$element" . "\n";    # Chris
 - 配列の **末尾から要素取り出す** ときには `shift` を利用します。
 
 ___
+## 配列の関数
+### 練習問題(shift.pl)
+次のコードに `shift`、`unshift` 関数を使って、 `@array` の中身の順番を正しくするプログラムを書きましょう。
+`$temp` 変数は、一時的にデータを仮置するために使用する変数です。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $elements = "second";
+my $temp;
+my @array = ( 'first', 'third' );
+
+<<ここにコードを書く>>
+
+print "@array\n";
+```
+
+___
 ## 練習問題 (1/2)
 次の処理をする `array_pop_shift.pl` を作りましょう。
 
 1. ('Alice', 'Bob', 'Chris') という配列 `@array` を作ってください。
 
-1. 配列 `@array` から 'Chris' を取り出し、出力してください。
+2. 配列 `@array` から 'Chris' を取り出し、出力してください。
 
-1. 配列 `@array` から 'Alice' を取り出し、出力してください。
+3. 配列 `@array` から 'Alice' を取り出し、出力してください。
 
 ___
 ## 練習問題 (2/2)
@@ -1691,11 +1756,11 @@ ___
 
 1. ('Alice', 'Bob', 'Chris') という配列 `@array` を作ってください。
 
-1. 配列 `@array` の末尾に `Diana` を追加し、 ('Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
+2. 配列 `@array` の末尾に `Diana` を追加し、 ('Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
 
-1. 配列 `@array` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
+3. 配列 `@array` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
 
-1. 配列をfor文で出力してみましょう。
+4. 配列をfor文で出力してみましょう。
 
 ___
 ## 配列の関数
@@ -1715,6 +1780,21 @@ ___
 my @array = reverse( 1 .. 5 );
 
 print "@array" . "\n";    # 5 4 3 2 1
+```
+
+___
+## 練習問題(countdown.pl)
+
+1. 下のプログラムに追記して、100から4までカウントダウンするプログラムを作りましょう。
+
+2. 1.で作ったプログラムに追記して(1.で使った配列を利用して)、１から97までカウントアップするプログラムを作りましょう。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my @array = (1 .. 100);
 ```
 
 ___
@@ -1758,10 +1838,23 @@ print "@sorted1" . "\n";    # 200, 40, 5, 3, 1
 ```
 
 - sortした結果をreverseで逆順にする方法
-```
+```perl
 my @num = ( 5, 200, 40, 3, 1 );
 my @sorted2 = reverse sort { $a <=> $b } @num;
 print "@sorted2" . "\n";    # 200, 40, 5, 3, 1
+```
+
+___
+## 練習問題(sort.pl)
+
+以下のプログラムに追記して、`@array` の中身を昇順にソートして出力しよう。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my @array = (10, 3, 21, 7, 1, 100);
 ```
 
 ___
