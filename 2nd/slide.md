@@ -1298,7 +1298,7 @@ ___
 ```perl
 my @array = ( 1, "foo", 3 );
 
-print "$array[0] . "\n";    # 1
+print "$array[0]" . "\n";    # 1
 ```
 
 配列 `@array` の最初の要素は `$array[0]` となります。
