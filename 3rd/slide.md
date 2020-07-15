@@ -264,6 +264,23 @@ print "@sorted\n";            # birth lang name （常にこの順番）
 [Perl入門ゼミ values関数 - ハッシュのすべての値の取得](https://tutorial.perlzemi.com/blog/20100222126425.html)
 
 ___
+## 練習問題(hashkeys.pl)
+次のハッシュのkeyを全て取り出して、画面に出力してみよう。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my %users = (
+    'Alice'  => 1,
+    'Bob'    => 2,
+    'Chris'  => 3,
+    'Daiana' => 4,
+);
+```
+
+___
 ## ハッシュの操作
 ### delete
 `delete` 関数は、指定したハッシュの名前（key）と、それに対応する値（value）を削除します。
@@ -298,6 +315,29 @@ if ( exists $hash{foo} )  { print "exists\n" }    # 何も出てこない
 - 名前（key）が存在すれば `1`（真）を返します。
 
 - 名前（key）が存在しなければ `'　'`(空文字、偽)を返します。
+
+___
+## 練習問題(menu.pl)
+次のハッシュはカフェのメニュー一覧を表しています。
+
+1. `icecream` のメニューを削除(ハッシュから`icecream`のキーと値を削除)してみよう。
+
+2. `icecream` のメニューが削除されていれば、"夏期メニューは終了しました"と画面に表示してみよう。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my %menu = (
+    'coffee'   => 380,
+    'tea'      => 380,
+    'sandwich' => 800,
+    'icecream' => 200,
+    'salada'   => 600,
+    'cake'     => 400,
+);
+```
 
 ___
 ## ハッシュの操作
@@ -337,7 +377,28 @@ for my $key ( keys %hash ) {
 どのような結果になるでしょうか？
 
 ___
-## 練習問題（1/2）
+## 練習問題（1/3）
+次のハッシュのデータを全て `"<<商品名>> の価格は <<金額>> 円です。"` の形式で出力してみよう。
+
+出力する順番は商品名をABC順(降順)で出力しよう。また、1品目毎に改行して見やすく出力しよう。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my %menu = (
+    'coffee'   => 380,
+    'tea'      => 380,
+    'sandwich' => 800,
+    'icecream' => 200,
+    'salada'   => 600,
+    'cake'     => 400,
+);
+```
+
+___
+## 練習問題（2/3）
 次の処理をする `hash_func.pl` を作りましょう。以下のハッシュをコピペして利用してください。
 ```perl
 my %hash = (
@@ -350,20 +411,19 @@ my %hash = (
 1. 以下の要素を追加してください。
     - 名前（key）: software
     - 値（value）: patch
-1. `keys` 関数を使って, `%hash` の名前（key）をすべて出力してください。
+2. `keys` 関数を使って, `%hash` の名前（key）をすべて出力してください。
 
-1. `delete` 関数を使って, 1で使ったハッシュから birth の要素を削除してください。
+3. `delete` 関数を使って, 1で使ったハッシュから birth の要素を削除してください。
 
 ___
-## 練習問題（2/2）
-練習問題（1/2）で作成した `hash_func.pl` を利用します。
+## 練習問題（3/3）
+練習問題（2/3）で作成した `hash_func.pl` を利用します。
 
 `exists` 関数を使って、`name`, `birth`, `lang`, `software` の各要素が存在するか確認してください。`名前（key）`は各要素のkey名が入るものとします。
 
 - 存在している場合は `名前（key） is exist.` と表示する。
 
 - 存在しない場合は `名前（key） is not exist.` と表示しする。
-
 
 ---
 # 正規表現
