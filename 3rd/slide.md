@@ -387,6 +387,24 @@ ___
 - `$str !~ /ruby/`と書くことで, `$str`の中に｢ruby｣という文字列を含まないなら真, そうでないなら(含むなら)偽, になります.
 
 ___
+## 練習問題
+次のサンプル文、変数に格納された文字列に `horse` という文字列が含まれているか調べるプログラムを書きましょう。
+含まれている場合は、画面に"文字列にhorse が含まれています。"と出力してみましょう。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+#<<サンプル文>>
+"Jingle, bells! Jingle, bells! Jingle all the way!";
+
+#<<文字列が格納された変数>>
+my $lyrics = "Oh, what fun it is to ride, In a One horse open sleigh!";
+
+```
+
+___
 ## パターンマッチ
 
     my $str = 'perl ruby python';
