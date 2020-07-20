@@ -1613,7 +1613,7 @@ ___
 use strict;
 use warnings;
 
-my @array = (2, 8, 10, 203 , 8760);
+my @array = (2, 8, 10, 203, 8760);
 ```
 
 ___
