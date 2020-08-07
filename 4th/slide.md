@@ -750,6 +750,22 @@ print "$hash_ref->{lang}\n";    # Perl
 通常のハッシュのvalueを参照するときは $hash{key} ですが、**ハッシュリファレンスの場合には `->` がついて `$hash_ref->{key}`** となっています。
 
 ___
+## 練習問題（hash_ref_allow.pl）
+
+次に用意されたハッシュリファレンスから、アロー記法を使用して `email` の値を画面に表示してみよう。
+
+```perl
+
+my $hash_ref = {
+    name      => 'Alice',
+    email     => 'alice@perl-entrance.org',
+    telephon  => '090-123-456',
+    address   => 'Shibuya Tokyo Japan',
+}
+
+```
+
+___
 ## 練習問題（hash_ref_for.pl）
 以下のコードを実行すると意図した出力が行われません。エディタにコピペしたうえで**for文の{ }ブロック内を修正し**、プログラムを完成させてください。
 ```
