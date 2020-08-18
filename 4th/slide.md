@@ -1055,6 +1055,32 @@ Perlには`Data::Dumper`の他にも有用なモジュールが標準で数多�
     - 必要最小限の機能を持つWebクライアント。(Perl 5.14以降)
 
 ___
+## 練習問題(dumper.pl)
+
+以下に用意されたハッシュリファレンスを、Data::Dumperモジュールを使って中身を出力してみよう。
+
+```perl
+my $menu = {
+    Hamburger_set => {
+        combo => [
+            'Hamburger',
+            'Juice',
+            'French fries',
+        ],
+        price => 500,
+    },
+    Cheeseburger_set => {
+        combo => [
+            'Cheeseburger',
+            'Juice',
+            'French fries',
+        ],
+        price => 600,
+    },
+}
+```
+
+___
 ## 練習問題(`region_ref.pl`)
 
 まず, 以下のデータ構造を表す`%japan`を作ってください.
