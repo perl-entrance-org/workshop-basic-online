@@ -871,6 +871,44 @@ print $animal{dog}{name} , "\n";    # Taro
 ```
 
 ___
+## ハッシュリファレンスを使う
+### 練習問題(berger_hash_ref.pl)
+下のリファレンスは、ファストフード店のメニューを表しています。
+
+```perl
+my $menu = {
+    Hamburger_set => {
+        combo => [
+            'Hamburger',
+            'Juice',
+            'French fries',
+        ],
+        price => 500,
+    },
+    Cheeseburger_set => {
+        combo => [
+            'Cheeseburger',
+            'Juice',
+            'French fries',
+        ],
+        price => 600,
+    },
+    Morning_set => {
+        combo => [
+            'Pancake',
+            'Hash browns',
+            'Salad',
+            'Coffee',
+        ],
+        price => 450,
+    }
+}
+```
+1. モーニングセットの商品（内容）を１つずつ順に出力してみよう。
+
+2. ハンバーガーセット2個とチーズバーガーセット3個をテイクアウトで買った時の合計金額を計算し出力してみよう。(余裕があれば、消費税8％も加算して画面に出力してみよう。)
+
+___
 ## 練習問題(animal_hash_ref.pl)
 
     animal
