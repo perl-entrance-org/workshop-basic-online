@@ -68,6 +68,8 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 
 ---
 
+## Wandbox
+
 この時点で、Perl のプログラムが右側のテキストエリアに表示されています。下にある `Run (or Ctrl+Enter)` をクリックします。
 
 <img src="image/wandbox04.png" align='left'>
