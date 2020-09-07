@@ -761,7 +761,7 @@ ___
 my $hash_ref = {
     name      => 'Alice',
     email     => 'alice@perl-entrance.org',
-    telephon  => '090-123-456',
+    telephone => '090-123-456',
     address   => 'Shibuya Tokyo Japan',
 }
 
