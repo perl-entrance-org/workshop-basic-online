@@ -458,7 +458,7 @@ ___
 
 ___
 ## 任意の1文字(応用)
-### 練習問題(sturents.pl)
+### 練習問題(students.pl)
 下の例では、生徒の名前と所属する学級名がハッシュの値として格納されています。
 その中から、Bクラス、Cクラス所属の人だけ、名前と所属クラス名を画面に出力してみましょう。
 
@@ -469,8 +469,8 @@ my %student = (
     Chris   => 'B_Class',
     Diana   => 'B_Class',
     Eve     => 'C_Class',
-    Eve     => 'A_Class',
-    Frank   => 'C_Class',
+    Frank   => 'A_Class',
+    George  => 'C_Class',
 );
 ```
 
