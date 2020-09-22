@@ -16,7 +16,7 @@
 
 - 講義中の疑問点は Discord で質問して下さい。サポーターが適宜回答やアドバイスを行える様にスタンバイしています。
 
-- うまくプログラムが動かない、分からない時は Discord でサポーターにヘルプを要請してください。Discord のテキスト及び音声チャットにて個別にサポートします。
+- うまくプログラムが動かない、分からない時は Discord #雑談部屋 でサポーターにヘルプを要請してください。Discord のテキスト及び音声チャットにて個別にサポートします。
 
 - <a href="https://discord.com/">Discord | 会話や交流が楽しめるプラットフォーム</a>
 
@@ -141,8 +141,8 @@ ___
     - 公式ページや<ruby>Tiwtter<rt>ツイッター</rt></ruby>アカウントでは、開催日程などがアナウンスされます。
 - <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash" target="_blank">Twitterハッシュタグ [#Perl入学式]</a>
     - 運営側がウォッチしているので、なにか疑問があればこれをつけて気軽に質問してみましょう。
-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform" target="_blank">Slackチャンネル</a>
-    - <ruby>Slack<rt>スラック</rt></ruby>というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
+- Discord Perl入学式チャンネル
+    - <ruby>Discord<rt>ディスコード</rt></ruby>というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
     - こちらでも気軽に質問や雑談をしてみましょう。
 - <a href="https://github.com/perl-entrance-org" target="_blank">GitHubのPerl入学式アカウント</a>
     - <ruby>GitHub<rt>ギットハブ</rt></ruby>というコードの集積サイトに講義で使われた資料、コードなどがあります。
@@ -458,9 +458,9 @@ ___
 
 これでみなさんもPerlMongerです。
 
-是非Perl入学式の<a href="https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform" target="_blank">slack</a>に参加して、 サポーターや参加者の皆さんと交流しましょう。
+是非Perl入学式の Discord #雑談部屋 でサポーターや参加者の皆さんと交流しましょう。
 
-不明点もslackで是非質問してください。
+不明点も Discord #雑談部屋 で是非質問してください。
 
 第2回以降の参加もお待ちしております!
 
