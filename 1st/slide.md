@@ -118,15 +118,17 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 
 <small>講師の都合に合わせて休講しているところもあります。</small>
 
+---
+
+## Perl 入学式とは
+
 参加費は無料です。受講者の負担が極力少ない形で行われています。
 
-現在のカリキュラムは全 ★★ 回です。
+現在のカリキュラムは全 4 〜 5 回です。
 
 ---
 
 ## Perl 入学式の使い方
-
-例えば...
 
 - プログラミング、ちょっと興味があるから始めてみたいな、という人。
 
@@ -143,13 +145,23 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 ## オンラインでのサポート
 
 - <a href="http://perl-entrance.org/" target="_blank">Perl 入学式の公式ページ</a>
+
 - <a href="https://twitter.com/Perl_Entrance">Twitter アカウント [@Perl_Entrance]</a>
+
   - 公式ページや<ruby>Tiwtter<rt>ツイッター</rt></ruby>アカウントでは、開催日程などがアナウンスされます。
+
 - <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash" target="_blank">Twitter ハッシュタグ [#Perl 入学式]</a>
   - 運営側がウォッチしているので、なにか疑問があればこれをつけて気軽に質問してみましょう。
+
+---
+
+## オンラインでのサポート
+
 - Discord Perl 入学式チャンネル
-  - <ruby>Discord<rt>ディスコード</rt></ruby>というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
+
+  - <a href="https://discord.com/channels/741610576609935430/741610901303721998"><ruby>Discord<rt>ディスコード</rt></ruby></a> というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
   - こちらでも気軽に質問や雑談をしてみましょう。
+
 - <a href="https://github.com/perl-entrance-org" target="_blank">GitHub の Perl 入学式アカウント</a>
   - <ruby>GitHub<rt>ギットハブ</rt></ruby>というコードの集積サイトに講義で使われた資料、コードなどがあります。
 
@@ -176,9 +188,9 @@ Perl は C 言語や<ruby>sed<rt>セド</rt></ruby>、<ruby>awk<rt>オーク</rt
 
 Perl は後に開発された Ruby(1995 年)や PHP(1995 年)に影響を与えました。
 
-<a href="https://www.levenez.com/lang/">Computer Languages History</a>
+- <a href="https://www.levenez.com/lang/">Computer Languages History</a>
 
-<a href="https://exploring-data.com/vis/programming-languages-influence-network/#Perl">Programming Languages Influence Network | Exploring Data</a>
+- <a href="https://exploring-data.com/vis/programming-languages-influence-network/#Perl">Programming Languages Influence Network | Exploring Data</a>
 
 ---
 
@@ -187,11 +199,21 @@ Perl は後に開発された Ruby(1995 年)や PHP(1995 年)に影響を与え�
 <a href="https://ja.wikipedia.org/wiki/Perl" target="_blank">Wikipedia の記事</a>から重要なものだけ引用します。
 
 - 強力な文字列処理。<ruby>正規表現<rt>せいきひょうげん</rt></ruby>をサポート
+
 - 日本語をはじめとした世界中の言語を処理可能
+
 - 自由度の高い文法。簡潔にプログラムを記述可能
+
+---
+
+## Perl の特徴
+
 - 高い後方互換性
+
 - 数多くのオペレーティングシステムで利用可能
+
 - プログラムの実行には事前コンパイルは不要
+
 - 有志によって開発された豊富なモジュール
 
 ---
@@ -203,6 +225,10 @@ Perl のスローガン、「ティムトゥーディー」と読みます。
 " There's more than one way to do it. " の頭文字をとったもの。
 
 意味は「やり方はひとつじゃない」。
+
+---
+
+## TMTOWTDI
 
 Larry は「プログラミング言語は、いろんな対象をシンプルに記述する為に、ある程度複雑でなければならない」と信じています。
 
@@ -218,7 +244,7 @@ Perl のバージョンアップによって新機能の追加や、セキュリ
 
 バージョンアップによって昔のスクリプトが動かなくなる、ということは**ほとんど**ありません。
 
-基本的な処理については後方互換性が高いレベルで維持されています。
+基本的な処理については、高いレベルで後方互換性が維持されています。
 
 ---
 
@@ -230,8 +256,14 @@ Perl には**モジュール**という、特定の処理に特化した追加�
 
 <small>Perl Monger ... Perl 使い、Perl を得意とするエンジニアのこと。Ruby における<ruby>Rubyist<rt>ルビースト</rt></ruby>、Python における<ruby>Pythonista<rt>パイソニスタ</rt></ruby>と同義です。</small>
 
+---
+
+## 豊富なモジュール
+
 - <ruby>Encode<rt>エンコード</rt></ruby> ... 文字列のエンコードを処理するモジュール。
+
 - Net::Twitter ... Twitter の API を操作するモジュール。
+
 - DBD::<ruby>SQLite<rt>エスキューライト</rt></ruby> ... Perl から、SQLite というデータベースを操作するモジュール。
 
 ---
@@ -240,7 +272,7 @@ Perl には**モジュール**という、特定の処理に特化した追加�
 
 - Perl 4 以前は前史として、既に周囲に環境が存在しないと思って良いです。
 
-- 1994 年、Perl 5.00x(x は数字)というバージョンで Perl5 が登場しました。
+- 1994 年、Perl5 (Perl 5.000) が登場しました。
 
 - 2000 年、Perl 5.6 が登場。この頃からインターネットやウェブというものが徐々に一般に普及していきます。
 
@@ -252,45 +284,48 @@ Perl には**モジュール**という、特定の処理に特化した追加�
 
 ## Perl5.8 以降のバージョンの歴史
 
-- Perl 5.10 が登場。 2007 年。 後方互換性を維持した構文拡張等。
-- Perl 5.12 が登場。 2010 年。
-- Perl 5.14 が登場。 2011 年。
-- Perl 5.16 が登場。 2012 年。
-- Perl 5.18 が登場。 2013 年。
-- Perl 5.20 が登場。 2014 年。
-- Perl 5.22 が登場。 2015 年。
-- Perl 5.24 が登場。 2016 年。
-- Perl 5.26 が登場。 2017 年。
-- Perl 5.28 が登場。 2018 年。
-- Perl 5.30 が登場。 2019 年。 現在の最新の安定版です。
+- 2007 年 : Perl 5.10 が登場。 後方互換性を維持した構文拡張等。
+- 2015 年 : Perl 5.22 が登場。
+- 2016 年 : Perl 5.24 が登場。
+- 2017 年 : Perl 5.26 が登場。
+- 2018 年 : Perl 5.28 が登場。
+- 2019 年 : Perl 5.30 が登場。 現在の最新の安定版です。
 
 ---
 
 ## Perl5 の安定板と開発版
 
-5.(偶数) が安定版、 5.(奇数) が開発版です。
+- 5.(偶数) が安定版、 5.(奇数) が開発版です。
 
-基本的に最新版の一つ手前の安定版までがサポート対象です。
+- 5.(奇数) の開発版をあえてインストールする必要はありません。5.(偶数) の安定版をインストールしましょう。
 
-過去のバージョンの Perl が生き残っている現場も多いですが、今なら Perl 5.10 以降だけを考えれば良いです。
-
-Perl 5.10 以降から 5.30 まで、Perl 初学者にとって大きな違いはあまりありません。
-
-また、5.(奇数) の開発版をあえてインストールする必要はありません。5.(偶数) の安定版をインストールしましょう。
+- 基本的に最新版の一つ手前の安定版までがサポート対象です。
 
 ---
 
-## 余談: Raku（旧称 Perl6）について
+## Perl5 の安定板と開発版
 
-Perl 5 とは別に、Perl 6 も開発されています。
+- 過去のバージョンの Perl が生き残っている現場も多いですが、今なら Perl 5.10 以降だけを考えれば良いです。
 
-当初は Perl5 の後継となるはずでしたが、後に「Perl5 とは別に開発を進める」と公式に発表されました。
+- Perl 5.10 以降から 5.30 まで、Perl 初学者にとって大きな違いはあまりありません。
 
-また、Perl 5 と Perl 6 では互換性を考慮していません。
+---
 
-これは Perl5 のバージョン間での互換性が最大限に保たれていることの裏返しでもあります。
+## 余談: <ruby>Raku<rt>ラク</rt></ruby>（旧称 Perl6）について
 
-2019 年 10 月、Perl6 は <ruby>Raku<rt>ラク</rt></raku>と改名しました。順次、名称の変更作業が行われています。
+- Perl 5 とは別に、Perl 6 も開発されています。
+
+- Perl 5 と Perl 6 では互換性を考慮していません。
+
+- 当初は Perl5 の後継となるはずでしたが、後に「Perl5 とは別に開発を進める」と公式に発表されました。
+
+- これは Perl5 のバージョン間での互換性が最大限に保たれていることの裏返しでもあります。
+
+---
+
+## 余談: <ruby>Raku<rt>ラク</rt></ruby>（旧称 Perl6）について
+
+- 2019 年 10 月、Perl6 は Raku と改名しました。順次、名称の変更作業が行われています。
 
 参考: <a href="https://raku.org/" target="_blank">The Raku Programming Language</a>
 
@@ -302,13 +337,13 @@ Perl 5 とは別に、Perl 6 も開発されています。
 
 地域の Perl Mongrer コミュニティは、(地名).pm を名乗ることが多いです。
 
-日本でも、十数個のコミュニティ、勉強会が開催されています。
+日本でも、多くのコミュニティ、勉強会が開催されています。
 
 ---
 
 ## 地域コミュニティ
 
-- pm.org に登録されている、公認のコミュニティ。
+- <a href="pm.org" target="_blank">pm.org</a> に登録されている、公認のコミュニティ。
 
   - Hokkaido.pm, Kushiro.pm, Sendai.pm, Niigata.pm, Tokyo.pm, Shibuya.pm, Yokohama.pm, Kamakura.pm, Gotanda.pm, Nagoya.pm, Kansai.pm, Kyoto.pm, Fukuoka.pm, Okinawa.pm
 
@@ -330,11 +365,25 @@ YAPC::Japan は日本の都市で年度内に 1〜2 度行われる、日本最�
 
 2006 年から 2015 年まで続いた YAPC::Asia の後継イベントです。
 
-2016 年 12 月に札幌で行われた YAPC::Hokkaido 2016 SAPPORO を皮切りに、大阪、福岡、沖縄、東京で開催されました。
+---
 
-2019 年度は 11 月に名古屋で開催されました。
+## YAPC::Japan
 
-2020 年 03 月に京都での開催を予定していましたが、新型コロナウイルス感染拡大防止の為、開催見送り(延期時期未定)となりました。
+- 2016 年 12 月 札幌 <a href="https://yapcjapan.org/2016hokkaido/" target="_blank">YAPC::Hokkaido 2016 SAPPORO</a>
+
+- 2017 年 7 月 博多 <a href="https://yapcjapan.org/2016hokkaido/" target="_blank">YAPC::HAKATA</a>
+
+- 2018 年 3 月 大阪 <a href="https://yapcjapan.org/2018okinawa/" target="\_blank">YAPC::Okinawa 2018 ONNASON</a>
+
+- 2019 年 1 月 東京 <a href="https://yapcjapan.org/2019tokyo/" target="_blank">YAPC::Tokyo 2019</a>
+
+- 2019 年 11 月 名古屋 <a href="https://yapcjapan.connpass.com/event/146727/" target="_blank">YAPC::Nagoya::Tiny 2019</a>
+
+---
+
+## YAPC::Japan
+
+2020 年は京都での開催を予定していましたが、新型コロナウイルス感染拡大防止の為に開催見送り(延期時期未定)となりました。
 
 参考：<a href="https://yapcjapan.org/2020kyoto/" target="_blank">YAPC::Kyoto 2020 開催見送りについて</a>
 
@@ -344,11 +393,15 @@ YAPC::Japan は日本の都市で年度内に 1〜2 度行われる、日本最�
 
 一時期、「Perl で Web サービスを作るなら<ruby>CGI<rt>シージーアイ</rt></ruby>」という時代がありましたが、今はそうではありません。
 
-最近は、<ruby>PSGI<rt>ピーエスジーアイ</rt></ruby>(Perl web Server Gateway Interface)という仕様に対応した<ruby>WAF<rt>ワフ</rt></ruby>(Web Application Framework)を使っての開発が増えています。
+最近は、<ruby>PSGI<rt>ピーエスジーアイ</rt></ruby>(Perl web Server Gateway Interface)という仕様に対応した<ruby>WAF<rt>ワフ</rt></ruby> (Web Application Framework)を使っての開発が増えています。
 
-2019 年現在、Perl の代表的かつ新規採用されやすい WAF としては、<ruby>Mojolicious<rt>モジョリシャス</rt></ruby>や<ruby>Amon2<rt>アモンツー</rt></ruby>などがあります。
+---
 
-Perl 入学式は「モダンな Perl を教える」という方針を取っていますので、CGI については触れません。
+## Perl と WAF
+
+2019 年現在、Perl の代表的かつ新規採用されやすい WAF としては、<ruby>Mojolicious<rt>モジョリシャス</rt></ruby> や <ruby>Amon2<rt>アモンツー</rt></ruby> などがあります。
+
+Perl 入学式は「モダンな Perl を教える」という方針なので、CGI については触れません。
 
 ---
 
@@ -364,6 +417,10 @@ Q. 難しい内容かもしれないので不安...
 
 A. 参加するだけなら怖くありません。参加費も無料、もしくは会場費の割勘程度です。
 
+---
+
+## 勉強会への参加
+
 こんな世界もあるんだ〜、程度に聴講すると、数年後にふと繋がることもあります。
 
 懇親会に参加して盛り上がると、さらに業界や Perl 界隈の裏話が聴けたりも！？
@@ -378,7 +435,11 @@ A. 参加するだけなら怖くありません。参加費も無料、もし�
 
 ネットの情報は玉石混交、一方で書籍の場合は情報の陳腐化があり、一長一短と言えます。
 
-最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby>`perldoc`<rt>パールドック</rt></ruby> / <a href="https://perldoc.perl.org/" target="_blank">perldoc.perl.org</a> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
+---
+
+## 検索 vs 書籍
+
+最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby><a href="https://perldoc.perl.org/" target="_blank">perldoc</a><rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
 
 ---
 
@@ -389,6 +450,10 @@ A. 参加するだけなら怖くありません。参加費も無料、もし�
 - 「<a href="https://www.oreilly.co.jp/books/9784873118246/" target="_blank">初めての Perl</a>」(通称: リャマ本)。若干プログラミング初心者向け、オライリーの文体に慣れていないと多少厳しいかも。
 
 - 「<a href="https://www.wgn.co.jp/store/dat/3227/" target="_blank">CPAN モジュールガイド</a>」CPAN モジュール（後述）のガイド本。Perl の可能性を知ることができる良書。
+
+---
+
+## オススメの書籍
 
 - 「<a href="https://booth.pm/ja/items/260345" target="_blank">雅な Perl</a>」2015 年に第 3 版刊行。同人誌、とはいえ初心者向けという意味ではかなり秀逸な解説をしています。
 
@@ -404,21 +469,21 @@ A. 参加するだけなら怖くありません。参加費も無料、もし�
 
 ## 最初のプログラム
 
-どのプログラミング言語でも、最初に解説されるのは「Hello, world! と表示するプログラム」であることが多いです。
+プログラム言語の学習において、最初に解説されるのは「Hello, world! と表示するプログラム」であることが多いです。
 
-というわけで、既にあるシステム Perl の環境を使って、Hello, world! を表示する Perl プログラムに挑戦してみましょう。
+早速、Hello, world! を表示する Perl プログラムに挑戦してみましょう。
 
-これはこれはターミナル上(Wandbox の画面下部には、ターミナル風の結果出力部分があります。便宜上この部分の事を以下 'ターミナル' と言います)に `Hello, world!` という文字列を表示するプログラムです。
+これはターミナル上(Wandbox の画面下部には、ターミナル風の結果出力部分があります。便宜上この部分の事を以下 'ターミナル' と言います)に `Hello, world!` という文字列を表示するプログラムです。
 
 ---
 
-## Hello, world!
+## Hello, World!(hello.pl)
 
 ```perl
 print "Hello, world!\n";
 ```
 
-エディタにこのようなプログラムを書いて、`hello.pl`という名前で保存しましょう。Perl のスクリプトは`.pl`という拡張子で保存することが多いです。
+Wandbox の画面上部にある入力欄に上記の文字を入力します。
 
 - `print`は、ターミナルに文字を出力する命令です。
 
@@ -432,24 +497,11 @@ print "Hello, world!\n";
 
 ## スクリプトの実行
 
-```perl
-$ perl hello.pl
-Hello, world!
-```
+Wandbox の入力欄の下にある [Run (or Ctrl+Enter)] ボタンを押します。
 
-エティタを閉じ、ターミナルで上記のように打ち込み、実行します。
+入力欄の下にあるターミナルに `Hello, world!` と表示されていれば成功です。
 
-`perl`の引数に、実行したいスクリプトファイル名を与えると、そのスクリプトを実行してくれます。
-
----
-
-## perldoc とドキュメント
-
-スクリプト中にわからない命令が出てきた場合には、<a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>で調べることが出来ます。
-
-Linux, Mac を利用しているユーザーは、コマンドライン実行環境で `perldoc` コマンドを利用して調べる事もできます。（本講義では説明をしませんので、興味がある方は 2019 年以前の資料を参照して下さい。）
-
-スクリプトに機能追加を行う**モジュール**（第４回で説明）も同様にインターネット上の`perldoc.perl.org`, `perldoc.jp`で確認が可能です。（前述の `perldoc` コマンドでも可能です）
+[hello.pl](https://wandbox.org/permlink/noU3msxlbzeUY4OO)
 
 ---
 
@@ -474,13 +526,11 @@ print 5-2;
 print "\n";
 ```
 
-エディタにこのようなプログラムを書いて、`minus.pl`という名前で保存しましょう。
-
 このスクリプトを実行すると、ターミナルに`3`が表示されます。
 
-では、上記のスクリプトを参考にして、2019 から Perl1.0 のリリース年の西暦を引き算して、Perl の満年齢を表示してみましょう。
+では、上記のスクリプトを参考にして、2020 から Perl1.0 のリリース年の西暦を引き算して、Perl の満年齢を表示してみましょう。
 
-<small>ちなみに Perl1.0 のリリース年は 1987 年とされています。 (Wikipedia より)</small>
+<small>Perl1.0 のリリース年は 1987 年です (Wikipedia より)</small>
 
 ---
 
@@ -498,9 +548,13 @@ use warnings;
 
 プログラムには、問答無用で書いておく「おまじない」ともいうべきものがあります。Perl は上記の 3 行が「おまじない」となります。
 
+---
+
+## おまじない
+
 - `#!/usr/bin/env perl` ... <ruby>shebang<rt>シバン</rt></ruby>と呼ばれるもので、このスクリプトが perl で動くことを明示します
 
-- `use strict` ... 厳密な書式を定めたり、未定義の変数を警告する
+- `use strict` ... 厳密な書式で書くことを強制し、未定義の変数を警告する
 
 - `use warnings` ... 望ましくない記述を警告する
 
@@ -512,9 +566,9 @@ use warnings;
 
 先程の冒頭の 3 行のおまじないを加えた上で、`Hello, Perl`という文字列を出力する`hello_perl.pl`を作成しよう
 
-- ヒント: 文字列は`"`で囲む
+- ヒント: 文字列はダブルクォーテーション `"` で囲む
 
-- ヒント: 文字列を出力する関数は`print`
+- ヒント: 文字列を出力する関数は `print`
 
 ---
 
