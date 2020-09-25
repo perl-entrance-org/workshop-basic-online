@@ -11,12 +11,15 @@ require App::revealup;
 
 use constant DEBUG => $ENV{DEBUG};
 
+my @passthrough_args = (qw(transition widhth height));
+
 GetOptions(
     \my %opt,
     "port|p=i",
     "silent|s",
     "theme|t=s",
     "print-pdf|p",
+    (map { "$_=s" } @passthrough_args),
 );
 
 my $markdown_path = shift;
@@ -39,7 +42,7 @@ chdir dirname($markdown_path);
 
 my @revealup_arg = ("serve", "--port=$port");
 push @revealup_arg, "--theme=$theme" if $theme;
-for my $key (qw(transition widhth height)) {
+for my $key (@passthrough_args) {
     # これらのオプションは revealup にあるので、存在すればそのまま採用
     push @revealup_arg, "--$key=$opt{$key}" if $opt{$key};
 }
