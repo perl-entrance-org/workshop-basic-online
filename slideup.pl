@@ -4,6 +4,7 @@ use v5.10;
 use strict;
 use warnings;
 
+use Cwd qw(getcwd);
 use File::Basename qw(basename dirname);
 use Getopt::Long qw(:config posix_default no_ignore_case bundling auto_help);
 use Pod::Usage qw(pod2usage);
@@ -45,6 +46,11 @@ push @revealup_arg, "--theme=$theme" if $theme;
 for my $key (@passthrough_args) {
     # これらのオプションは revealup にあるので、存在すればそのまま採用
     push @revealup_arg, "--$key=$opt{$key}" if $opt{$key};
+}
+# オンライン配信にはトランジションは不要
+if ( !grep { /^--transition=/ } @revealup_arg and getcwd() =~ m{\bonline\b} ) {
+    print "slideup.pl: start online mode. transition is off";
+    push @revealup_arg, "--transition=none";
 }
 push @revealup_arg, $markdown_filename;
 
