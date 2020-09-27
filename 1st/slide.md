@@ -399,7 +399,7 @@ YAPC::Japan は日本の都市で年度内に 1〜2 度行われる、日本最�
 
 ## Perl と WAF
 
-2019 年現在、Perl の代表的かつ新規採用されやすい WAF としては、<ruby>Mojolicious<rt>モジョリシャス</rt></ruby> や <ruby>Amon2<rt>アモンツー</rt></ruby> などがあります。
+2020 年現在、Perl の代表的かつ新規採用されやすい WAF としては、<ruby>Mojolicious<rt>モジョリシャス</rt></ruby> や <ruby>Amon2<rt>アモンツー</rt></ruby> などがあります。
 
 Perl 入学式は「モダンな Perl を教える」という方針なので、CGI については触れません。
 
