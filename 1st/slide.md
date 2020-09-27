@@ -36,11 +36,39 @@
 
 ---
 
+## Perl 入学式の学習環境について
+
+Perl 入学式 online 版では、以下のサービス・ツールを利用して学習を行っていきます。
+
+- 動画の中継：Youtube Live
+
+- Perl 実行環境：<a href="https://wandbox.org"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
+
+- コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998"><ruby>Discord<rt>ディスコード</rt></ruby></a>
+
+- スライド共有ツール（仮）：<a href="https://appslideshare.tugougaii.site/">appslideshare</a>
+
+---
+
+## Perl 入学式の学習環境について
+
+４つのサービス・ツールを利用しますが、以下のような構成をお勧めします。
+
+- スマホ・タブレットで Youtube Live を視聴
+
+- PC で スライド共有ツール ・ Wandbox ・ ディスコード を開く
+
+  - 仮想デスクトップ機能・マルチディスプレイなどを用いて、各ツールを切り替える
+
+---
+
 ## Wandbox
 
-Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で学習します。
+---
 
-<a href="https://wandbox.org">Wandbox</a> を利用します。
+## Wandbox
+
+Perl 実行環境の Wandbox の利用方法です。
 
 1. ブラウザで Wandbox のページを開きます。
 
@@ -70,7 +98,9 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 
 ## Wandbox
 
-この時点で、Perl のプログラムが右側のテキストエリアに表示されています。下にある `Run (or Ctrl+Enter)` をクリックします。
+この時点で、Perl のプログラムが右側のテキストエリアに表示されています。このテキストエリアをエディタと呼びます。
+
+下にある `Run (or Ctrl+Enter)` をクリックします。
 
 <img src="image/wandbox04.png" align='left'>
 
@@ -78,9 +108,35 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 
 ## Wandbox
 
-下にプログラムの実行結果が表示されます。このようにして学習を進めていきます。
+下にプログラムの実行結果が表示されます。この黒い部分をターミナルと呼びます。
+
+このようにエディタで入力を行い、ターミナルで実行結果を確認しながら学習を進めていきます。
 
 <img src="image/wandbox05.png" align='left'>
+
+---
+
+## Wandbox
+
+エディタ部は `+` でタブを増やすことができます。
+
+ただし、`Run (or Ctrl+Enter)` で実行されるのは一番左端のタブのみとなります。
+
+<img src="image/wandbox06.png" align='left'>
+
+<img src="image/wandbox07.png" align='right'>
+
+---
+
+## Wandbox
+
+Wandbox で書いたコードを共有することもできます。
+
+共有すると URL が発行されます。コードの確認を依頼する際にとても便利な機能です。
+
+共有すると URL に紐づいてコードがインターネット上に残ります。気をつけてください。
+
+<img src="image/wandbox08.png" align='left'>
 
 ---
 
