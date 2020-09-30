@@ -346,6 +346,22 @@ ___
 - さらに時間の余った人は数字以外が入力された場合に 'INPUT NUMBER PLEASE'と表示する仕組みを入れてみよう
 
 ---
+
+## （コラム）Perl と CGI
+
+一時期、「Perl で Web サービスを作るなら<ruby>CGI<rt>シージーアイ</rt></ruby>」という時代がありましたが、今はそうではありません。
+
+最近は、<ruby>PSGI<rt>ピーエスジーアイ</rt></ruby>(Perl web Server Gateway Interface)という仕様に対応した<ruby>WAF<rt>ワフ</rt></ruby> (Web Application Framework)を使っての開発が増えています。
+
+---
+
+## （コラム）Perl と WAF
+
+2019 年現在、Perl の代表的かつ新規採用されやすい WAF としては、<ruby>Mojolicious<rt>モジョリシャス</rt></ruby> や <ruby>Amon2<rt>アモンツー</rt></ruby> などがあります。
+
+Perl 入学式は「モダンな Perl を教える」という方針なので、CGI については触れません。
+
+---
 ## Webアプリ、その前に
 
 ___
