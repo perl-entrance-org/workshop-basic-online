@@ -1542,6 +1542,7 @@ Perl5 のモジュール 群についてもそのまま、あるいは、わず�
 参考: <a href="https://www.perl.com/article/announcing-perl-7/" target="_blank">Announcing Perl 7</a>
 
 ---
+
 ## HTML 入学式
 
 次回は Web アプリを作成しますが、その際に知っておくと良い内容をまとめました。
