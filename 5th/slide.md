@@ -357,7 +357,7 @@ ___
 
 ## （コラム）Perl と WAF
 
-2019 年現在、Perl の代表的かつ新規採用されやすい WAF としては、<ruby>Mojolicious<rt>モジョリシャス</rt></ruby> や <ruby>Amon2<rt>アモンツー</rt></ruby> などがあります。
+2020 年現在、Perl の代表的かつ新規採用されやすい WAF としては、<ruby>Mojolicious<rt>モジョリシャス</rt></ruby> や <ruby>Amon2<rt>アモンツー</rt></ruby> などがあります。
 
 Perl 入学式は「モダンな Perl を教える」という方針なので、CGI については触れません。
 
