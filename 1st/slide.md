@@ -40,9 +40,9 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - Perl 実行環境：<a href="https://wandbox.org" target="\_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
 
-- コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="\_blank><ruby>Discord<rt>ディスコード</rt></ruby></a>
+- コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="\_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
 
-- スライド共有ツール（仮）：<a href="https://appslideshare.tugougaii.site/" target="\_blank>appslideshare</a>
+- スライド共有ツール（仮）：<a href="https://appslideshare.tugougaii.site/" target="\_blank">appslideshare</a>
 
 ---
 
@@ -52,7 +52,7 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - スマホ・タブレットで Youtube Live を視聴
 
-- PC で スライド共有ツール ・ Wandbox ・ ディスコード を開く
+- PC で スライド共有ツール ・ Wandbox ・ Discord を開く
 
   - 仮想デスクトップ機能・マルチディスプレイなどを用いて、各ツールを切り替える
 
