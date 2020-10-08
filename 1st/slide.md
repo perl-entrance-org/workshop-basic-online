@@ -18,7 +18,7 @@
 
 - うまくプログラムが動かない、分からない時は Discord #雑談部屋 でサポーターにヘルプを要請してください。Discord のテキスト及び音声チャットにて個別にサポートします。
 
-- <a href="https://discord.com/">Discord | 会話や交流が楽しめるプラットフォーム</a>
+- <a href="https://discord.com/" target="\_blank">Discord | 会話や交流が楽しめるプラットフォーム</a>
 
 ---
 
@@ -34,13 +34,33 @@
 
 ## Perl 入学式の学習環境について
 
+Perl 入学式 online 版では、以下のサービス・ツールを利用して学習を行っていきます。
+
+- 動画の中継：Youtube Live
+
+- Perl 実行環境：<a href="https://wandbox.org" target="\_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
+
+- コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="\_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
+
+- スライド共有ツール（仮）：<a href="https://appslideshare.tugougaii.site/" target="\_blank">appslideshare</a>
+
+---
+
+## Perl 入学式の学習環境について
+
+４つのサービス・ツールを利用しますが、以下のような構成をお勧めします。
+
+- スマホ・タブレットで Youtube Live を視聴
+
+- PC で スライド共有ツール ・ Wandbox ・ Discord を開く
+
+  - 仮想デスクトップ機能・マルチディスプレイなどを用いて、各ツールを切り替える
+
 ---
 
 ## Wandbox
 
-Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で学習します。
-
-<a href="https://wandbox.org">Wandbox</a> を利用します。
+Perl 実行環境として利用する Wandbox の利用方法です。
 
 1. ブラウザで Wandbox のページを開きます。
 
@@ -70,7 +90,9 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 
 ## Wandbox
 
-この時点で、Perl のプログラムが右側のテキストエリアに表示されています。下にある `Run (or Ctrl+Enter)` をクリックします。
+この時点で、Perl のプログラムが右側のテキストエリアに表示されています。このテキストエリアをエディタと呼びます。
+
+下にある `Run (or Ctrl+Enter)` をクリックします。
 
 <img src="image/wandbox04.png" align='left'>
 
@@ -78,17 +100,43 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 
 ## Wandbox
 
-下にプログラムの実行結果が表示されます。このようにして学習を進めていきます。
+下にプログラムの実行結果が表示されます。この黒い部分をターミナルと呼びます。
+
+このようにエディタで入力を行い、ターミナルで実行結果を確認しながら学習を進めていきます。
 
 <img src="image/wandbox05.png" align='left'>
 
 ---
 
-## 手元の PC に環境構築する場合
+## Wandbox
+
+エディタ部は `+` でタブを増やすことができます。
+
+ただし、`Run (or Ctrl+Enter)` で実行されるのは一番左端のタブのみとなります。
+
+<img src="image/wandbox06.png" align='left'>
+
+<img src="image/wandbox07.png" align='right'>
+
+---
+
+## Wandbox
+
+Wandbox で書いたコードを共有することもできます。
+
+共有すると URL が発行されます。コードの確認を依頼する際にとても便利な機能です。
+
+共有すると URL に紐づいてコードがインターネット上に残ります。気をつけてください。
+
+<img src="image/wandbox08.png" align='left'>
+
+---
+
+## 手元の PC で Perl 実行環境がある場合・または構築する場合
 
 すでに手元の PC に環境がある方は、その環境を利用してください。
 
-PC への環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md">2019 年度資料の「第 1 回　第 1 部」</a>にて公開しています。
+PC への環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md" target="\_blank">2019 年度資料の「第 1 回　第 1 部」</a>にて公開しています。
 
 ---
 
@@ -99,6 +147,10 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 出来た方は、Discord のテキストチャットで「出来た！」とリアクションしてみてください。
 
 よくわからない方は Discord のテキストチャットにて、サポーターにヘルプを求めてください。
+
+---
+
+## 休憩 ＆ 質問 ＆ 雑談 タイム（５ 〜 10 分）
 
 ---
 
@@ -124,7 +176,7 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 
 参加費は無料です。受講者の負担が極力少ない形で行われています。
 
-現在のカリキュラムは全 4 〜 5 回です。
+現在のカリキュラムは全 4 〜 5 回を予定しています。
 
 ---
 
@@ -132,11 +184,11 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 
 - プログラミング、ちょっと興味があるから始めてみたいな、という人。
 
-- 今流行のウェブアプリケーションを作ってみたいものの、基礎から勉強したい人。
+- ウェブアプリケーションを作ってみたいもの、基礎から勉強したい人。
 
-- 他の言語を使っているけど、ちょっと Perl も使ってみたいと思った人。
+- 他の言語を使っているけど、Perl も使ってみたいと思った人。
 
-- 仕事や研究で Perl を使い始めたけど、ちょっと自信がないので勉強したい人。
+- 仕事や研究で Perl を使い始めたけど、自信がないので勉強したい人。
 
 皆さんの学びたい、作りたいといった気持ち、目標をサポートします！
 
@@ -144,13 +196,13 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 
 ## オンラインでのサポート
 
-- <a href="http://perl-entrance.org/" target="_blank">Perl 入学式の公式ページ</a>
+- <a href="http://perl-entrance.org/" target="\_blank">Perl 入学式の公式ページ</a>
 
-- <a href="https://twitter.com/Perl_Entrance">Twitter アカウント [@Perl_Entrance]</a>
+- <a href="https://twitter.com/Perl_Entrance" target="\_blank">Twitter アカウント [@Perl_Entrance]</a>
 
-  - 公式ページや<ruby>Tiwtter<rt>ツイッター</rt></ruby>アカウントでは、開催日程などがアナウンスされます。
+  - 公式ページや Tiwtter アカウントでは、開催日程などがアナウンスされます。
 
-- <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash" target="_blank">Twitter ハッシュタグ [#Perl 入学式]</a>
+- <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash" target="\_blank">Twitter ハッシュタグ [#Perl 入学式]</a>
   - 運営側がウォッチしているので、なにか疑問があればこれをつけて気軽に質問してみましょう。
 
 ---
@@ -159,10 +211,10 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 
 - Discord Perl 入学式チャンネル
 
-  - <a href="https://discord.com/channels/741610576609935430/741610901303721998"><ruby>Discord<rt>ディスコード</rt></ruby></a> というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
+  - <a href="https://discord.com/channels/741610576609935430/741610901303721998" target="\_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a> というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
   - こちらでも気軽に質問や雑談をしてみましょう。
 
-- <a href="https://github.com/perl-entrance-org" target="_blank">GitHub の Perl 入学式アカウント</a>
+- <a href="https://github.com/perl-entrance-org" target="\_blank">GitHub の Perl 入学式アカウント</a>
   - <ruby>GitHub<rt>ギットハブ</rt></ruby>というコードの集積サイトに講義で使われた資料、コードなどがあります。
 
 ---
@@ -188,15 +240,15 @@ Perl は C 言語や<ruby>sed<rt>セド</rt></ruby>、<ruby>awk<rt>オーク</rt
 
 Perl は後に開発された Ruby(1995 年)や PHP(1995 年)に影響を与えました。
 
-- <a href="https://www.levenez.com/lang/">Computer Languages History</a>
+- <a href="https://www.levenez.com/lang/" target="\_blank">Computer Languages History</a>
 
-- <a href="https://exploring-data.com/vis/programming-languages-influence-network/#Perl">Programming Languages Influence Network | Exploring Data</a>
+- <a href="https://exploring-data.com/vis/programming-languages-influence-network/#Perl" target="\_blank">Programming Languages Influence Network | Exploring Data</a>
 
 ---
 
 ## Perl の特徴
 
-<a href="https://ja.wikipedia.org/wiki/Perl" target="_blank">Wikipedia の記事</a>から重要なものだけ引用します。
+<a href="https://ja.wikipedia.org/wiki/Perl" target="\_blank">Wikipedia の記事</a>から重要なものだけ引用します。
 
 - 強力な文字列処理。<ruby>正規表現<rt>せいきひょうげん</rt></ruby>をサポート
 
@@ -230,7 +282,7 @@ Perl のバージョンアップによって新機能の追加や、セキュリ
 
 ## 検索 vs 書籍
 
-最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby><a href="https://perldoc.perl.org/" target="_blank">perldoc</a><rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
+最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby><a href="https://perldoc.perl.org/" target="\_blank">perldoc</a><rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="\_blank">perldoc.jp</a>)を活用しましょう。
 
 ---
 
@@ -244,8 +296,6 @@ Perl のバージョンアップによって新機能の追加や、セキュリ
 
 早速、Hello, world! を表示する Perl プログラムに挑戦してみましょう。
 
-これはターミナル上(Wandbox の画面下部には、ターミナル風の結果出力部分があります。便宜上この部分の事を以下 'ターミナル' と言います)に `Hello, world!` という文字列を表示するプログラムです。
-
 ---
 
 ## Hello, World!(hello.pl)
@@ -254,7 +304,7 @@ Perl のバージョンアップによって新機能の追加や、セキュリ
 print "Hello, world!\n";
 ```
 
-Wandbox の画面上部にある入力欄に上記の文字を入力します。
+Wandbox の画面上部にあるエディタ（入力欄）に上記の文字を入力します。
 
 - `print`は、ターミナルに文字を出力する命令です。
 
@@ -276,9 +326,9 @@ Wandbox の入力欄の下にある [Run (or Ctrl+Enter)] ボタンを押しま�
 
 ---
 
-## 練習問題 (1)
+## 練習問題 (1) `yapc.pl`
 
-print 命令を複数個使って、Perl 入学式と YAPC の情報を表示するスクリプト`yapc.pl`を書いてみましょう。
+print 命令を複数個使って、Perl 入学式と YAPC の情報を表示するスクリプト `yapc.pl` を書いてみましょう。
 
 - 「この勉強会の名前」、「今日の日付」、「会場名」、「前回の YAPC の場所」を表示してください。
 
@@ -290,7 +340,7 @@ print 命令を複数個使って、Perl 入学式と YAPC の情報を表示す
 
 ---
 
-## 練習問題 (2)
+## 練習問題 (2) `birth.pl`
 
 ```bash
 print 5-2;
@@ -299,9 +349,11 @@ print "\n";
 
 このスクリプトを実行すると、ターミナルに`3`が表示されます。
 
-では、上記のスクリプトを参考にして、2020 から Perl1.0 のリリース年の西暦を引き算して、Perl の満年齢を表示してみましょう。
+上記のスクリプトを参考にして、2020 から Perl1.0 のリリース年の 1987 年 を引き算して、Perl の満年齢を表示する `birth.pl` を書いてみましょう。
 
-<small>Perl1.0 のリリース年は 1987 年です (Wikipedia より)</small>
+---
+
+## 休憩 ＆ 質問 ＆ 雑談 タイム（５ 〜 10 分）
 
 ---
 
@@ -333,9 +385,9 @@ use warnings;
 
 ---
 
-## 練習問題 (hello_perl.pl)
+## 練習問題 (3) `hello_perl.pl`
 
-先程の冒頭の 3 行のおまじないを加えた上で、`Hello, Perl`という文字列を出力する`hello_perl.pl`を作成しよう
+先程の冒頭の 3 行のおまじないを加えた上で、 `Hello, Perl` という文字列を出力する `hello_perl.pl` を書いてみましょう。
 
 - ヒント: 文字列はダブルクォーテーション `"` で囲む
 

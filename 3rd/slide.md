@@ -272,7 +272,7 @@ print Dumper \%hash;  # ハッシュリファレンス（第4回で説明）
 
 ## （コラム）オススメの書籍
 
-- 「<a href="https://www.oreilly.co.jp/books/4873110963/" target="_blank">プログラミング Perl</a>」(通称: ラクダ本)。プログラミング未経験の初心者にはハードルが高く、時期が来るまで買うのを待っても良いかも？
+- 「<a href="https://www.oreilly.co.jp/books/4873110963/" target="_blank">プログラミング Perl</a>」(通称: ラクダ本)。プログラミング未経験の初心者にはハードルが高い。海外では第 4 版まで出版されている（https://www.oreilly.com/library/view/programming-perl-4th/9781449321451/）
 
 - 「<a href="https://www.oreilly.co.jp/books/9784873118246/" target="_blank">初めての Perl</a>」(通称: リャマ本)。若干プログラミング初心者向け、オライリーの文体に慣れていないと多少厳しいかも。
 
