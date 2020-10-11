@@ -66,7 +66,7 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 1. 左上に `gcc HEAD 11.0.0 20200` というプルダウンメニューがありますのでクリックします。
 
-<img src="image/wandbox01.png" align='left'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox01.png" align='left'>
 
 ---
 
@@ -76,7 +76,7 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 1. 左側の Perl のバージョンから `Perl 5.30.1` を選択します。
 
-<img src="image/wandbox02.png" align='left'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox02.png" align='left'>
 
 ---
 
@@ -84,7 +84,7 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 `Load template` のリンクをクリックします。
 
-<img src="image/wandbox03.png" align='left'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox03.png" align='left'>
 
 ---
 
@@ -94,7 +94,7 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 下にある `Run (or Ctrl+Enter)` をクリックします。
 
-<img src="image/wandbox04.png" align='left'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox04.png" align='left'>
 
 ---
 
@@ -104,7 +104,7 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 このようにエディタで入力を行い、ターミナルで実行結果を確認しながら学習を進めていきます。
 
-<img src="image/wandbox05.png" align='left'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox05.png" align='left'>
 
 ---
 
@@ -114,9 +114,9 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 ただし、`Run (or Ctrl+Enter)` で実行されるのは一番左端のタブのみとなります。
 
-<img src="image/wandbox06.png" align='left'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox06.png" align='left'>
 
-<img src="image/wandbox07.png" align='right'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox07.png" align='right'>
 
 ---
 
