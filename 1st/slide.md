@@ -18,7 +18,7 @@
 
 - うまくプログラムが動かない、分からない時は Discord #雑談部屋 でサポーターにヘルプを要請してください。Discord のテキスト及び音声チャットにて個別にサポートします。
 
-- <a href="https://discord.com/" target="\_blank">Discord | 会話や交流が楽しめるプラットフォーム</a>
+- <a href="https://discord.com/" target="_blank">Discord | 会話や交流が楽しめるプラットフォーム</a>
 
 ---
 
@@ -38,11 +38,11 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - 動画の中継：Youtube Live
 
-- Perl 実行環境：<a href="https://wandbox.org" target="\_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
+- Perl 実行環境：<a href="https://wandbox.org" target="_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
 
-- コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="\_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
+- コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
 
-- スライド共有ツール（仮）：<a href="https://appslideshare.tugougaii.site/" target="\_blank">appslideshare</a>
+- スライド共有ツール（仮）：<a href="https://appslideshare.tugougaii.site/" target="_blank">appslideshare</a>
 
 ---
 
@@ -128,7 +128,7 @@ Wandbox で書いたコードを共有することもできます。
 
 共有すると URL に紐づいてコードがインターネット上に残ります。気をつけてください。
 
-<img src="image/wandbox08.png" align='left'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox08.png" align='left'>
 
 ---
 
@@ -136,7 +136,7 @@ Wandbox で書いたコードを共有することもできます。
 
 すでに手元の PC に環境がある方は、その環境を利用してください。
 
-PC への環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md" target="\_blank">2019 年度資料の「第 1 回　第 1 部」</a>にて公開しています。
+PC への環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md" target="_blank">2019 年度資料の「第 1 回　第 1 部」</a>にて公開しています。
 
 ---
 
@@ -196,13 +196,13 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 
 ## オンラインでのサポート
 
-- <a href="http://perl-entrance.org/" target="\_blank">Perl 入学式の公式ページ</a>
+- <a href="http://perl-entrance.org/" target="_blank">Perl 入学式の公式ページ</a>
 
-- <a href="https://twitter.com/Perl_Entrance" target="\_blank">Twitter アカウント [@Perl_Entrance]</a>
+- <a href="https://twitter.com/Perl_Entrance" target="_blank">Twitter アカウント [@Perl_Entrance]</a>
 
   - 公式ページや Tiwtter アカウントでは、開催日程などがアナウンスされます。
 
-- <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash" target="\_blank">Twitter ハッシュタグ [#Perl 入学式]</a>
+- <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash" target="_blank">Twitter ハッシュタグ [#Perl 入学式]</a>
   - 運営側がウォッチしているので、なにか疑問があればこれをつけて気軽に質問してみましょう。
 
 ---
@@ -211,10 +211,10 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 
 - Discord Perl 入学式チャンネル
 
-  - <a href="https://discord.com/channels/741610576609935430/741610901303721998" target="\_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a> というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
+  - <a href="https://discord.com/channels/741610576609935430/741610901303721998" target="_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a> というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
   - こちらでも気軽に質問や雑談をしてみましょう。
 
-- <a href="https://github.com/perl-entrance-org" target="\_blank">GitHub の Perl 入学式アカウント</a>
+- <a href="https://github.com/perl-entrance-org" target="_blank">GitHub の Perl 入学式アカウント</a>
   - <ruby>GitHub<rt>ギットハブ</rt></ruby>というコードの集積サイトに講義で使われた資料、コードなどがあります。
 
 ---
@@ -226,7 +226,7 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 ## Perl って何?
 
 1987 年、<ruby>Larry Wall<rt>ラリー ウォール</rt></ruby>(右写真)が開発したプログラミング言語です。
-<img src="image/larry.jpg" align='right'>
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/larry.jpg" align='right'>
 
 <ruby>Ruby<rt>ルビー</rt></ruby>、<ruby>Python<rt>パイソン</rt></ruby>、<ruby>PHP<rt>ピーエイチピー</rt></ruby>と並ぶ軽量言語(<ruby>Lightweight Language<rt>ライトウェイト ランゲージ</rt></ruby>)と呼ばれるカテゴリのプログラミング言語の 1 つです。
 
@@ -240,15 +240,15 @@ Perl は C 言語や<ruby>sed<rt>セド</rt></ruby>、<ruby>awk<rt>オーク</rt
 
 Perl は後に開発された Ruby(1995 年)や PHP(1995 年)に影響を与えました。
 
-- <a href="https://www.levenez.com/lang/" target="\_blank">Computer Languages History</a>
+- <a href="https://www.levenez.com/lang/" target="_blank">Computer Languages History</a>
 
-- <a href="https://exploring-data.com/vis/programming-languages-influence-network/#Perl" target="\_blank">Programming Languages Influence Network | Exploring Data</a>
+- <a href="https://exploring-data.com/vis/programming-languages-influence-network/#Perl" target="_blank">Programming Languages Influence Network | Exploring Data</a>
 
 ---
 
 ## Perl の特徴
 
-<a href="https://ja.wikipedia.org/wiki/Perl" target="\_blank">Wikipedia の記事</a>から重要なものだけ引用します。
+<a href="https://ja.wikipedia.org/wiki/Perl" target="_blank">Wikipedia の記事</a>から重要なものだけ引用します。
 
 - 強力な文字列処理。<ruby>正規表現<rt>せいきひょうげん</rt></ruby>をサポート
 
@@ -282,7 +282,7 @@ Perl のバージョンアップによって新機能の追加や、セキュリ
 
 ## 検索 vs 書籍
 
-最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby><a href="https://perldoc.perl.org/" target="\_blank">perldoc</a><rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="\_blank">perldoc.jp</a>)を活用しましょう。
+最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby><a href="https://perldoc.perl.org/" target="_blank">perldoc</a><rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
 
 ---
 
