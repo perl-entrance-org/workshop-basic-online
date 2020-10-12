@@ -44,7 +44,7 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
 
-- 講義スライド共有：<a href="https://appslideshare.tugougaii.site/" target="_blank">スライド同期くん</a>
+- 講義スライド共有：<a href="https://appslideshare.tugougaii.site/slide/Online2020?p=1&c=pre-left&cf=1" target="_blank">スライド同期くん</a>
 
 ---
 
@@ -131,6 +131,28 @@ Wandbox で書いたコードを共有することもできます。
 共有すると URL に紐づいてコードがインターネット上に残ります。気をつけてください。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox08.png" align='left'>
+
+---
+
+## スライド同期くん
+
+講師が見ているスライドを受講生の手元で反映するためのツールです。
+
+画面下にある「スライドを同期する」にチェックボックスを入れ、 講師のアカウントを選択します。
+
+チェックを外すことで同期が外れます。
+
+練習問題を解く時など、じっくりスライドを確認する時に利用してください。
+
+---
+
+## スライド同期くん
+
+ネットワークの環境により、講師が行っている講義と Youtube Live で配信される映像がずれることが予想されます。
+
+「同期の遅延」で設定されている 0 秒 のところをクリックすると、スライドをめくるタイミングを遅らせることができます。
+
+まずは 30 秒を基準にして設定し、Youtube Live で配信される講師スライドに合わせて講義を受けつつ調整を行ってください。
 
 ---
 
