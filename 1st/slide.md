@@ -36,13 +36,15 @@
 
 Perl 入学式 online 版では、以下のサービス・ツールを利用して学習を行っていきます。
 
+それぞれのツールへのリンクは <a href="https://perl-entrance.connpass.com/event/189331/" target="_blank">connpass のイベントページ</a>に掲載しています。
+
 - 動画の中継：Youtube Live
 
 - Perl 実行環境：<a href="https://wandbox.org" target="_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
 
 - コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
 
-- スライド共有ツール（仮）：<a href="https://appslideshare.tugougaii.site/" target="_blank">appslideshare</a>
+- 講義スライド共有：<a href="https://appslideshare.tugougaii.site/slide/Online2020?p=1&c=pre-left&cf=1" target="_blank">スライド同期くん</a>
 
 ---
 
@@ -52,7 +54,7 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - スマホ・タブレットで Youtube Live を視聴
 
-- PC で スライド共有ツール ・ Wandbox ・ Discord を開く
+- PC で スライド同期くん ・ Wandbox ・ Discord を開く
 
   - 仮想デスクトップ機能・マルチディスプレイなどを用いて、各ツールを切り替える
 
@@ -129,6 +131,28 @@ Wandbox で書いたコードを共有することもできます。
 共有すると URL に紐づいてコードがインターネット上に残ります。気をつけてください。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox08.png" align='left'>
+
+---
+
+## スライド同期くん
+
+講師が見ているスライドを受講生の手元で反映するためのツールです。
+
+画面下にある「スライドを同期する」にチェックボックスを入れ、 講師のアカウントを選択します。
+
+チェックを外すことで同期が外れます。
+
+練習問題を解く時など、じっくりスライドを確認する時に利用してください。
+
+---
+
+## スライド同期くん
+
+ネットワークの環境により、講師が行っている講義と Youtube Live で配信される映像がずれることが予想されます。
+
+「同期の遅延」で設定されている 0 秒 のところをクリックすると、スライドをめくるタイミングを遅らせることができます。
+
+まずは 30 秒を基準にして設定し、Youtube Live で配信される講師スライドに合わせて講義を受けつつ調整を行ってください。
 
 ---
 
@@ -326,11 +350,11 @@ Wandbox の入力欄の下にある [Run (or Ctrl+Enter)] ボタンを押しま�
 
 ---
 
-## 練習問題 (1) `yapc.pl`
+## 練習問題 (1) `entrance.pl`
 
-print 命令を複数個使って、Perl 入学式と YAPC の情報を表示するスクリプト `yapc.pl` を書いてみましょう。
+print 命令を複数個使って、Perl 入学式の情報を表示するスクリプト `entrance.pl` を書いてみましょう。
 
-- 「この勉強会の名前」、「今日の日付」、「会場名」、「前回の YAPC の場所」を表示してください。
+- 「この勉強会の名前」、「今日の日付」を表示してください。
 
 - print 命令を複数書く場合にはセミコロンで文を区切りましょう。
 
@@ -349,7 +373,29 @@ print "\n";
 
 このスクリプトを実行すると、ターミナルに`3`が表示されます。
 
-上記のスクリプトを参考にして、2020 から Perl1.0 のリリース年の 1987 年 を引き算して、Perl の満年齢を表示する `birth.pl` を書いてみましょう。
+上記のスクリプトを参考にして、2020 から Perl 1.0 のリリース年の 1987 年 を引き算して、Perl の満年齢を表示する `birth.pl` を書いてみましょう。
+
+---
+
+## 練習問題 (3) `tax.pl`
+
+```perl
+print 1000 * 1.08;
+```
+
+このスクリプトは 1000 円の品物に消費税 8%込の金額を表示するスクリプトです。
+
+2019 年 10 月から消費税は 10%に引き上げられました。上記のスクリプトを参考にして、消費税 10%込の金額を表示する `tax.pl` を書いてみましょう。
+
+---
+
+## 練習問題 (4) `newline.pl`
+
+```perl
+print "hello! \n\n\n\n\n world!";
+```
+
+上記のスクリプトを入力し、どのような結果になるか確認してみましょう。
 
 ---
 
@@ -398,8 +444,6 @@ use warnings;
 ## お疲れ様でした!
 
 長い時間、Perl 入学式第 1 回お疲れ様でした！
-
-これでみなさんも PerlMonger です。
 
 是非 Perl 入学式の Discord #雑談部屋 でサポーターや参加者の皆さんと交流しましょう。
 
