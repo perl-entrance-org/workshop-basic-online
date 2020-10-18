@@ -140,9 +140,9 @@ Wandbox で書いたコードを共有することもできます。
 
 画面下にある「スライドを同期する」にチェックボックスを入れ、 講師のアカウントを選択します。
 
-チェックを外すことで同期が外れます。
+練習問題を解く時など、じっくりスライドを確認する時はチェックを外してください。
 
-練習問題を解く時など、じっくりスライドを確認する時に利用してください。
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/appslideshare01.png" align='left'>
 
 ---
 
@@ -153,6 +153,8 @@ Wandbox で書いたコードを共有することもできます。
 「同期の遅延」で設定されている 0 秒 のところをクリックすると、スライドをめくるタイミングを遅らせることができます。
 
 まずは 30 秒を基準にして設定し、Youtube Live で配信される講師スライドに合わせて講義を受けつつ調整を行ってください。
+
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/appslideshare02.png" align='left'>
 
 ---
 
@@ -431,7 +433,7 @@ use warnings;
 
 ---
 
-## 練習問題 (3) `hello_perl.pl`
+## 練習問題 (5) `hello_perl.pl`
 
 先程の冒頭の 3 行のおまじないを加えた上で、 `Hello, Perl` という文字列を出力する `hello_perl.pl` を書いてみましょう。
 
