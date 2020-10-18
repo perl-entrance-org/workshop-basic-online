@@ -158,6 +158,14 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
+## スライド同期くん
+
+スライドめくりなど、利用方法については画面右上のリンクで表示が可能です。
+
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/appslideshare03.png" align='left'>
+
+---
+
 ## 手元の PC で Perl 実行環境がある場合・または構築する場合
 
 すでに手元の PC に環境がある方は、その環境を利用してください。
