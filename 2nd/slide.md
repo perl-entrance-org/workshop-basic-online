@@ -1422,10 +1422,11 @@ else{
 
 先の条件式の抜粋です。
 
-````perl
+```perl
 my $foo = 10;
 
-if ( $foo > 0 && $foo % 2 == 0 ) {```
+if ( $foo > 0 && $foo % 2 == 0 ) {
+```
 
 1. `&&` の左辺にある `$foo` が 0 より大きいので、`$foo > 0` は 真。
 1. `&&` の右辺にある `$foo` を 2 で割った剰余は 0 なので、`$foo % 2 == 0` も 真。
@@ -1448,7 +1449,7 @@ if ( $foo > 0 || $foo % 2 == 1 ) {  # $fooが 0 より大きい または 2 で�
 else{
     print "&& : NG\n"
 }
-````
+```
 
 ---
 
@@ -1490,7 +1491,7 @@ if ( $small < $medium <= $large ) { # Perl 5.30までのバージョンではエ
 
 ### 3 つ以上の値を比較したい場合
 
-````perl
+```perl
 $small < $medium < $large
 ```
 
@@ -1516,7 +1517,7 @@ my $large  = 30;
 if ( $small < $medium <= $large ) { # 不等号が2種類ある
     print "小さい順に並んでます\n";
 }
-````
+```
 
 不等号をはじめ、演算子には[優先順位](https://perldoc.jp/docs/perl/perlop.pod)があります。
 
