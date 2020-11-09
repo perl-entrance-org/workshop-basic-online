@@ -256,8 +256,8 @@ print '$foo\n'; # シングルクォーテーションで囲うと「$foo\n」�
 use strict;
 use warnings;
 
-my $hoge = "Hello"  # "hello"の後にセミコロンがない
-print "$hoge\n";
+my $foo = "Hello"  # "hello"の後にセミコロンがない
+print "$foo\n";
 ```
 
 エラーメッセージ
@@ -475,11 +475,11 @@ print 100 % 7;    # 100 / 7 の余りである 2
 
 以下の問題を順番に書いて表示してみよう。
 
-1. 変数 `$hoge` に 10, `$foo` に 3 を代入し、それぞれを画面に表示させる。
+1. 変数 `$foo` に 10, `$bar` に 3 を代入し、それぞれを画面に表示させる。
 
-1. 変数 `$hoge` から 変数 `$foo` を引いた数を画面に表示させる。
+1. 変数 `$foo` から 変数 `$bar` を引いた数を画面に表示させる。
 
-1. 変数 `$hoge` を 変数 `$foo` で割った時の余りを表示させる。
+1. 変数 `$foo` を 変数 `$bar` で割った時の余りを表示させる。
 
 ---
 
@@ -518,18 +518,18 @@ print "$foo\n";   # 12
 代入演算子（ `=` ）を利用して、変数の中身を書き換える処理は多いため、専用の記法が用意されています。
 
 ```perl
-my $fuga = 100;
-my $hoge = 50;
+my $bar = 100;
+my $foo = 50;
 
-$fuga += 1;         # $fuga = $fuga + 1;と同じ
-print "$fuga\n";    # 101
-$fuga -= 1;         # $fuga = $fuga - 1;と同じ
-print "$fuga\n";    # 100
+$bar += 1;         # $bar = $bar + 1;と同じ
+print "$bar\n";    # 101
+$bar -= 1;         # $bar = $bar - 1;と同じ
+print "$bar\n";    # 100
 
-$fuga *= 2;         # $fuga = $fuga * 2;と同じ
-print "$fuga\n";    # 200
-$fuga /= $hoge;     # $fuga = $fuga / $hoge と同じ
-print "$fuga\n";    # 4
+$bar *= 2;         # $bar = $bar * 2;と同じ
+print "$bar\n";    # 200
+$bar /= $foo;     # $bar = $bar / $foo と同じ
+print "$bar\n";    # 4
 ```
 
 ---
