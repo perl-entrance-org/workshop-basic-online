@@ -352,7 +352,7 @@ Perl に限らず、プログラムのエラーメッセージのほとんどは
 
 - 2002 年、Perl 5.8 が登場。国際化対応や今につながる様々な機能が搭載されます。5.8 時代が長かったため、多くのサービスで長きにわたって使われました。
 
-参考: <a href="https://speakerdeck.com/anatofuz/regasiperlbirudo-xian-dai-nisu-ruperl-1-2-dot-0toperl6" target="_blank">レガシー Perl ビルド ~現代に蘇る Perl[1..5].0 と Perl6~</a>
+参考: <a href="https://speakerdeck.com/anatofuz/regasiperlbirudo-xian-dai-nisu-ruperl-1-2-dot-0toperl6" target="_blank">レガシー Perl ビルド 〜現代に蘇る Perl[1..5].0 と Perl6〜</a>
 
 ---
 
