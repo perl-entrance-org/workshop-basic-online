@@ -807,7 +807,7 @@ $ perl hoge.pl arg
 複数の引数を受け取る場合には、空白で区切って列挙します。
 
 ```bash
-$ perl hoge.pl arg1 arg2
+$ perl prog.pl "arg1" "arg2"
 ```
 
 ---
