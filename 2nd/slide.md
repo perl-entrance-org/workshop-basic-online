@@ -785,7 +785,8 @@ print "Perl入学式は開講" . $period . "年です\n"; # Perl入学式は開�
 # コマンドライン引数から一番左側の値を1つ受け取り、変数 $foo に代入する
 my $foo = shift;
 
-my $bar = shift;  # コマンドライン引数から値を1つ受け取り、変数 $bar に代入する
+# コマンドライン引数から左から2番目の値を受け取り、変数 $bar に代入する
+my $bar = shift;
 
 print $foo;         # $foo を表示する
 print $bar;         # $bar を表示する
