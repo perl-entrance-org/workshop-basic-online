@@ -803,7 +803,7 @@ print $bar;         # $bar を表示する
 arg とあるのが引数です。
 
 ```bash
-$ perl hoge.pl arg
+$ perl hoge.pl "arg"
 ```
 
 複数の引数を受け取る場合には、空白で区切って列挙します。
