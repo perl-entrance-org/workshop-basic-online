@@ -18,7 +18,7 @@
 
 - if 文
 - 配列
-- 配列の操作（join, split, push, pop, unshift, shift, reverse sort）
+- 配列の操作（join, split, push, pop, unshift, shift, reverse, sort）
 - ハッシュ
 - ハッシュの操作（keys, delete, exists）
 
