@@ -1257,12 +1257,12 @@ push / pop は配列の末尾の値を操作する関数です。
 
 ```perl
 my @array = ( 'Alice', 'Bob' );
-push @array, 'Chris';    # 末尾に要素 Chris を追加する
-print "@array" . "\n";   # Alice Bob Chris
+push @array, 'Carol';    # 末尾に要素 Carol を追加する
+print "@array" . "\n";   # Alice Bob Carol
 
-my $element = pop @array;    # 末尾の要素 Chris を取り出す
+my $element = pop @array;    # 末尾の要素 Carol を取り出す
 print "@array" . "\n";       # Alice Bob
-print "$element" . "\n";     # Chris
+print "$element" . "\n";     # Carol
 ```
 
 - 配列の **末尾に要素を追加** するときには `push` を利用します。
@@ -1302,12 +1302,12 @@ unshift / shift は配列の先頭の値を操作する関数です。
 
 ```perl
 my @array = ( 'Alice', 'Bob' );
-unshift @array, 'Chris';    # 先頭に要素 Chris を追加する
-print "@array" . "\n";      # Chris Alice Bob
+unshift @array, 'Carol';    # 先頭に要素 Carol を追加する
+print "@array" . "\n";      # Carol Alice Bob
 
-my $element = shift @array; # 先頭の要素 Chris を取り出す
+my $element = shift @array; # 先頭の要素 Carol を取り出す
 print "@array" . "\n";      # Alice Bob
-print "$element" . "\n";    # Chris
+print "$element" . "\n";    # Carol
 ```
 
 - 配列の **先頭に要素を追加** するときには `unshift` を利用します。
@@ -1341,9 +1341,9 @@ print "@array\n";
 
 ## 練習問題 (array_pop_shift.pl)
 
-1. ('Alice', 'Bob', 'Chris') という配列 `@array` を作ってください。
+1. ('Alice', 'Bob', 'Carol') という配列 `@array` を作ってください。
 
-2. 配列 `@array` から 'Chris' を取り出し、出力してください。
+2. 配列 `@array` から 'Carol' を取り出し、出力してください。
 
 3. 配列 `@array` から 'Alice' を取り出し、出力してください。
 
@@ -1355,11 +1355,11 @@ print "@array\n";
 
 ## 練習問題 (array_push_unshift.pl)
 
-1. ('Alice', 'Bob', 'Chris') という配列 `@array` を作ってください。
+1. ('Alice', 'Bob', 'Carol') という配列 `@array` を作ってください。
 
-2. 配列 `@array` の末尾に `Diana` を追加し、 ('Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
+2. 配列 `@array` の末尾に `Dave` を追加し、 ('Alice', 'Bob', 'Carol', 'Dave') という配列を作ってください。
 
-3. 配列 `@array` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
+3. 配列 `@array` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Carol', 'Dave') という配列を作ってください。
 
 4. 配列を for 文で出力してみましょう。
 
@@ -1851,7 +1851,7 @@ use warnings;
 my %users = (
     'Alice'  => 1,
     'Bob'    => 2,
-    'Chris'  => 3,
+    'Carol'  => 3,
     'Daiana' => 4,
 );
 ```

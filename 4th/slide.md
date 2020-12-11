@@ -169,8 +169,8 @@ my $lyrics = "Oh, what fun it is to ride, In a One horse open sleigh!";
 my %student = (
     Alice   => 'A_Class',
     Bob     => 'C_Class',
-    Chris   => 'B_Class',
-    Diana   => 'B_Class',
+    Carol   => 'B_Class',
+    Dave   => 'B_Class',
     Eve     => 'C_Class',
     Frank   => 'A_Class',
     George  => 'C_Class',
@@ -657,7 +657,7 @@ for my $lang ( sort keys %hash ) {
 
 ### 練習問題(datastruct.pl)
 
-1. `name1, name2, name3` という名前のスカラー変数を 3 つ作り、3 人の名前 Alice, Bob, Chris をそれぞれ代入して画面に出力してみましょう。
+1. `name1, name2, name3` という名前のスカラー変数を 3 つ作り、3 人の名前 Alice, Bob, Carol をそれぞれ代入して画面に出力してみましょう。
 
 2. `students` という名前の配列を作り、1.で作成した 3 名を配列に格納して出力してみましょう。
 
@@ -908,7 +908,7 @@ Perl 入学式では、利用頻度が非常に高い '配列リファレンス'
 1. 次に用意された配列とハッシュから、配列リファレンス `$students_ref`、ハッシュリファレンス `$scores_ref` を作成しよう。
 
 ```perl
-my @students = ("Alice", "Bob", "Chris");
+my @students = ("Alice", "Bob", "Carol");
 my %scores = (
     "Japanese"    => 95,
     "Mathematics" => 80,
@@ -1136,7 +1136,7 @@ my $anonymous_array  = [ 'foo', 'bar', 'baz' ];
 
 ### 練習問題(anonymous_arr.pl)
 
-'Alice', 'Bob', 'Chris'の 3 名が格納された配列リファレンス `$students_ref` を、無名配列を使って 1 行で作成してみよう。
+'Alice', 'Bob', 'Carol'の 3 名が格納された配列リファレンス `$students_ref` を、無名配列を使って 1 行で作成してみよう。
 
 ```perl
 # お約束の3行は省略してますが、必ず書くこと
@@ -1266,7 +1266,7 @@ my @animal = ( [ 'shiba', 'bull' ], [ 'mike', 'kuro' ] );    # 完成
 ```
 Alice,  090-123-456,  alice@perl-entrance.org
 Bob,    080-456-789,  bob@perl-entrance.org
-Chris,  050-987-123,  chris@perl-entrance.org
+Carol,  050-987-123,  carol@perl-entrance.org
 ```
 
 ```perl
@@ -1327,7 +1327,7 @@ print "$animal[0][1]\n";    # bull アローを省略
 
 1. 先ほどの練習問題で作ったアドレス帳のプログラムを改造して、Bob の e-mail アドレスを画面に表示してみましょう。
 
-2. Chris の電話番号を画面に表示してみましょう。
+2. Carol の電話番号を画面に表示してみましょう。
 
 3. 3 名の e-mail アドレスのみを順番に画面に表示してみましょう。
 
