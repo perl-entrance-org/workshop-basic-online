@@ -992,7 +992,7 @@ for my $element (@array) {
 
 ## 練習問題(array_sum2.pl)
 
-先ほどの練習問題 arraysum.pl のプログラムを書き換えてみよう。
+先ほどの練習問題 array_sum.pl のプログラムを書き換えてみよう。
 for 文を使って、 @nums に格納された数字を全て足した合計を画面に出力させてみましょう。
 
 ```perl
