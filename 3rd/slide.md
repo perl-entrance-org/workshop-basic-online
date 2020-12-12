@@ -63,7 +63,7 @@
 
 条件式の結果は 真 または 偽 となります。
 
-Perl では、次のページの 5 つの値が｢偽｣の値として扱われます。
+Perl では、次のページの 5 つの値が「偽」の値として扱われます。
 
 これ以外の値は、Perl では全て「真」として扱われます。
 
@@ -75,10 +75,10 @@ Perl では、次のページの 5 つの値が｢偽｣の値として扱われ
 
 ### Perl における偽値
 
-1. 数値｢`0`｣
-1. 文字列｢`'0'`｣
-1. 文字列｢`''`｣（シングルクォーテーションの連続、間に何もない。空文字ともいう。）
-1. 空のリスト｢`()`｣ Perl 入学式では扱わない
+1. 数値「`0`」
+1. 文字列「`'0'`」
+1. 文字列「`''`」（シングルクォーテーションの連続、間に何もない。空文字ともいう。）
+1. 空のリスト「`()`」 Perl 入学式では扱わない
 1. `undef`（まだ値を設定していないスカラー変数）Perl 入学式では扱わない
 
 ---
@@ -141,7 +141,7 @@ else {
 
 ```perl
 if ( 1 ) {           # 条件式の結果が明示的な「真」の値である 1
-    print "OK\n";    # 条件が｢真｣なので出力される
+    print "OK\n";    # 条件が「真」なので出力される
 }
 else{
     print "NG\n";    # 実行されない
@@ -159,7 +159,7 @@ if ( 0 ) {           # 条件式の結果が「偽」の値である 0
     print "OK\n";    # 実行されない
 }
 else{
-    print "NG\n";    # 条件が｢偽｣なので出力される
+    print "NG\n";    # 条件が「偽」なので出力される
 }
 ```
 
@@ -483,9 +483,9 @@ else {
 || # または
 ```
 
-- `&&` 演算子は｢かつ・AND｣の意味を持つ。 `&&` の両辺の条件が 真 となるときのみ 真 となる。
+- `&&` 演算子は「かつ・AND」の意味を持つ。 `&&` の両辺の条件が 真 となるときのみ 真 となる。
 
-- `||` 演算子は｢または・OR｣の意味を持つ。 `||` 両辺のうち、片方が 真 ならば 真 となる。
+- `||` 演算子は「または・OR」の意味を持つ。 `||` 両辺のうち、片方が 真 ならば 真 となる。
 
 ---
 
@@ -1257,12 +1257,12 @@ push / pop は配列の末尾の値を操作する関数です。
 
 ```perl
 my @array = ( 'Alice', 'Bob' );
-push @array, 'Chris';    # 末尾に要素 Chris を追加する
-print "@array" . "\n";   # Alice Bob Chris
+push @array, 'Carol';    # 末尾に要素 Carol を追加する
+print "@array" . "\n";   # Alice Bob Carol
 
-my $element = pop @array;    # 末尾の要素 Chris を取り出す
+my $element = pop @array;    # 末尾の要素 Carol を取り出す
 print "@array" . "\n";       # Alice Bob
-print "$element" . "\n";     # Chris
+print "$element" . "\n";     # Carol
 ```
 
 - 配列の **末尾に要素を追加** するときには `push` を利用します。
@@ -1302,12 +1302,12 @@ unshift / shift は配列の先頭の値を操作する関数です。
 
 ```perl
 my @array = ( 'Alice', 'Bob' );
-unshift @array, 'Chris';    # 先頭に要素 Chris を追加する
-print "@array" . "\n";      # Chris Alice Bob
+unshift @array, 'Carol';    # 先頭に要素 Carol を追加する
+print "@array" . "\n";      # Carol Alice Bob
 
-my $element = shift @array; # 先頭の要素 Chris を取り出す
+my $element = shift @array; # 先頭の要素 Carol を取り出す
 print "@array" . "\n";      # Alice Bob
-print "$element" . "\n";    # Chris
+print "$element" . "\n";    # Carol
 ```
 
 - 配列の **先頭に要素を追加** するときには `unshift` を利用します。
@@ -1341,9 +1341,9 @@ print "@array\n";
 
 ## 練習問題 (array_pop_shift.pl)
 
-1. ('Alice', 'Bob', 'Chris') という配列 `@array` を作ってください。
+1. ('Alice', 'Bob', 'Carol') という配列 `@array` を作ってください。
 
-2. 配列 `@array` から 'Chris' を取り出し、出力してください。
+2. 配列 `@array` から 'Carol' を取り出し、出力してください。
 
 3. 配列 `@array` から 'Alice' を取り出し、出力してください。
 
@@ -1355,11 +1355,11 @@ print "@array\n";
 
 ## 練習問題 (array_push_unshift.pl)
 
-1. ('Alice', 'Bob', 'Chris') という配列 `@array` を作ってください。
+1. ('Alice', 'Bob', 'Carol') という配列 `@array` を作ってください。
 
-2. 配列 `@array` の末尾に `Diana` を追加し、 ('Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
+2. 配列 `@array` の末尾に `Dave` を追加し、 ('Alice', 'Bob', 'Carol', 'Dave') という配列を作ってください。
 
-3. 配列 `@array` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
+3. 配列 `@array` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Carol', 'Dave') という配列を作ってください。
 
 4. 配列を for 文で出力してみましょう。
 
@@ -1851,7 +1851,7 @@ use warnings;
 my %users = (
     'Alice'  => 1,
     'Bob'    => 2,
-    'Chris'  => 3,
+    'Carol'  => 3,
     'Daiana' => 4,
 );
 ```

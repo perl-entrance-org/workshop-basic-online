@@ -254,7 +254,7 @@ ___
 ___
 ## Visual Studio Code
 
-<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code - Code Editing. Redefined</a>へアクセスし、｢Download｣をクリックします。
+<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code - Code Editing. Redefined</a>へアクセスし、「Download」をクリックします。
 
 ___
 ## Visual Studio Code
