@@ -909,7 +909,7 @@ print "$sum\n"    # 4
 ## 練習問題(array_sum.pl)
 
 以下のサンプルプログラムにプログラムを追記して完成させよう。
-@nums に格納された数字を全て足した合計を画面に出力させてみましょう。
+@numbers に格納された数字を全て足した合計を画面に出力させてみましょう。
 
 ```perl
 #!/usr/bin/env perl
@@ -917,7 +917,7 @@ print "$sum\n"    # 4
 use strict;
 use warnings;
 
-my @nums = (10, 33, 7, 90, 42 );
+my @numbers = (10, 33, 7, 90, 42 );
 
 ```
 
@@ -993,7 +993,7 @@ for my $element (@array) {
 ## 練習問題(array_sum2.pl)
 
 先ほどの練習問題 array_sum.pl のプログラムを書き換えてみよう。
-for 文を使って、 @nums に格納された数字を全て足した合計を画面に出力させてみましょう。
+for 文を使って、 @numbers に格納された数字を全て足した合計を画面に出力させてみましょう。
 
 ```perl
 #!/usr/bin/env perl
@@ -1001,7 +1001,7 @@ for 文を使って、 @nums に格納された数字を全て足した合計を
 use strict;
 use warnings;
 
-my @nums = (10, 33, 7, 90, 42 );
+my @numbers = (10, 33, 7, 90, 42 );
 
 ```
 
