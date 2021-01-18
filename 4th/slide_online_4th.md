@@ -1209,12 +1209,12 @@ say('Hello Perl!');
 ```perl
 sub notice_event {
     print "2月18日(木), 29日(金)の17:00から\n";
-    print "nPerlのイベントJapan.pmがオンラインで開催されます!\n";
+    print "PerlのイベントJapan.pmがオンラインで開催されます!\n";
 }
 
 sub greeting {
     my $name = shift;
-    print "$nameさん、Perl入学式へようこそ!\n";
+    print "$name さん、Perl入学式へようこそ!\n";
 }
 
 ```
