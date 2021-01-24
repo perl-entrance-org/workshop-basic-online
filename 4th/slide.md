@@ -98,7 +98,7 @@ print "@words\n";    # ('I', 'Love', 'Perl.')
 
 ## 練習問題 (split.pl)
 
-- "There's more than one way to do it." という文字列を作り、split 関数で `" "`（半角スペース）ごとに分割して配列 `@array` に格納し、すべて出力してください。
+- "There's more than one way to do it." という文字列を作り、split 関数で `" "`（半角スペース）ごとに分割して配列 `@words` に格納し、すべて出力してください。
 
 ---
 
@@ -108,14 +108,14 @@ print "@words\n";    # ('I', 'Love', 'Perl.')
 
 ## 練習問題 (join2.pl)
 
-`@array` の中身の数字を、半角スペース区切りの文字列として画面に表示しましょう。
+`@numbers` の中身の数字を、半角スペース区切りの文字列として画面に表示しましょう。
 
 ```perl
 #!/usr/bin/env perl
 use strict;
 use warnings;
 
-my @array = (2, 8, 10, 203, 8760);
+my @numbers = (2, 8, 10, 203, 8760);
 ```
 
 ---
@@ -189,13 +189,13 @@ my $log = "2020-7-10,12:30:55,GET /css-combinators/ HTTP/1.1,200,7974,http://web
 push / pop は配列の末尾の値を操作する関数です。
 
 ```perl
-my @array = ( 'Alice', 'Bob' );
-push @array, 'Carol';    # 末尾に要素 Carol を追加する
-print "@array" . "\n";   # Alice Bob Carol
+my @members = ( 'Alice', 'Bob' );
+push @members, 'Carol';    # 末尾に要素 Carol を追加する
+print "@members" . "\n";   # Alice Bob Carol
 
-my $element = pop @array;    # 末尾の要素 Carol を取り出す
-print "@array" . "\n";       # Alice Bob
-print "$element" . "\n";     # Carol
+my $member = pop @members;    # 末尾の要素 Carol を取り出す
+print "@members" . "\n";       # Alice Bob
+print "$member" . "\n";     # Carol
 ```
 
 - 配列の **末尾に要素を追加** するときには `push` を利用します。
@@ -216,7 +216,7 @@ print "$element" . "\n";     # Carol
 use strict;
 use warnings;
 
-my $elements = "second";
+my $element = "second";
 my $temp;
 my @array = ( 'first', 'third' );
 
@@ -234,13 +234,13 @@ print "@array\n";
 unshift / shift は配列の先頭の値を操作する関数です。
 
 ```perl
-my @array = ( 'Alice', 'Bob' );
-unshift @array, 'Carol';    # 先頭に要素 Carol を追加する
-print "@array" . "\n";      # Carol Alice Bob
+my @members = ( 'Alice', 'Bob' );
+unshift @members, 'Carol';    # 先頭に要素 Carol を追加する
+print "@members" . "\n";      # Carol Alice Bob
 
-my $element = shift @array; # 先頭の要素 Carol を取り出す
-print "@array" . "\n";      # Alice Bob
-print "$element" . "\n";    # Carol
+my $member = shift @members; # 先頭の要素 Carol を取り出す
+print "@members" . "\n";      # Alice Bob
+print "$member" . "\n";    # Carol
 ```
 
 - 配列の **先頭に要素を追加** するときには `unshift` を利用します。
@@ -261,7 +261,7 @@ print "$element" . "\n";    # Carol
 use strict;
 use warnings;
 
-my $elements = "second";
+my $element = "second";
 my $temp;
 my @array = ( 'first', 'third' );
 
@@ -274,11 +274,11 @@ print "@array\n";
 
 ## 練習問題 (array_pop_shift.pl)
 
-1. ('Alice', 'Bob', 'Carol') という配列 `@array` を作ってください。
+1. ('Alice', 'Bob', 'Carol') という配列 `@members` を作ってください。
 
-2. 配列 `@array` から 'Carol' を取り出し、出力してください。
+2. 配列 `@members` から 'Carol' を取り出し、出力してください。
 
-3. 配列 `@array` から 'Alice' を取り出し、出力してください。
+3. 配列 `@members` から 'Alice' を取り出し、出力してください。
 
 ---
 
@@ -288,11 +288,11 @@ print "@array\n";
 
 ## 練習問題 (array_push_unshift.pl)
 
-1. ('Alice', 'Bob', 'Carol') という配列 `@array` を作ってください。
+1. ('Alice', 'Bob', 'Carol') という配列 `@members` を作ってください。
 
-2. 配列 `@array` の末尾に `Dave` を追加し、 ('Alice', 'Bob', 'Carol', 'Dave') という配列を作ってください。
+2. 配列 `@members` の末尾に `Dave` を追加し、 ('Alice', 'Bob', 'Carol', 'Dave') という配列を作ってください。
 
-3. 配列 `@array` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Carol', 'Dave') という配列を作ってください。
+3. 配列 `@members` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Carol', 'Dave') という配列を作ってください。
 
 4. 配列を for 文で出力してみましょう。
 
@@ -413,14 +413,14 @@ print "@sorted2" . "\n";    # 200, 40, 5, 3, 1
 
 ## 練習問題(sort.pl)
 
-以下のプログラムに追記して、`@array` の中身を昇順にソートして出力しよう。
+以下のプログラムに追記して、`@numbers` の中身を昇順にソートして出力しよう。
 
 ```perl
 #!/usr/bin/env perl
 use strict;
 use warnings;
 
-my @array = (10, 3, 21, 7, 1, 100);
+my @numbers = (10, 3, 21, 7, 1, 100);
 ```
 
 ---
