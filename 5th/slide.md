@@ -302,7 +302,7 @@ my %hash = (
 
 - 存在している場合は `名前（key） is exist.` と表示する。
 
-- 存在しない場合は `名前（key） is not exist.` と表示しする。
+- 存在しない場合は `名前（key） does not exist.` と表示しする。
 
 ---
 
