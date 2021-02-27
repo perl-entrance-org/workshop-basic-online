@@ -300,7 +300,7 @@ my %hash = (
 
 `exists` 関数を使って、`name`, `birth`, `lang`, `software` の各要素が存在するか確認してください。`名前（key）`は各要素の key 名が入るものとします。
 
-- 存在している場合は `名前（key） is exist.` と表示する。
+- 存在している場合は `名前（key） exists.` と表示する。
 
 - 存在しない場合は `名前（key） does not exist.` と表示しする。
 
