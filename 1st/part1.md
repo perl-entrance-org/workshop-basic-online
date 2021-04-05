@@ -48,6 +48,8 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 
 <img src="image/wandbox01.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## Wandbox
@@ -58,6 +60,8 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 
 <img src="image/wandbox02.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## Wandbox
@@ -65,6 +69,8 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 `Load template` のリンクをクリックします。
 
 <img src="image/wandbox03.png" align='left'>
+
+<br clear="all">
 
 ---
 
@@ -74,6 +80,8 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 
 <img src="image/wandbox04.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## Wandbox
@@ -81,6 +89,8 @@ Perl 入学式 online 版では、基本的に Web ブラウザ版の環境で�
 下にプログラムの実行結果が表示されます。このようにして学習を進めていきます。
 
 <img src="image/wandbox05.png" align='left'>
+
+<br clear="all">
 
 ---
 
