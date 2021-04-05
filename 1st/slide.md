@@ -70,6 +70,8 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox01.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## Wandbox
@@ -80,6 +82,8 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox02.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## Wandbox
@@ -87,6 +91,8 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 `Load template` のリンクをクリックします。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox03.png" align='left'>
+
+<br clear="all">
 
 ---
 
@@ -98,6 +104,8 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox04.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## Wandbox
@@ -107,6 +115,8 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 このようにエディタで入力を行い、ターミナルで実行結果を確認しながら学習を進めていきます。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox05.png" align='left'>
+
+<br clear="all">
 
 ---
 
@@ -120,6 +130,8 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox07.png" align='right'>
 
+<br clear="all">
+
 ---
 
 ## Wandbox
@@ -131,6 +143,8 @@ Wandbox で書いたコードを共有することもできます。
 共有すると URL に紐づいてコードがインターネット上に残ります。気をつけてください。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox08.png" align='left'>
+
+<br clear="all">
 
 ---
 
@@ -144,6 +158,8 @@ Wandbox で書いたコードを共有することもできます。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/appslideshare01.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## スライド同期くん
@@ -156,6 +172,8 @@ Wandbox で書いたコードを共有することもできます。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/appslideshare02.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## スライド同期くん
@@ -164,6 +182,8 @@ Wandbox で書いたコードを共有することもできます。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/appslideshare03.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## 手元の PC で Perl 実行環境がある場合・または構築する場合
@@ -171,6 +191,8 @@ Wandbox で書いたコードを共有することもできます。
 すでに手元の PC に環境がある方は、その環境を利用してください。
 
 PC への環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md" target="_blank">2019 年度資料の「第 1 回　第 1 部」</a>にて公開しています。
+
+<br clear="all">
 
 ---
 
@@ -263,6 +285,8 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/larry.jpg" align='right'>
 
 <ruby>Ruby<rt>ルビー</rt></ruby>、<ruby>Python<rt>パイソン</rt></ruby>、<ruby>PHP<rt>ピーエイチピー</rt></ruby>と並ぶ軽量言語(<ruby>Lightweight Language<rt>ライトウェイト ランゲージ</rt></ruby>)と呼ばれるカテゴリのプログラミング言語の 1 つです。
+
+<br clear="all">
 
 ---
 

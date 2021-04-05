@@ -103,6 +103,8 @@ $ bash replace-repo.bash "<IP Address:Port>"
 
 `<IP Address:Port>` の部分は, 別途お伝えします.
 
+<br clear="all">
+
 ___
 ## msys2のセットアップ（６）
 ### リポジトリデータのリストア
@@ -118,6 +120,8 @@ $ bash replace-repo.bash <IP Address:Port>
 <img src="image/replace-repo2.png" align='right' style='width: 30%'>
 
 変更時と同じコマンドを実行します.
+
+<br clear="all">
 
 ___
 
