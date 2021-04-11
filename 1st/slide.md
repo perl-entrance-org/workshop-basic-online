@@ -82,7 +82,7 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 1. ブラウザで Wandbox のページを開きます。
 
-1. 左上に `gcc HEAD 11.0.0 20200` というプルダウンメニューがありますのでクリックします。
+1. 左上に `gcc HEAD 11.0.1 20210` というプルダウンメニューがありますのでクリックします。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox01.png" align='left'>
 
@@ -216,11 +216,11 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
-# Perl 入学式について
+# Perl 入学式とは
 
 ---
 
-## Perl 入学式とは
+## Perl 入学式について
 
 2012 年 1 月に大阪で誕生した、プログラミング未経験者〜初心者向けの Perl 勉強会です。
 
@@ -235,7 +235,7 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
-## Perl 入学式とは
+## Perl 入学式について
 
 参加費は無料です。受講者の負担が極力少ない形で行われています。
 
@@ -282,7 +282,7 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
-# Perl という言語について
+# Perl について
 
 ---
 
@@ -290,8 +290,6 @@ Wandbox で書いたコードを共有することもできます。
 
 1987 年、<ruby>Larry Wall<rt>ラリー ウォール</rt></ruby>(右写真)が開発したプログラミング言語です。
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/larry.jpg" align='right'>
-
-<br clear="all">
 
 <ruby>Ruby<rt>ルビー</rt></ruby>、<ruby>Python<rt>パイソン</rt></ruby>、<ruby>PHP<rt>ピーエイチピー</rt></ruby>と並ぶ軽量言語(<ruby>Lightweight Language<rt>ライトウェイト ランゲージ</rt></ruby>)と呼ばれるカテゴリのプログラミング言語の 1 つです。
 
@@ -347,7 +345,9 @@ Perl のバージョンアップによって新機能の追加や、セキュリ
 
 ## 検索 vs 書籍
 
-最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby><a href="https://perldoc.perl.org/" target="_blank">perldoc</a><rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
+最初は誰しもプログラミングや Perl の「用語」や「記号」が分からないものです。
+
+検索するにも手がかりが無い場合、ドキュメント(<ruby><a href="https://perldoc.perl.org/" target="_blank">perldoc</a><rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
 
 ---
 
@@ -357,13 +357,48 @@ Perl のバージョンアップによって新機能の追加や、セキュリ
 
 ## 最初のプログラム
 
-プログラム言語の学習において、最初に解説されるのは「Hello, world! と表示するプログラム」であることが多いです。
+プログラム言語の学習において、最初に解説するのは
 
-早速、Hello, world! を表示する Perl プログラムに挑戦してみましょう。
+「`Hello, world!` と表示するプログラム」
+
+であることが多いです。
+
+早速、`Hello, world!` を表示する Perl プログラムに挑戦してみましょう。
 
 ---
 
-## Hello, World!(hello.pl)
+## Hello, World!<br>(hello.pl [ローカル開発環境])
+
+```perl
+print "Hello, world!\n";
+```
+
+エディタにこのようなプログラムを書いて、`hello.pl`という名前で保存します。
+
+- `print`は、ターミナルに文字を出力する命令です。
+
+- <ruby>`\n`<rt>バックスラッシュ エヌ</rt></ruby>は改行を意味します。
+
+- Mac の日本語キーボードの場合、`\`は Option + `￥`キーで入力できます。
+
+- 文の最後にはセミコロン(`;`)を付けましょう。文の区切りという意味です。
+
+---
+
+## スクリプトの実行<br>(hello.pl [ローカル開発環境])
+
+```perl
+$ perl hello.pl
+Hello, world!
+```
+
+エティタを閉じ、ターミナルで上記のように打ち込み、実行します。
+
+`perl`の引数に、実行したいスクリプトファイル名を与えると、そのスクリプトを実行してくれます。
+
+---
+
+## Hello, World!<br>(hello.pl [wandbox])
 
 ```perl
 print "Hello, world!\n";
@@ -381,13 +416,41 @@ Wandbox の画面上部にあるエディタ（入力欄）に上記の文字を
 
 ---
 
-## スクリプトの実行
+## スクリプトの実行<br>(hello.pl [wandbox])
 
 Wandbox の入力欄の下にある [Run (or Ctrl+Enter)] ボタンを押します。
 
 入力欄の下にあるターミナルに `Hello, world!` と表示されていれば成功です。
 
-[hello.pl](https://wandbox.org/permlink/noU3msxlbzeUY4OO)
+<a href="https://wandbox.org/permlink/noU3msxlbzeUY4OO" target="_brank">hello.pl [wandbox]</a>
+
+---
+
+# おまじない
+
+---
+
+## おまじない
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+```
+
+プログラムには、問答無用で書いておく「おまじない」ともいうべきものがあります。Perl は上記の 3 行が「おまじない」となります。
+
+---
+
+## おまじない
+
+- `#!/usr/bin/env perl` ... <ruby>shebang<rt>シバン</rt></ruby>と呼ばれるもので、このスクリプトが perl で動くことを明示します
+
+- `use strict` ... 厳密な書式で書くことを強制し、未定義の変数を警告する
+
+- `use warnings` ... 望ましくない記述を警告する
+
+以下、この資料のサンプルコードでは「お約束」を省略します。**書かれているもの**として扱ってください。
 
 ---
 
@@ -444,49 +507,7 @@ print "hello! \n\n\n\n\n world!";
 
 ---
 
-## 休憩 ＆ 質問 ＆ 雑談 タイム（５ 〜 10 分）
-
----
-
-# おまじない
-
----
-
-## おまじない
-
-```perl
-#!/usr/bin/env perl
-use strict;
-use warnings;
-```
-
-プログラムには、問答無用で書いておく「おまじない」ともいうべきものがあります。Perl は上記の 3 行が「おまじない」となります。
-
----
-
-## おまじない
-
-- `#!/usr/bin/env perl` ... <ruby>shebang<rt>シバン</rt></ruby>と呼ばれるもので、このスクリプトが perl で動くことを明示します
-
-- `use strict` ... 厳密な書式で書くことを強制し、未定義の変数を警告する
-
-- `use warnings` ... 望ましくない記述を警告する
-
-以下、この資料のサンプルコードでは「お約束」を省略します。**書かれているもの**として扱ってください。
-
----
-
-## 練習問題 (5) `hello_perl.pl`
-
-先程の冒頭の 3 行のおまじないを加えた上で、 `Hello, Perl` という文字列を出力する `hello_perl.pl` を書いてみましょう。
-
-- ヒント: 文字列はダブルクォーテーション `"` で囲む
-
-- ヒント: 文字列を出力する関数は `print`
-
----
-
-## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションしてみてください。
+## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（５ 〜 10 分）
 
 ---
 
@@ -754,8 +775,6 @@ Perl に限らず、プログラムのエラーメッセージのほとんどは
 
 ## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
 
-## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（ 5 〜 10 分）
-
 ---
 
 ## （コラム）Perl5 のバージョンの歴史
@@ -782,6 +801,8 @@ Perl に限らず、プログラムのエラーメッセージのほとんどは
 - 2019 年 : Perl 5.30 が登場。
 
 - 2020 年 : Perl 5.32 が登場。 現在の最新の安定版です。
+
+- 2021 年 : Perl 5 の後継言語として、Perl 7 が登場予定。
 
 ---
 
