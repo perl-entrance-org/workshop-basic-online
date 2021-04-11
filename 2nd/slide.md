@@ -820,6 +820,8 @@ Wandbox の場合には、画面左上、バージョン情報の下にある `R
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/2nd/image/wandbox10.png" align='left'>
 
+<br clear="all">
+
 ---
 
 ## コマンドライン引数

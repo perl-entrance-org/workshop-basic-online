@@ -202,6 +202,15 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
+## 手元の PC で Perl 実行環境がある場合・または構築する場合
+
+すでに手元の PC に環境がある方は、その環境を利用してください。
+
+PC への環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md" target="_blank">2019 年度資料の「第 1 回　第 1 部」</a>にて公開しています。
+
+
+---
+
 ## Perl 入学式の学習環境について
 
 みなさん、Perl の実行環境は準備できましたでしょうか？
@@ -292,6 +301,8 @@ Wandbox で書いたコードを共有することもできます。
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/larry.jpg" align='right'>
 
 <ruby>Ruby<rt>ルビー</rt></ruby>、<ruby>Python<rt>パイソン</rt></ruby>、<ruby>PHP<rt>ピーエイチピー</rt></ruby>と並ぶ軽量言語(<ruby>Lightweight Language<rt>ライトウェイト ランゲージ</rt></ruby>)と呼ばれるカテゴリのプログラミング言語の 1 つです。
+
+<br clear="all">
 
 ---
 
