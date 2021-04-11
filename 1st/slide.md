@@ -1,6 +1,6 @@
 # Perl 入学式
 
-## 第 1 回 学習環境構築 編
+## 第 1 回 導入編
 
 ---
 
@@ -40,7 +40,11 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - 動画の中継：Youtube Live
 
-- Perl 実行環境：<a href="https://wandbox.org" target="_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
+- Perl 実行環境
+
+  - Windows：msys2 上の Perl（<a href="">インストール方法の解説ページへのリンク</a>）
+  - macos：システムにインストールされている Perl
+  - 予備：<a href="https://wandbox.org" target="_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
 
 - コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
 
@@ -54,9 +58,21 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - スマホ・タブレットで Youtube Live を視聴
 
-- PC で スライド同期くん ・ Wandbox ・ Discord を開く
+- PC で スライド同期くん ・ Perl 実行環境 ・ Discord を開く
 
   - 仮想デスクトップ機能・マルチディスプレイなどを用いて、各ツールを切り替える
+
+---
+
+## Perl 入学式の学習環境について
+
+---
+
+## 手元の PC で Perl 実行環境がある場合・または構築する場合
+
+すでに手元の PC に環境がある方は、その環境を利用してください。
+
+PC への環境構築の方法は、<a href="" target="_blank">インストール方法の解説ページへのリンク</a>にて公開しています。
 
 ---
 
@@ -76,7 +92,7 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 1. メニューの右側から Perl を選択します。
 
-1. 左側の Perl のバージョンから `Perl 5.30.1` を選択します。
+1. 左側の Perl のバージョンから `Perl 5.32.0` を選択します。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox02.png" align='left'>
 
@@ -166,14 +182,6 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
-## 手元の PC で Perl 実行環境がある場合・または構築する場合
-
-すでに手元の PC に環境がある方は、その環境を利用してください。
-
-PC への環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md" target="_blank">2019 年度資料の「第 1 回　第 1 部」</a>にて公開しています。
-
----
-
 ## Perl 入学式の学習環境について
 
 みなさん、Perl の実行環境は準備できましたでしょうか？
@@ -184,7 +192,7 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 
 ---
 
-## 休憩 ＆ 質問 ＆ 雑談 タイム（５ 〜 10 分）
+## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（５ 〜 10 分）
 
 ---
 
@@ -201,6 +209,7 @@ PC への環境構築の方法は、<a href="https://github.com/perl-entrance-or
 - 2015 年度 : 沖縄開講
 - 2017 年度 : 札幌開講
 - 2019 年度 : 千歳開講
+- 2020 年度 : オンライン開講
 
 <small>講師の都合に合わせて休講しているところもあります。</small>
 
