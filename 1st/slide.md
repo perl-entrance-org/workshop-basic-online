@@ -25,10 +25,11 @@
 ## 本日の内容
 
 - Perl 入学式の学習環境について
-- Perl 入学式について
-- Perl という言語について
-- Perl をより深く学ぶ方法と色々な Perl コミュニティについて
+- CLI ターミナルとシェル入門
+- Visual Studio Code
 - Hello, World
+- スカラー変数
+- 四則演算
 
 ---
 
@@ -207,7 +208,6 @@ Wandbox で書いたコードを共有することもできます。
 すでに手元の PC に環境がある方は、その環境を利用してください。
 
 PC への環境構築の方法は、<a href="https://github.com/perl-entrance-org/workshop-2019/blob/master/1st/part1.md" target="_blank">2019 年度資料の「第 1 回　第 1 部」</a>にて公開しています。
-
 
 ---
 
