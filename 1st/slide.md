@@ -203,6 +203,436 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
+# ターミナルと<br>シェル入門
+
+---
+
+## CUI(CLI)
+
+<ruby>macOS<rt>マックオーエス</rt></ruby> も <ruby>Linux<rt>リナックス</rt></ruby> も、Windows と同じく<ruby>GUI<rt>ジーユーアイ</rt></ruby>で操作可能です。
+
+ですが、プログラミングをする上で<ruby>CUI<rt>シーユーアイ</rt></ruby> (<ruby>CLI<rt>シーエルアイ</rt></ruby>) は避けられません。
+
+- CUI ... Character User Interface
+- CLI ... Command Line Interface
+
+これらは文字によって操作を行うインターフェイスのことを指します。
+
+- Windows ならば、コマンドプロンプトに該当します。
+- Linux / macOS ではターミナルに該当します。
+
+---
+
+## CUI(CLI)
+
+実際に CUI (CLI) を操作して体験してみましょう。
+
+プログラマーやインフラエンジニアが操作している「黒い画面」というのはこのターミナルのことを指しています。
+
+---
+
+## ターミナルとシェル
+
+プログラムの起動や制御を CUI(CLI)で行うプログラムのことを、**シェル**と呼びます。
+
+ターミナルを開くと、シェルを使った操作が出来るようになります。
+
+![シェル](image/shell.png)
+
+<br clear="all">
+
+---
+
+## ターミナルの開き方(Windows)
+
+スタートメニューから「MSYS2 XXbit」を選択し、「MSYS2 MSYS」をクリックします。
+
+<small>MSYS2 は頻繁に起動するため、タスクバーへの追加やスタートメニューへのピン止めをおすすめします。</small>
+
+![ターミナル](image/start-msys2-1.png)
+
+<br clear="all">
+
+△ スタートメニューから開いたところ（Windows10）
+
+---
+
+## ターミナルの開き方(macOS)
+
+Launchpad などから「ターミナル」を選択し、起動します。
+
+<small>ターミナルは頻繁に起動するため、Dock へ追加しておくことをおすすめします。</small>
+
+![ターミナルのアイコン](image/terminal.png)
+
+<br clear="all">
+
+△ ターミナルのアイコン
+
+---
+
+## シェルで使えるコマンド集
+
+シェルには様々なコマンドがあり、使いこなせば作業の負担を軽減することができます。
+
+Perl 入学式の中でもよく使うコマンドを紹介します。
+
+ターミナルを起動後、 `$` あるいは `%` が表示されます。この記号の後にコマンドを入力します。
+
+```bash
+$
+```
+
+```bash
+%
+```
+
+---
+
+## コマンド集(ls)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ ls
+example.pl example.txt
+```
+
+`ls` は、現在いるディレクトリにあるファイルを表示します。
+
+コマンド名は '<strong>l</strong>ist <strong>s</strong>egments' の頭文字を取ったものです。
+
+`ls -a` とすると、`.` (ドット)で始まる、通常は見えない隠しファイルも含め、すべて表示します。
+
+このように、コマンドに追加の命令をつけて動作を変えることができます。
+
+これを<ruby>引数<rt>ひきすう</rt></ruby>といいます。
+
+---
+
+## コマンド集(pwd)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ pwd
+/home/username
+```
+
+`pwd` は、現在いるディレクトリの場所（パス）を表示します。
+
+コマンド名は '<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory' の頭文字を取ったものです。
+
+---
+
+## コマンド集(mkdir)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ mkdir sample
+$ ls
+example.pl example.txt sample
+```
+
+`mkdir DIRECTORY` は、`DIRECTORY`という名前のディレクトリを作ります。
+
+コマンド名は '<strong>m</strong>a<strong>k</strong>e <strong>dir</strong>ectory' を短縮したものです。
+
+---
+
+## コマンド集(cd)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ cd sample
+$ pwd
+/home/username/sample
+$ cd ..
+$ pwd
+/home/username
+```
+
+`cd DIRECTORY` で、`DIRECTORY` 配下に移動します。
+
+コマンド名は '<strong>ch</strong>ange <strong>dir</strong>ectory' を短縮したものです。
+
+上の階層のディレクトリは `..` で表示されます。
+
+---
+
+## コマンド集(touch)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ touch sample1 sample2
+$ ls
+sample1 sample2
+```
+
+`touch` には 2 つの役割があります。`touch FILE` とした時・・・
+
+- FILE が存在しない場合には、空のファイルを生成する
+- FILE がすでに存在する場合には、ファイルのアクセス日時と更新日時を現時刻に書き換える
+
+---
+
+## コマンド集(rm)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ ls
+sample1 sample2
+$ rm sample1
+$ ls
+sample2
+```
+
+`rm FILE` は、`FILE` を削除します。
+
+`rm FILE1 FILE2`のように複数のファイルを半角スペースで区切ることで、複数のファイルをまとめて削除することができます。
+
+コマンド名は'<strong>r</strong>e<strong>m</strong>ove'を短縮したものです。
+
+---
+
+## コマンド集(rmdir)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ mkdir del_sample
+$ ls
+del_sample
+$ rmdir del_sample
+$ ls
+$
+```
+
+`rmdir DIRECTORY` は、`DIRECTORY` を削除します。
+
+ただしディレクトリは空である必要があります。
+
+コマンド名は '<strong>r</strong>e<strong>m</strong>ove <strong>dir</strong>ectory' を短縮したものです。
+
+---
+
+## コマンド集(ディレクトリを中身のファイルごと削除)
+
+### [ Windows(msys2) / macOS ]
+
+ディレクトリの中身ごとを削除するときは、先に紹介した `rm` に引数を加えて `rm -r DIRECTORY` とすることで、まとめて削除することができます。
+
+`-r` という引数は <ruby>recursive<rt>リカーシブ</rt></ruby> （再帰的）を意味しています。
+
+---
+
+## コマンド集(cp)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ ls
+sample2
+$ cp sample2 sample1
+$ ls
+sample1 sample2
+```
+
+`cp [OPTION] SOURCE DEST` は、`SOURCE` を `DEST` にコピーします。
+
+コマンド名は '<strong>c</strong>o<strong>p</strong>y' を短縮したものです。
+
+ディレクトリをコピーするときは、`[OPTION]` として `-r` を指定し、`cp -r SOURCE DEST` でコピーしなければなりません。
+
+---
+
+## コマンド集(mv)
+
+### [ Windows(msys2) / macOS ]
+
+```bash
+$ ls
+sample1 sample2
+$ mv sample1 sample_text
+$ ls
+sample_text sample2
+```
+
+`mv SOURCE DEST` で、`SOURCE` を `DEST` に移動します。
+
+コマンド名は '<strong>m</strong>o<strong>v</strong>e' を短縮したものです。
+
+ファイルやディレクトリの名前を変更する用途にも使えます。
+
+---
+
+## コマンド集(start)
+
+### [ Windows(msys2) ]
+
+```bash
+$ start .
+```
+
+`start [DIRECTORY]` で、`DIRECTORY` を <ruby>Explorer<rt>エクスプローラー</rt></ruby> というファイルマネージャで開きます。
+
+`start` は対象となるファイルの種類によって動作が変わります。
+
+例えば、ディレクトリが対象ならば上記のように Explorer で表示、テキストならばテキストエディタで表示... という動作をします。
+
+---
+
+## コマンド集(open)
+
+### [ macOS ]
+
+```bash
+$ open .
+```
+
+`open [DIRECTORY]` で、 `DIRECTORY` を <ruby>Finder<rt>ファインダー</rt></ruby> というファイルマネージャで開きます。
+
+`open` は対象となるファイルの種類によって動作が変わります。
+
+例えばディレクトリが対象ならば上記のように Finder で表示、テキストならばテキストエディタで表示... という動作をします。
+
+<br clear="all">
+
+---
+
+## 練習問題
+
+ホームディレクトリとは、ユーザごとに用意された作業場所のようなものです。
+
+`cd` とだけ入力してエンターキーを押すと、ホームディレクトリに移動します。
+
+1. **ホームディレクトリ**に `perl-entrance` というディレクトリを作りましょう。
+
+2. 作った `perl-entrance` ディレクトリの中に移動しましょう。
+
+3. **カレントディレクトリ**のパスを `pwd` で表示し、その後に、`start` もしくは `open` を使って、ファイルマネージャで開いてみましょう。
+
+<small>現在いるディレクトリをカレントディレクトリと言います。</small>
+
+---
+
+# エディタ入門
+
+---
+
+## エディタ
+
+コードを書く時に最も使う道具、それがエディタです。
+
+プログラミングに特化した様々なエディタが開発されていますが、Perl 入学式では Visual Studio Code を推奨しています。
+
+特にこだわりのない方は、今回紹介する Visual Studio Code を試してみましょう。
+
+もちろん、Emacs や Vim、サクラエディタなど、既に使い慣れているエディタがある方はそちらをお使いください。
+
+---
+
+## Visual Studio Code
+
+<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code - Code Editing. Redefined</a> へアクセスし、 Download をクリックします。
+
+---
+
+## Visual Studio Code
+
+### [ Windows ]
+
+ダウンロードした `VSCodeUserSetup-**.exe` をダブルクリックすると、インストールが開始されます。
+
+`**` としたところにはバージョン番号が入ります。
+
+インストール後は、スタートメニューから「Visual Studio Code」をダブルクリックすれば Visual Studio Code が起動します。
+
+インストール直後は自動的に起動します。
+
+---
+
+## Visual Studio Code
+
+### [ macOS ]
+
+ダウンロードした `VSCode-darwin-stable.zip` をダブルクリックすると、`Visual Studio Code.app` が生成されます。
+
+これをダブルクリックすれば Visual Studio Code が起動します。
+
+「 "Visual Studio Code.app" はインターネットからダウンロードされたアプリケーションです」という警告が出た場合、「開く」をクリックします。
+
+---
+
+## Visual Studio Code
+
+### 日本語化
+
+メニューが英語でとっつきにくい場合には、日本語化することが可能です。
+
+1. ウィンドウ左上の View -> Command Palette から `Configure Display Language` と入力して候補を選択する。
+
+1. Install Addicional Languages を選択する。
+
+1. 左側のメニューから「日本語」を選択し、緑色の「Install」ボタンを押す。
+
+1. 一度 Visual Studio Code を閉じて、再度起動する。
+
+1. 英語表記に戻す場合には、1. から en を選択することで英語メニューになります。
+
+---
+
+## Visual Studio Code
+
+### ファイルを開く
+
+- 左上メニューから
+
+  - Windows 版：ファイル -> ファイルを開く
+  - macOS 版：ファイル -> 開く
+
+<br>
+
+### ファイルを保存する
+
+- 左上メニューの ファイル -> 保存
+
+---
+
+## Visual Studio Code
+
+### 参考書
+
+- <a href="https://system-admin-girl.com/" target="_blank">まんがでわかる Linux シス管系女子</a>
+
+- <a href="https://gihyo.jp/book/2020/978-4-297-11225-7" target="_blank">新版 zsh&bash 対応］macOS× コマンド入門 ── ターミナルとコマンドライン、基本の力</a>
+
+---
+
+## Visual Studio Code
+
+### ファイル編集手順
+
+`perl-entrance` ディレクトリ内に `profile.txt` という空のファイルを用意して、Visual Studio Code で編集する例です。
+
+1. `cd` コマンドを利用し、`perl-entrance` フォルダに移動する
+
+1. `touch` コマンドを使い、`profile.txt` を作成する
+
+1. Windows(msys2) の場合は `start . ` で Explorer を 、macOS の場合は `open . ` で Finder を開き、中の `profile.txt` を Visual Studio Code にドラッグ＆ドロップする
+
+1. 編集が終わったら Visual Studio Code の上にある ファイル メニューから 保存 を選択する
+
+---
+
+## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（５ 〜 10 分）
+
+---
+
 # Hello, world!
 
 ---
