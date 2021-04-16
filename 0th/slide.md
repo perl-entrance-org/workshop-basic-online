@@ -270,7 +270,7 @@ $ yes "" | pacman -Sy perl perl-CPAN msys2-devel make libcrypt-devel openssl per
 
 次のコマンドを実行して perl のバージョンを確認します。
 
-`This is perl 5, version 32, ...` などと表示されれば、インストールは成功しています。
+`This is perl 5, version xx, ...` などと表示されれば、インストールは成功しています。
 
 ```bash
 # perlのバージョンを確認する
