@@ -1023,11 +1023,84 @@ Perl に限らず、プログラムのエラーメッセージのほとんどは
 
 ---
 
+# コラム<br>Perl について
+
+---
+
+## コラム：Perl について
+
+### Perl って何?
+
+1987 年、<ruby>Larry Wall<rt>ラリー ウォール</rt></ruby>(右写真)が開発したプログラミング言語です。
+<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/larry.jpg" align='right'>
+
+<ruby>Ruby<rt>ルビー</rt></ruby>、<ruby>Python<rt>パイソン</rt></ruby>、<ruby>PHP<rt>ピーエイチピー</rt></ruby>と並ぶ軽量言語(<ruby>Lightweight Language<rt>ライトウェイト ランゲージ</rt></ruby>)と呼ばれるカテゴリのプログラミング言語の 1 つです。
+
+<br clear="all">
+
+---
+
+## コラム：Perl について
+
+### Perl の登場
+
+Perl は C 言語や <ruby>sed<rt>セド</rt></ruby>、<ruby>awk<rt>オーク</rt></ruby> の影響を受けた動的型付け言語です。
+
+<small>先頭大文字「Perl」は言語そのもの、先頭小文字「perl」はその処理系を示します。</small>
+
+Perl は後に開発された Ruby(1995 年)や PHP(1995 年)に影響を与えました。
+
+- <a href="https://www.levenez.com/lang/" target="_blank">Computer Languages History</a>
+
+- <a href="https://exploring-data.com/vis/programming-languages-influence-network/#Perl" target="_blank">Programming Languages Influence Network | Exploring Data</a>
+
+---
+
+## コラム：Perl について
+
+### Perl の特徴
+
+<a href="https://ja.wikipedia.org/wiki/Perl" target="_blank">Wikipedia の記事</a>から重要なものだけ引用します。
+
+- 強力な文字列処理。<ruby>正規表現<rt>せいきひょうげん</rt></ruby>をサポート
+
+- 高い後方互換性
+
+- 日本語をはじめとした世界中の言語を処理可能
+
+- 自由度の高い文法で簡潔にプログラムを記述可能
+
+- 数多くのオペレーティングシステムで利用可能
+
+- プログラムの実行には事前コンパイルは不要
+
+- 有志によって開発された豊富なモジュール
+
+---
+
+## コラム：Perl について
+
+### Perl5, Perl6(Raku), Perl7
+
+- Perl5：これから学ぶ言語です
+
+- Perl6(<ruby>Raku<rt>ラク</rt></ruby>)：
+
+  Perl5 の後継言語として開発されましたが、Perl5 とは互換性がありません。2019 年に Perl6 から Raku に改名しました。
+
+  <a href="https://raku.org/" target="_blank">Raku Programming Language</a>
+
+- Perl7：
+
+  Perl5 の後継言語です。Perl5 とは最大限の互換性が保たれています。2021 年夏頃にリリース予定です。
+
+---
+
 ## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（ 5 〜 10 分）
 
 ---
 
-# 四則演算と<br>文字列連結
+# 四則演算
 
 ---
 
