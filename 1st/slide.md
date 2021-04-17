@@ -26,7 +26,7 @@
 
 - Perl 入学式の学習環境について
 - ターミナルとシェル入門
-- Visual Studio Code
+- Visual Studio Code 入門
 - Hello, World
 - スカラー変数
 - 四則演算
@@ -542,31 +542,35 @@ $ open .
 
 ---
 
-# エディタ入門
+# Visual Studio Code 入門
 
 ---
 
-## エディタ
+## Visual Studio Code 入門
+
+### エディタ
 
 コードを書く時に最も使う道具、それがエディタです。
 
 プログラミングに特化した様々なエディタが開発されていますが、Perl 入学式では Visual Studio Code を推奨しています。
 
-特にこだわりのない方は、今回紹介する Visual Studio Code を試してみましょう。
+特にこだわりのない方は、今回紹介する Visual Studio Code を利用してください。
 
 もちろん、Emacs や Vim、サクラエディタなど、既に使い慣れているエディタがある方はそちらをお使いください。
 
 ---
 
-## Visual Studio Code
+## Visual Studio Code 入門
+
+### ダウンロード
 
 <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code - Code Editing. Redefined</a> へアクセスし、 Download をクリックします。
 
 ---
 
-## Visual Studio Code
+## Visual Studio Code 入門
 
-### [ Windows ]
+### インストール（Windows）
 
 ダウンロードした `VSCodeUserSetup-**.exe` をダブルクリックすると、インストールが開始されます。
 
@@ -578,9 +582,9 @@ $ open .
 
 ---
 
-## Visual Studio Code
+## Visual Studio Code 入門
 
-### [ macOS ]
+### インストール（macOS）
 
 ダウンロードした `VSCode-darwin-stable.zip` をダブルクリックすると、`Visual Studio Code.app` が生成されます。
 
@@ -590,7 +594,7 @@ $ open .
 
 ---
 
-## Visual Studio Code
+## Visual Studio Code 入門
 
 ### 日本語化
 
@@ -604,11 +608,11 @@ $ open .
 
 1. 一度 Visual Studio Code を閉じて、再度起動する。
 
-1. 英語表記に戻す場合には、1. から en を選択することで英語メニューになります。
+1. 英語表記に戻す場合には、1. から en を選択してから Visual Studio Code を再起動します。
 
 ---
 
-## Visual Studio Code
+## Visual Studio Code 入門
 
 ### ファイルを開く
 
@@ -625,17 +629,7 @@ $ open .
 
 ---
 
-## Visual Studio Code
-
-### 参考書
-
-- <a href="https://system-admin-girl.com/" target="_blank">まんがでわかる Linux シス管系女子</a>
-
-- <a href="https://gihyo.jp/book/2020/978-4-297-11225-7" target="_blank">新版 zsh&bash 対応］macOS× コマンド入門 ── ターミナルとコマンドライン、基本の力</a>
-
----
-
-## Visual Studio Code
+## Visual Studio Code 入門
 
 ### ファイル編集手順
 
