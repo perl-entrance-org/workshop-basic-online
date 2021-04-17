@@ -43,7 +43,7 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - Perl 実行環境
 
-  - Windows：msys2 上の Perl（<a href="">インストール方法の解説ページへのリンク</a>）
+  - Windows：msys2 上の Perl（<a href="https://github.com/perl-entrance-org/workshop-basic-online/blob/master/0th/slide.md">第 0 回 環境構築編</a>）
   - macos：システムにインストールされている Perl
   - 予備：<a href="https://wandbox.org" target="_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
 
