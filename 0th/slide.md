@@ -240,7 +240,7 @@ Perl のインストールまで動画も用意しています。
 $ pacman -Syu
 ```
 
-<img src="image/7.png" align='right' style='width: 30%'>
+<img src="image/7.png" align='left' style='width: 30%'>
 
 <br clear="all">
 
