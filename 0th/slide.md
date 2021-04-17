@@ -28,7 +28,7 @@
 
 文字の説明だけでは難しいところもあるので、動画を用意しました。ぜひ活用してください。
 
-<a href="https://youtu.be/--XD8Q63XfU" target="_blank">Windows に msys2 と Perl をインストールする方法（音声）</a>
+[![](https://img.youtube.com/vi/--XD8Q63XfU/0.jpg)](https://www.youtube.com/watch?v=--XD8Q63XfU)
 
 また、字幕での動画も各項目ごとに用意しています。
 
@@ -39,7 +39,8 @@
 <a href="https://support.microsoft.com/ja-jp/help/15056/windows-32-64-bit-faq" target="_blank">32 ビットと 64 ビットの Windows: よく寄せられる質問</a>内の「コンピューターで実行中の Windows が 32 ビット バージョンであるか 64 ビット バージョンであるかを確認するにはどうすればよいですか?」を参考に判別します。
 
 また、動画も用意しています。
-<a href="https://youtu.be/55PqdgiJ-mU" target="_blank">01 Windows アーキテクチャ確認（字幕）</a>
+
+[![](https://img.youtube.com/vi/55PqdgiJ-mU/0.jpg)](https://www.youtube.com/watch?v=55PqdgiJ-mU)
 
 ---
 
@@ -60,7 +61,8 @@
 <small>ファイル名の i686 や x86_64 はアーキテクチャ名であり、YYYYMMDD は msys2 がリリースされた日付です。</small>
 
 動画も用意しています。
-<a href="https://youtu.be/YD_2pi6isQ4" target="_blank">02.インストーラーの入手</a>
+
+[![](https://img.youtube.com/vi/YD_2pi6isQ4/0.jpg)](https://www.youtube.com/watch?v=YD_2pi6isQ4)
 
 ---
 
@@ -79,7 +81,8 @@
 <br clear="all">
 
 動画も用意しています。
-<a href="https://youtu.be/LNPbSXNH0yM" target="_blank">03.msys2 のインストール</a>
+
+[![](https://img.youtube.com/vi/LNPbSXNH0yM/0.jpg)](https://www.youtube.com/watch?v=LNPbSXNH0yM)
 
 ---
 
@@ -217,7 +220,8 @@ $ pacman -Syu
 上記は `pacman -Syu`と入力し、行末で enter キー、またはリターンキーを押すことを意味します。
 
 Perl のインストールまで動画も用意しています。
-<a href="https://youtu.be/I6zO4l6koMU" target="_blank">04.Perl のインストール</a>
+
+[![](https://img.youtube.com/vi/I6zO4l6koMU/0.jpg)](https://www.youtube.com/watch?v=I6zO4l6koMU)
 
 ---
 
