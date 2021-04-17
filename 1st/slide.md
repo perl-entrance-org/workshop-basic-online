@@ -33,9 +33,13 @@
 
 ---
 
+# Perl 入学式の学習環境について
+
+---
+
 ## Perl 入学式の学習環境について
 
-Perl 入学式 online 版では、以下のサービス・ツールを利用して学習を行っていきます。
+### 利用するツール
 
 それぞれのツールへのリンクは <a href="https://perl-entrance.connpass.com/event/189331/" target="_blank">connpass のイベントページ</a>に掲載しています。
 
@@ -43,8 +47,8 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 - Perl 実行環境
 
-  - Windows：msys2 上の Perl（<a href="https://github.com/perl-entrance-org/workshop-basic-online/blob/master/0th/slide.md">第 0 回 環境構築編</a>）
-  - macos：システムにインストールされている Perl
+  - Windows：msys2 上の Perl（<a href="https://github.com/perl-entrance-org/workshop-basic-online/blob/master/0th/slide.md" target="_blank">第 0 回 環境構築編</a>）
+  - macOS：システムにインストールされている Perl
   - 予備：<a href="https://wandbox.org" target="_blank"><ruby>Wandbox<rt>ワンドボックス</rt></ruby></a>
 
 - コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
@@ -55,89 +59,89 @@ Perl 入学式 online 版では、以下のサービス・ツールを利用し�
 
 ## Perl 入学式の学習環境について
 
-４つのサービス・ツールを利用しますが、以下のような構成をお勧めします。
+### おすすめの学習環境
 
 - スマホ・タブレットで Youtube Live を視聴
 
 - PC で スライド同期くん ・ Perl 実行環境 ・ Discord を開く
 
-  - 仮想デスクトップ機能・マルチディスプレイなどを用いて、各ツールを切り替える
+仮想デスクトップ機能・マルチディスプレイ、タブレットを併用するなどしながら学習を進めましょう。
 
 ---
 
 ## Perl 入学式の学習環境について
 
----
+### Wandbox
 
-## 手元の PC で Perl 実行環境がある場合・または構築する場合
+手元の PC に Perl 実行環境を用意できない場合には、 Wandbox という Web サービスを利用します。
 
-すでに手元の PC に環境がある方は、その環境を利用してください。
+1. ブラウザで <a href="https://wandbox.org" target="_blank">Wandbox</a> のページを開きます。
 
-PC への環境構築の方法は、<a href="" target="_blank">インストール方法の解説ページへのリンク</a>にて公開しています。
+2. 左上に `gcc HEAD 11.0.1 20xxx` というプルダウンメニューがありますのでクリックします。
 
----
+  <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox01.png" align='left'>
 
-## Wandbox
-
-Perl 実行環境として利用する Wandbox の利用方法です。
-
-1. ブラウザで Wandbox のページを開きます。
-
-1. 左上に `gcc HEAD 11.0.1 20210` というプルダウンメニューがありますのでクリックします。
-
-<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox01.png" align='left'>
-
-<br clear="all">
+  <br clear="all">
 
 ---
 
-## Wandbox
+## Perl 入学式の学習環境について
 
-1. メニューの右側から Perl を選択します。
+### Wandbox
 
-1. 左側の Perl のバージョンから `Perl 5.32.0` を選択します。
+3. メニューの右側から Perl を選択します。
 
-<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox02.png" align='left'>
+4. 左側の Perl のバージョンから `Perl 5.32.0` を選択します。
 
-<br clear="all">
+  <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox02.png" align='left'>
 
----
-
-## Wandbox
-
-`Load template` のリンクをクリックします。
-
-<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox03.png" align='left'>
-
-<br clear="all">
+  <br clear="all">
 
 ---
 
-## Wandbox
+## Perl 入学式の学習環境について
+
+### Wandbox
+
+5. `Load template` のリンクをクリックします。
+
+  <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox03.png" align='left'>
+
+  <br clear="all">
+
+---
+
+## Perl 入学式の学習環境について
+
+### Wandbox
 
 この時点で、Perl のプログラムが右側のテキストエリアに表示されています。このテキストエリアをエディタと呼びます。
 
-下にある `Run (or Ctrl+Enter)` をクリックします。
+6. 下にある `Run (or Ctrl+Enter)` をクリックします。
 
-<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox04.png" align='left'>
+  <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox04.png" align='left'>
 
-<br clear="all">
+  <br clear="all">
 
 ---
 
-## Wandbox
+## Perl 入学式の学習環境について
 
-下にプログラムの実行結果が表示されます。この黒い部分をターミナルと呼びます。
+### Wandbox
+
+7. 下にプログラムの実行結果が表示されます。この黒い部分をターミナルと呼びます。
+
+  <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox05.png" align='left'>
+
+  <br clear="all">
 
 このようにエディタで入力を行い、ターミナルで実行結果を確認しながら学習を進めていきます。
 
-<img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/wandbox05.png" align='left'>
-
-<br clear="all">
-
 ---
 
-## Wandbox
+## Perl 入学式の学習環境について
+
+### Wandbox
 
 エディタ部は `+` でタブを増やすことができます。
 
@@ -151,7 +155,9 @@ Perl 実行環境として利用する Wandbox の利用方法です。
 
 ---
 
-## Wandbox
+## Perl 入学式の学習環境について
+
+### Wandbox
 
 Wandbox で書いたコードを共有することもできます。
 
@@ -165,7 +171,9 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
-## スライド同期くん
+## Perl 入学式の学習環境について
+
+### スライド同期くん
 
 講師が見ているスライドを受講生の手元で反映するためのツールです。
 
@@ -179,13 +187,15 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
-## スライド同期くん
+## Perl 入学式の学習環境について
+
+### スライド同期くん
 
 ネットワークの環境により、講師が行っている講義と Youtube Live で配信される映像がずれることが予想されます。
 
 「同期の遅延」で設定されている 0 秒 のところをクリックすると、スライドをめくるタイミングを遅らせることができます。
 
-まずは 30 秒を基準にして設定し、Youtube Live で配信される講師スライドに合わせて講義を受けつつ調整を行ってください。
+まずは 30 秒を基準にして設定し、Youtube Live で配信される講師スライドに合わせて調整を行ってください。
 
 <img src="https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/appslideshare02.png" align='left'>
 
@@ -193,7 +203,9 @@ Wandbox で書いたコードを共有することもできます。
 
 ---
 
-## スライド同期くん
+## Perl 入学式の学習環境について
+
+### スライド同期くん
 
 スライドめくりなど、利用方法については画面右上のリンクで表示が可能です。
 
