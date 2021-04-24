@@ -448,7 +448,7 @@ $
 
 ### コマンド `rm -r `
 
-ディレクトリの中身ごとを削除するときは、先に紹介した `rm` に引数 `-r` を加えて `rm -r DIRECTORY` とすることで、まとめて削除することができます。
+ディレクトリを中身ごと削除するときは、先に紹介した `rm` に引数 `-r` を加えて `rm -r DIRECTORY` とすることで、まとめて削除することができます。
 
 `-r` という引数は <ruby>recursive<rt>リカーシブ</rt></ruby> （再帰的）を意味しています。
 
@@ -502,7 +502,7 @@ sample_text sample2
 $ start .
 ```
 
-`start [DIRECTORY]` で、`DIRECTORY` を <ruby>Explorer<rt>エクスプローラー</rt></ruby> というファイルマネージャで開きます。
+`start DIRECTORY` で、`DIRECTORY` を <ruby>Explorer<rt>エクスプローラー</rt></ruby> というファイルマネージャで開きます。
 
 `start` は対象となるファイルの種類によって動作が変わります。
 
@@ -518,7 +518,7 @@ $ start .
 $ open .
 ```
 
-`open [DIRECTORY]` で、 `DIRECTORY` を <ruby>Finder<rt>ファインダー</rt></ruby> というファイルマネージャで開きます。
+`open DIRECTORY` で、 `DIRECTORY` を <ruby>Finder<rt>ファインダー</rt></ruby> というファイルマネージャで開きます。
 
 `open` は対象となるファイルの種類によって動作が変わります。
 
@@ -566,7 +566,7 @@ $ open .
 
 特にこだわりのない方は、今回紹介する Visual Studio Code を利用してください。
 
-もちろん、Emacs や Vim、サクラエディタなど、既に使い慣れているエディタがある方はそちらをお使いください。
+もちろん、<ruby>Emacs<rt>イーマックス</rt></ruby> や <ruby>Vim<rt>ヴィム</rt></ruby>、サクラエディタなど、既に使い慣れているエディタがある方はそちらをお使いください。
 
 ---
 
@@ -574,7 +574,7 @@ $ open .
 
 ### ダウンロード
 
-<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code - Code Editing. Redefined</a> へアクセスし、 Download をクリックします。
+Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code - Code Editing. Redefined</a> へアクセスし、 Download をクリックします。
 
 ---
 
@@ -687,7 +687,7 @@ print "Hello, world!\n";
 
 エディタにこのようなプログラムを書いて、`hello.pl`という名前で保存します。
 
-- `print`は、ターミナルに文字を出力する命令です。
+- `print` は、ターミナルに文字を出力する命令です。
 
 - <ruby>`\n`<rt>バックスラッシュ エヌ</rt></ruby>は改行を意味します。
 
@@ -766,15 +766,15 @@ Perl では上記の 3 行が「おまじない」となります。
 
 - `#!/usr/bin/env perl` ... <ruby>shebang<rt>シバン</rt></ruby>と呼ばれるもので、このプログラムが perl で動くことを明示する
 
-- `use strict` ... 厳密な書式で書くことを強制し、未定義の変数警告する
+- `use strict;` ... 厳密な書式で書くことを強制し、未定義の変数警告する
 
-- `use warnings` ... 望ましくない記述を警告する
+- `use warnings;` ... 望ましくない記述を警告する
 
 以下、この資料のサンプルコードでは「おまじない」を省略します。**書かれているもの**として扱ってください。
 
 ---
 
-## 練習問題 (1) `entrance.pl`
+## 練習問題 `entrance.pl`
 
 「この勉強会の名前」と「今日の日付」を表示するプログラム `entrance.pl` を書いてみましょう。
 
@@ -788,7 +788,7 @@ Perl では上記の 3 行が「おまじない」となります。
 
 ---
 
-## 練習問題 (2) `newline.pl`
+## 練習問題 `newline.pl`
 
 ```perl
 print "hello! \n\n\n\n\n world!";
@@ -960,9 +960,9 @@ print "$foo\n"; # 1
 ```perl
 my $foo = 1;
 
-print "$foo\n"; # ダブルクォーテーションで囲うと「1」が表示される
+print "$foo\n"; # ダブルクォーテーションで囲うと 1 が表示される
 
-print '$foo\n'; # シングルクォーテーションで囲うと「$foo\n」が表示される
+print '$foo\n'; # シングルクォーテーションで囲うと $foo\n が表示される
 ```
 
 ---
@@ -1037,7 +1037,7 @@ Perl に限らず、プログラムのエラーメッセージのほとんどは
 
 ## スカラー変数
 
-### 練習問題 1 (scalar_practice1.pl)
+### 練習問題 `scalar_practice1.pl`
 
 - 1 から 9 までの好きな数字をスカラー変数に格納し、それらの値を表示するプログラム `scalar_practice1.pl` を作成しよう！
 
@@ -1049,11 +1049,11 @@ Perl に限らず、プログラムのエラーメッセージのほとんどは
 
 ## スカラー変数
 
-### 練習問題 2 (scalar_practice2.pl)
+### 練習問題 `scalar_practice2.pl`
 
 - 好きなプログラミング言語の名前をスカラ変数に格納し、それらの値を表示するプログラム `scalar_practice2.pl` を作成しよう！
 
-  - `$language` や `$lang` など、変数の中に何が入っているのが、推測できる変数名を利用しましょう。
+  - `$language` や `$lang` など、変数の中身が推測できる変数名を利用しましょう。
 
 ---
 
@@ -1317,7 +1317,7 @@ print "$foo\n"; # 8
 
 ## 四則演算
 
-### 練習問題(keisan1.pl)
+### 練習問題 `keisan1.pl`
 
 以下の問題を順番に書いて表示してみよう。
 
@@ -1331,7 +1331,7 @@ print "$foo\n"; # 8
 
 ## 四則演算
 
-### 練習問題(keisan2.pl)
+### 練習問題 `keisan2.pl`
 
 以下の問題を順番に書いて表示してみよう。
 
