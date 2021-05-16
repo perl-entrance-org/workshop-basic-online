@@ -235,8 +235,8 @@ my $first = shift;
 # コマンドライン引数の左から2番目の値を受け取り、変数 $second に代入する
 my $second = shift;
 
-print $first;         # $first を表示する
-print $second;         # $second を表示する
+print 'first is ' . "$first\n";      # $first を表示する
+print 'second is ' . "$second\n";    # $second を表示する
 ```
 
 ---
@@ -361,9 +361,7 @@ Perl では、次のページの 5 つの値が「偽」の値として扱われ
 
 他のプログラミング言語では、<ruby>`true`<rt>トゥルー</rt></ruby> や <ruby>`false`<rt>フォルス</rt></ruby> という単語に 真 または 偽 の意味を持たせたキーワードとして扱うことがあります。
 
-しかし、Perl は `true` や `false` などの文字で真偽値を表すことはできません。
-
-また特別な意味もありません。
+しかし、Perl は `true` や `false` といった、ひと目で真偽値であることがわかる組み込みのキーワードはありません。
 
 あくまで、Perl では先に述べた 5 つの偽値のみが偽、それ以外はすべて真となります。
 
@@ -516,7 +514,7 @@ my $num =  1; # OK
 
 数値の比較に用いる `==` と、代入演算子の `=` を間違えています。
 
-この場合、実行すると以下のエラーが出ます。
+この場合、実行すると以下の警告が出ます。
 
 ```plaintext
 Useless use of numeric eq (==) in void context
@@ -536,7 +534,7 @@ if ($num == 1) { print $num } # OK
 
 条件式に注目してください。代入演算子の `=` と、数値の比較に用いる `==` を間違えています。
 
-この場合、実行すると以下のエラーが出ます。
+この場合、実行すると以下の警告が出ます。
 
 ```perl
 Found = in conditional, should be ==
