@@ -267,7 +267,7 @@ print "Alice loves $season\n";    # Alice loves autumn
 と表示されるようなプログラム `hello_name.pl` を作成しよう。
 
 ```bash
-$ hello_name.pl Taro
+$ perl hello_name.pl Taro
 Hello, Taro!
 ```
 
