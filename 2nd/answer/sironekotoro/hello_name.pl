@@ -2,6 +2,5 @@
 use strict;
 use warnings;
 
-my $str = <STDIN>;
-chomp $str;
-print "$str\n";
+my $name = shift;
+print "Hello, $name!\n";
