@@ -863,7 +863,7 @@ $small < $medium < $large
 
 <a href="https://perldoc.perl.org/perl5320delta#Chained-comparisons-capability">chained comparison</a> = **連鎖比較** とよびます。
 
-Perl 5.30 以前では、連鎖比較 することはできません。下記のようなエラーとなります。
+Perl 5.30 以前では、連鎖比較を利用することはできません。下記のようなエラーとなります。
 
     syntax error at sample.pl line 5, near "$medium <"
 
