@@ -846,7 +846,7 @@ if ( $small < $medium <= $large ) { # Perl 5.30までのバージョンではエ
 上記の例の場合、以下のように解釈されます。
 
 ```perl
-$small < $medium  && $medium <= $large
+$small < $medium && $medium <= $large
 ```
 
 ---
@@ -859,9 +859,11 @@ $small < $medium  && $medium <= $large
 $small < $medium < $large
 ```
 
-Perl 5.30 以前では、上記のように、に 3 つ以上の値を同時に比較することはできません。
+この 3 つ以上の値の比較は Perl 5.32 から導入されました。
 
-下記のようなエラーとなります。
+<a href="https://perldoc.perl.org/perl5320delta#Chained-comparisons-capability">chained comparison</a> = **連鎖比較** とよびます。
+
+Perl 5.30 以前では、連鎖比較 することはできません。下記のようなエラーとなります。
 
     syntax error at sample.pl line 5, near "$medium <"
 
@@ -881,7 +883,13 @@ if ( $small < $medium && $medium <= $large ) {
 }
 ```
 
-`$small < $medium` かつ `$medium <= $large` というように、論理演算子を使って比較することも可能です。
+Perl 5.30 以前のコードでは連鎖比較は利用されていないため、
+
+```perl
+$small < $medium && $medium <= $large
+```
+
+というように、論理演算子を使って 3 つ以上の値の比較を行なっています。
 
 ---
 
