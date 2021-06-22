@@ -26,6 +26,18 @@
 
 ---
 
+## 本日のサポーター紹介
+
+---
+
+## 講義環境について
+
+- Youtube
+- スライド共有ツール
+- Discord
+
+---
+
 # 前回の復習
 
 ---
@@ -170,7 +182,7 @@ print "Perl入学式は開講" . $period . "年です\n"; # Perl入学式は開�
 
 ---
 
-# コマンドライン<br>引数
+# コマンドライン<br><ruby>引数<rt>ひきすう</rt></ruby>
 
 ---
 
@@ -267,7 +279,7 @@ print "Alice loves $season\n";    # Alice loves autumn
 と表示されるようなプログラム `hello_name.pl` を作成しよう。
 
 ```bash
-$ hello_name.pl Taro
+$ perl hello_name.pl Taro
 Hello, Taro!
 ```
 
@@ -880,6 +892,7 @@ if ( $small < $medium && $medium <= $large ) {
 - 数字が 3 の倍数の時に `fizz` と表示する
 - 数字が 5 の倍数の時は `buzz` と表示する
 - 数字が 3 と 5 の倍数の時は `fizzbuzz` と表示する
+- それ以外の数字の時は、その数字を表示する
 
 ```bash
 $ perl fizzbuzz_cmd.pl 3
@@ -888,6 +901,8 @@ $ perl fizzbuzz_cmd.pl 5
 Buzz
 $ perl fizzbuzz_cmd.pl 15
 FizzBuzz
+$ perl fizzbuzz_cmd.pl 4
+4
 ```
 
 ---
