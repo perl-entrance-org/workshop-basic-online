@@ -883,7 +883,7 @@ if ( $small < $medium && $medium <= $large ) {
 }
 ```
 
-Perl 5.30 以前のコードでは連鎖比較は利用されていないため、
+Perl 5.30 以前では、連鎖比較を利用することはできないため、
 
 ```perl
 $small < $medium && $medium <= $large
