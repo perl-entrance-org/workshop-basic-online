@@ -856,7 +856,7 @@ $small < $medium && $medium <= $large
 ### 3 つ以上の値を比較したい場合（ Perl 5.30 以前）
 
 ```perl
-$small < $medium < $large
+$small < $medium <= $large
 ```
 
 この 3 つ以上の値の比較は Perl 5.32 から導入されました。
