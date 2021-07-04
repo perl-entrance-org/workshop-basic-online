@@ -1018,12 +1018,12 @@ sub say {
 ### サブルーチンに複数の引数を渡す
 
 ```perl
-sub add {
+sub plus {
     my ($left, $right) = @_;  # @_ の中に 2, 5が入る
     return $left + $right;    # ↑
 }                             # │
                               # │
-my $result = add(2, 5);       # ┘ add の引数 2, 5
+my $result = plus(2, 5);       # ┘ plus の引数 2, 5
 print $result . "\n";   # 7
 ```
 
@@ -1038,22 +1038,22 @@ print $result . "\n";   # 7
 ### サブルーチン側の引数の受け取り方
 
 ```perl
-sub add {
+sub plus {
                         # @_ を省略した場合
     my $left  = shift;  # @_ の先頭から1つ取り出して変数に入れている
     my $right = shift;  # @_ の先頭から1つ取り出して変数に入れている
     return $left + $right;
 }
-my $result = add(2, 5);
+my $result = plus(2, 5);
 ```
 
 ```perl
-sub add {
+sub plus {
     my $left  = $_[0];  # $_[0] : @_ の最初の要素
     my $right = $_[1];  # $_[1] : @_ の次の要素
     return $left + $right;
 }
-my $result = add(2, 5);
+my $result = plus(2, 5);
 ```
 
 先程の引数の受け取り方は、上記のプログラムと同じ意味になります。
@@ -1065,11 +1065,11 @@ my $result = add(2, 5);
 ### 返り値と return
 
 ```perl
-sub add {
+sub plus {
     my ($left, $right) = @_;
     return $left + $right;  # $left + $right の結果を返す
 }
-my $result = add(2, 5);
+my $result = plus(2, 5);
 print $result . "\n";   # 7
 ```
 
@@ -1110,11 +1110,11 @@ sub is_same {
 ### 複数の返り値
 
 ```perl
-sub add_and_min {
+sub plus_and_min {
     my ( $left, $right ) = @_;
     return ( $left + $right, $left - $right );
 }
-my ( $add, $min ) = add_and_min( 5, 4 );
+my ( $plus, $min ) = plus_and_min( 5, 4 );
 ```
 
 サブルーチンは、このようにリストを返すことで複数個の値を返すこともできます。
@@ -1128,12 +1128,12 @@ my ( $add, $min ) = add_and_min( 5, 4 );
 ## return がない場合の返り値
 
 ```perl
-sub add {
+sub plus {
     my ($left, $right) = @_;
     $left + $right;         # サブルーチンの中で最後に評価された行
 }
 
-my $result = add(2, 5);
+my $result = plus(2, 5);
 print $result . "\n";   # 7
 ```
 
