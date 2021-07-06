@@ -1156,11 +1156,11 @@ sub is_same {
 ### 複数の返り値
 
 ```perl
-sub plus_and_min {
+sub plus_and_minus {
     my ( $left, $right ) = @_;
     return ( $left + $right, $left - $right );
 }
-my ( $plus, $min ) = plus_and_min( 5, 4 );
+my ( $plus, $minus ) = plus_and_minus( 5, 4 );
 ```
 
 サブルーチンは、このようにリストを返すことで複数個の値を返すこともできます。
