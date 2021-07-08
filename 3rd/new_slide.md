@@ -1065,8 +1065,8 @@ sub say {
 
 ```perl
 sub plus {
-    my ($left, $right) = @_;  # @_ の中に 2, 5が入る
-    return $left + $right;    # ↑
+    my ($first, $second) = @_;  # @_ の中に 2, 5が入る
+    return $first + $second;    # ↑
 }                             # │
                               # │
 my $result = plus(2, 5);       # ┘ plus の引数 2, 5
@@ -1086,18 +1086,18 @@ print $result . "\n";   # 7
 ```perl
 sub plus {
                         # @_ を省略した場合
-    my $left  = shift;  # @_ の先頭から1つ取り出して変数に入れている
-    my $right = shift;  # @_ の先頭から1つ取り出して変数に入れている
-    return $left + $right;
+    my $first  = shift;  # @_ の先頭から1つ取り出して変数に入れている
+    my $second = shift;  # @_ の先頭から1つ取り出して変数に入れている
+    return $first + $second;
 }
 my $result = plus(2, 5);
 ```
 
 ```perl
 sub plus {
-    my $left  = $_[0];  # $_[0] : @_ の最初の要素
-    my $right = $_[1];  # $_[1] : @_ の次の要素
-    return $left + $right;
+    my $first  = $_[0];  # $_[0] : @_ の最初の要素
+    my $second = $_[1];  # $_[1] : @_ の次の要素
+    return $first + $second;
 }
 my $result = plus(2, 5);
 ```
@@ -1112,8 +1112,8 @@ my $result = plus(2, 5);
 
 ```perl
 sub plus {
-    my ($left, $right) = @_;
-    return $left + $right;  # $left + $right の結果を返す
+    my ($first, $second) = @_;
+    return $first + $second;  # $first + $second の結果を返す
 }
 my $result = plus(2, 5);
 print $result . "\n";   # 7
@@ -1123,7 +1123,7 @@ print $result . "\n";   # 7
 
 サブルーチンや関数の処理結果のことを **<ruby>返り値<rt>かえりち</rt></ruby>** といいます。
 
-この場合、 `$left + $right` の計算結果が呼び出し元へ返され、 `$result` に格納されます。
+この場合、 `$first + $second` の計算結果が呼び出し元へ返され、 `$result` に格納されます。
 
 ---
 
@@ -1133,13 +1133,13 @@ print $result . "\n";   # 7
 
 ```perl
 sub is_same {
-    my ( $left, $right ) = @_;
-    if ( $left eq $right ) {
-        print "true\n";    # $left と $right が等しければ表示
+    my ( $first, $second ) = @_;
+    if ( $first eq $second ) {
+        print "true\n";    # $first と $second が等しければ表示
         return 1;
     }
     else {
-        print "false\n";    # $left と $right が異なれば表示
+        print "false\n";    # $first と $second が異なれば表示
         return 0;
     }
     print "YOU WILL NEVER SEE IT\n"; # 絶対に表示されない!
@@ -1157,8 +1157,8 @@ sub is_same {
 
 ```perl
 sub plus_and_minus {
-    my ( $left, $right ) = @_;
-    return ( $left + $right, $left - $right );
+    my ( $first, $second ) = @_;
+    return ( $first + $second, $first - $second );
 }
 my ( $plus, $minus ) = plus_and_minus( 5, 4 );
 ```
@@ -1175,15 +1175,15 @@ my ( $plus, $minus ) = plus_and_minus( 5, 4 );
 
 ```perl
 sub plus {
-    my ($left, $right) = @_;
-    $left + $right;         # サブルーチンの中で最後に評価された行
+    my ($first, $second) = @_;
+    $first + $second;         # サブルーチンの中で最後に評価された行
 }
 
 my $result = plus(2, 5);
 print $result . "\n";   # 7
 ```
 
-サブルーチンの中に `return` がない場合、サブルーチンの返り値は最後に評価された処理の結果(この場合、 `$left + $right`の計算結果)を返します。
+サブルーチンの中に `return` がない場合、サブルーチンの返り値は最後に評価された処理の結果(この場合、 `$first + $second`の計算結果)を返します。
 
 値を返すという意図を明確にするため、 `return` は書くようにしましょう。
 
