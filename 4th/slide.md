@@ -593,6 +593,22 @@ $VAR1 = [
 
 ---
 
+## 練習問題（http_response.pl）
+
+以下はあるサービスの応答をハッシュリファレンスにしたものです。
+
+それぞれの項目の key と value を表示してください。
+
+```perl
+my $response = {
+    protocol => 'HTTP/1.1',
+    status   => '200',
+    content  => 'weather forcast'
+};
+```
+
+---
+
 ## 練習問題（use_referance.pl）
 
 以下の表を、配列 @members にハッシュリファレンスを格納して作成しました。各メンバーの名前、 japanese と math の値を合計したものを表示してください。（例：Alice => 150）
