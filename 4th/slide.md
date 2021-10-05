@@ -234,9 +234,9 @@ print "@array"; # name Alice japanese 60 math 90 name Bob japanese 70 math 70 na
 
 ## リファレンスの作り方
 
-### 1. 配列・ハッシュを作り、それをリファレンス化したスカラー変数を作る方法
+### 1. 配列・ハッシュを作り、それをリファレンス化してスカラー変数にする方法
 
-配列・ハッシュをリファレンス化するためには、元の変数に `\（バックスラッシュ）` をつけてスカラーに代入します。
+配列・ハッシュをリファレンス化するためには、元の変数に <ruby>`\`<rt>バックスラッシュ</rt></ruby> をつけてスカラーに代入します。
 
 ```perl
 my @alice_score     = ( 60, 90 );
@@ -256,13 +256,13 @@ my $alice_ref = \%alice;    # バックスラッシュをつけて代入
 
 無名配列の「無名」は配列・ハッシュとしての名を持たない（宣言していない）と考えてください。
 
-- 配列の場合（右辺のリストが `[]` で囲われていることに注意！）
+- 配列の場合（右辺のリストが <ruby>`[ ]`<rt>角かっこ</rt></ruby> で囲われていることに注意！）
 
 ```perl
 my $alice_score_ref     = [ 60, 90 ];
 ```
 
-- ハッシュの場合（右辺のリストが `{ }` で囲われていることに注意！）
+- ハッシュの場合（右辺のリストが <ruby>`{ }`<rt>波かっこ</rt></ruby> で囲われていることに注意！）
 
 ```perl
 my $alice_ref = { name => 'Alice', japanese => 60, math => 90 };
@@ -274,7 +274,7 @@ my $alice_ref = { name => 'Alice', japanese => 60, math => 90 };
 
 ### print だけでは確認できない
 
-リファレンスは配列やハッシュをスカラーにしたものなので、そのまま `print` しても中身を表示することができません。
+リファレンスは配列やハッシュをスカラーにしたものですが、そのまま `print` しても中身を表示することができません。
 
 ```perl
 my @alice = ( 60, 90 );
@@ -321,7 +321,7 @@ $VAR1 = [
 ```perl
 use Data::Dumper;
 
-# 直接ハッシュリファレンスを作成
+# 無名ハッシュを作成
 my $alice_ref = { name => 'Alice', japanese => 60, math => 90 };
 
 print Dumper $alice_ref;
@@ -374,7 +374,7 @@ print Dumper \@array;
 
 ## リファレンスで複雑なデータ構造を作成する
 
-先のプログラムの実行結果です。
+先のプログラムの実行結果です。3 人の名前や成績データを 1 つの配列の中に格納することができました。
 
 ```perl
 $VAR1 = [
@@ -430,14 +430,14 @@ $VAR1 = [
 
 ### 配列リファレンスをデリファレンスする
 
-元の配列に戻すときは、ハッシュリファレンスを `@{ }` で囲みます。
+元の配列に戻すときは、配列リファレンスを `@[ ]` で囲みます。
 
 ```perl
 my @alice_score     = ( 60, 90 );
 my $alice_score_ref = \@alice_score;
 
 # デリファレンスして配列に戻す
-my @alice_score_deref = @{$alice_score_ref};    # リファレンスを @{ } で囲んでいる
+my @alice_score_deref = @{$alice_score_ref};    # リファレンスを @[ ] で囲んでいる
 print $alice_score_deref[0] . "\n";    # 60
 ```
 
@@ -448,7 +448,7 @@ print $alice_score_deref[0] . "\n";    # 60
 
 ### ハッシュリファレンスをデリファレンスする
 
-元の配列に戻すときは、ハッシュリファレンスを `%{ }` で囲みます。
+元のハッシュに戻すときは、ハッシュリファレンスを `%{ }` で囲みます。
 
 ```perl
 my %alice     = ( name => 'Alice', japanese => 60, math => 90 );
@@ -467,7 +467,7 @@ print $alice_deref{name} . "\n";    # Alice
 
 ### 配列リファレンスをデリファレンスせずにデータを扱う
 
-デリファレンスをすることなく、データを取り出すことも可能です。
+アロー記法を用いると、デリファレンスをすることなくデータを取り出すことが可能です。
 
 ```perl
 my @alice_score     = ( 60, 90 );
@@ -497,7 +497,7 @@ print $alice_ref->{name} . "\n";    # Alice
 print ${$alice_ref}{name} . "\n";    # Alice
 ```
 
-アロー記法であれ冗長な書き方であれ、添字 `[0]` や ハッシュの名前 `{name}` など、それぞれの変数に応じた記法を用います。デリファレンスと同様に元データが配列であるかハッシュであるかを意識しておくことが大事です。
+アロー記法でも、添字 `[0]` や ハッシュの名前 `{name}` など、それぞれの変数に応じた記法を用います。デリファレンスと同様に元データが配列であるかハッシュであるかを意識しておくことが大事です。
 
 ---
 
@@ -536,16 +536,9 @@ use Data::Dumper;
 my @alice_score     = ( 60, 90 );
 my $alice_score_ref = \@alice_score;
 
-for my $score (@{$alice_score_ref}){
-    print $score . "\n";
+for my $score ( @{$alice_score_ref} ) {
+    print $score . "\n";    # 60 90
 }
-```
-
-```perl
-$VAR1 = [
-          60,
-          90,
-        ];
 ```
 
 ---
@@ -561,8 +554,8 @@ use Data::Dumper;
 my @alice_score     = ( 60, 90 );
 my $alice_score_ref = \@alice_score;
 
-push @{$alice_score_ref}, 100;  # 配列と同じように扱っている
-print Dumper $alice_score_ref;  # 元の配列の内容も変更されていることに注意
+push @{$alice_score_ref}, 100;    # 配列と同じように扱っている
+print Dumper $alice_score_ref;    # 元の配列の内容も変更されていることに注意
 ```
 
 ```perl
@@ -586,13 +579,13 @@ use Data::Dumper;
 my %alice     = ( name => 'Alice', japanese => 60, math => 90 );
 my $alice_ref = \%alice;
 
-my @keys = keys %{$alice_ref};  # ハッシュと同じように扱っている
-print Dumper \@keys;    # 普通の配列にDumper使うときは \ を付ける
+my @keys = keys %{$alice_ref};    # ハッシュと同じように扱っている
+print Dumper \@keys;              # 普通の配列にDumper使うときは \ を付ける
 ```
 
 ```perl
 $VAR1 = [
-          'japanese',
+          'japanese',   # 元はハッシュなので順不同
           'math',
           'name'
         ];
@@ -602,7 +595,7 @@ $VAR1 = [
 
 ## 練習問題（use_referance.pl）
 
-以下の表をハッシュリファレンスを格納した配列 @members として作成しました。各メンバーの japanese と math の値を合計したものを表示してください。
+以下の表を、配列 @members にハッシュリファレンスを格納して作成しました。各メンバーの名前、 japanese と math の値を合計したものを表示してください。（例：Alice => 150）
 
 |  name   | Japanese | math |
 | ------- | -------- | ---- |
