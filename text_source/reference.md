@@ -46,7 +46,7 @@ Perlの変数として以下の 3 種類について学んできました。
 スカラー変数で頑張る場合（生徒数×3の変数宣言が必要）
 
 ```perl
-my $alice_name      = 'Alice';
+my $alice_name     = 'Alice';
 my $alice_japanese = 60;
 my $alice_math     = 90;
 ```
@@ -67,9 +67,9 @@ my $alice_math     = 90;
 配列で頑張る場合（生徒の数だけ配列の宣言が必要）
 
 ```perl
-my @alice  = ( 'Alice', 60, 90 );
-my @bob    = ( 'Bob',   70, 70 );
-my @carol  = ( 'Carol', 80, 80 );
+my @alice = ( 'Alice', 60, 90 );
+my @bob   = ( 'Bob',   70, 70 );
+my @carol = ( 'Carol', 80, 80 );
 ```
 
 ---
@@ -86,6 +86,8 @@ my @carol  = ( 'Carol', 80, 80 );
 
 
 ハッシュで頑張る場合（配列と同じく生徒の数だけハッシュの宣言が必要）
+
+いずれの場合も、生徒全員の合計点や平均点を出そうと思った時に苦労します。
 
 ```perl
 my %alice  = ( name => 'Alice',  japanese => 60, math => 90 );
@@ -105,7 +107,7 @@ my %charie = ( name => 'Charie', japanese => 80, math => 80 );
 |  Bob    |    70    |  70  |
 |  Charie |    80    |  80  |
 
-このデータは「配列の中にハッシュが入っている」と見ることができます。
+この複雑なデータ構造は、「配列の中にハッシュが入っている」と見ることができます。
 
 ```
 (
@@ -121,9 +123,9 @@ my %charie = ( name => 'Charie', japanese => 80, math => 80 );
 
 ### 複雑なデータ構造
 
-では、このデータ構造をPerlで表現してみます。
+では、このデータ構造をこれまで学んだ範囲で表現してみます。
 
-```
+```perl
 (
     ( name => 'Alice',  japanese => 60, math => 90 ),
     ( name => 'Bob',    japanese => 70, math => 70 ),
@@ -186,7 +188,7 @@ my $alice_score_ref = \@alice_socre;    # バックスラッシュをつけて�
 ```
 
 ```perl
-my %alice = ( name => 'Alice', japanese => 60, math => 90 );
+my %alice     = ( name => 'Alice', japanese => 60, math => 90 );
 my $alice_ref = \%alice;    # バックスラッシュをつけて代入
 ```
 
@@ -201,7 +203,7 @@ my $alice_ref = \%alice;    # バックスラッシュをつけて代入
 - 配列の場合（右辺のリストが <ruby>`[ ]`<rt>角かっこ</rt></ruby> で囲われていることに注意！）
 
 ```perl
-my $alice_score_ref     = [ 60, 90 ];
+my $alice_score_ref = [ 60, 90 ];
 ```
 
 - ハッシュの場合（右辺のリストが <ruby>`{ }`<rt>波かっこ</rt></ruby> で囲われていることに注意！）
@@ -219,15 +221,15 @@ my $alice_ref = { name => 'Alice', japanese => 60, math => 90 };
 リファレンスは配列やハッシュをスカラーにしたものですが、そのまま `print` しても中身を表示することができません。
 
 ```perl
-my @alice = ( 60, 90 );
-my $alice_score_ref = \@alice;    # バックスラッシュをつけて代入
+my @alice           = ( 60, 90 );
+my $alice_score_ref = \@alice;      # バックスラッシュをつけて代入
 
 # 直接ハッシュリファレンスを作成
 my $alice_ref = { name => 'Alice', japanese => 60, math => 90 };
 
-print $alice_score_ref . "\n";   #ARRAY(0x7fc9fa012898)
+print $alice_score_ref . "\n";      #ARRAY(0x7fc9fa012898)
 
-print $alice_ref . "\n";   #HASH(0x7fc9fa00e3b8)
+print $alice_ref . "\n";            #HASH(0x7fc9fa00e3b8)
 ```
 
 リファレンスの中身を確認したいときは、ハッシュの中身を確認するときに利用した `Data::Dumper` モジュールを利用します。
@@ -241,8 +243,8 @@ print $alice_ref . "\n";   #HASH(0x7fc9fa00e3b8)
 ```perl
 use Data::Dumper;
 
-my @alice = ( 60, 90 );
-my $alice_score_ref = \@alice;    # バックスラッシュをつけて代入
+my @alice           = ( 60, 90 );
+my $alice_score_ref = \@alice;      # バックスラッシュをつけて代入
 
 print Dumper $alice_score_ref;
 ```
@@ -271,9 +273,9 @@ print Dumper $alice_ref;
 
 ```perl
 $VAR1 = {
-          'math' => 90,
+          'name' => 'Alice',
           'japanese' => 60,
-          'name' => 'Alice'
+          'math' => 90
         };
 ```
 
@@ -321,9 +323,9 @@ print Dumper \@array;
 ```perl
 $VAR1 = [
           {
-            'math' => 90,
             'japanese' => 60,
-            'name' => 'Alice'
+            'name' => 'Alice',
+            'math' => 90
           },
           {
             'name' => 'Bob',
@@ -331,8 +333,8 @@ $VAR1 = [
             'math' => 90
           },
           {
-            'name' => 'Charie',
             'math' => 90,
+            'name' => 'Charie',
             'japanese' => 60
           }
         ];
@@ -342,7 +344,7 @@ $VAR1 = [
 
 ## 練習問題（make_referance.pl）
 
-1. 以下のデータをリファレンス化してください。1行を無名ハッシュで作成し、そのハッシュリファレンスを格納した配列を作ります。
+1. 以下のデータをリファレンス化してください。各行を無名ハッシュで作成し、そのハッシュリファレンスを格納した配列を作ります。
 
     直接配列内に記述しても、ハッシュリファレンスを配列に格納する方法でも、どちらでも構いません。
 
@@ -352,7 +354,7 @@ $VAR1 = [
 |  Bob    |    70    |  70  |
 |  Charie |    80    |  80  |
 
-2. 作成したデータ構造を `Data::Dumper` モジュールを利用して中身を表示してください。
+2. リファレンス化したデータを `Data::Dumper` モジュールを利用して中身を表示してください。
 
 ---
 
@@ -360,11 +362,11 @@ $VAR1 = [
 
 ### デリファレンス
 
-配列・ハッシュをリファレンス化することで、複雑なデータ構造を作成することができるようになりました。
+配列・ハッシュをリファレンス化することで、「配列の中のハッシュ」「ハッシュのハッシュ」などの複雑なデータ構造を作成し、スカラー変数に格納することができるようになりました。
 
-今度はそのデータ構造からデータを取り出す方法を学んでいきます。
+今度はそのスカラー変数からデータを取り出す方法を学んでいきます。
 
-まずはリファレンス化してスカラー変数にしたデータを元の配列・ハッシュに戻す **デリファレンス** です。
+まずはリファレンス化してスカラー変数にしたデータを、元の配列・ハッシュに戻す **デリファレンス** です。
 
 ---
 
@@ -372,17 +374,16 @@ $VAR1 = [
 
 ### 配列リファレンスをデリファレンスする
 
-元の配列に戻すときは、配列リファレンスを `@[ ]` で囲みます。
+元の配列に戻すときは、配列リファレンスを `@{ }` で囲みます。
 
 ```perl
 my @alice_score     = ( 60, 90 );
 my $alice_score_ref = \@alice_score;
 
 # デリファレンスして配列に戻す
-my @alice_score_deref = @{$alice_score_ref};    # リファレンスを @[ ] で囲んでいる
-print $alice_score_deref[0] . "\n";    # 60
+my @alice_score_deref = @{$alice_score_ref};    # リファレンスを @{ } で囲んでいる
+print $alice_score_deref[0] . "\n";             # 60
 ```
-
 
 ---
 
@@ -439,7 +440,7 @@ print $alice_ref->{name} . "\n";    # Alice
 print ${$alice_ref}{name} . "\n";    # Alice
 ```
 
-アロー記法でも、添字 `[0]` や ハッシュの名前 `{name}` など、それぞれの変数に応じた記法を用います。デリファレンスと同様に元データが配列であるかハッシュであるかを意識しておくことが大事です。
+アロー記法でも、添字 `[0]` や ハッシュの名前 `{name}` など、それぞれの変数に応じた記法を用います。デリファレンスと同様に、元データが配列であるかハッシュであるかを意識しておくことが大事です。
 
 ---
 
@@ -449,7 +450,7 @@ print ${$alice_ref}{name} . "\n";    # Alice
 
 リファレンスから直接データを取り出すこともできますが、リファレンスのデータを更新することも可能です。
 
-ただし、リファレンスのデータを更新すると、リファレンス元のデータにも影響が及びます。注意しておきましょう。
+ただし、リファレンスのデータを更新すると、リファレンス元の変数にも影響が及びます。注意しておきましょう。
 
 ```perl
 my %alice     = ( name => 'Alice', japanese => 60, math => 90 );
@@ -512,7 +513,7 @@ $VAR1 = [
 
 ## リファレンスの利用法
 
-### ハッシュの関数をリファレンスに利用する
+### ハッシュの関数をリファレンスに利用する（`keys`）
 
 デリファレンスしたものは元の配列・ハッシュと同じように扱うことができます。
 
