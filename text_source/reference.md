@@ -536,17 +536,17 @@ $VAR1 = [
 
 ---
 
-## 練習問題（http_response.pl）
+## 練習問題（weather_report.pl）
 
-以下はあるサービスの応答をハッシュリファレンスにしたものです。
+以下は天気予報の応答をハッシュリファレンスにしたものです。
 
 それぞれの項目の key と value を表示してください。
 
 ```perl
-my $response = {
-    protocol => 'HTTP/1.1',
-    status   => '200',
-    content  => 'weather forcast'
+my $content = {
+    publishingOffice => '気象庁',
+    targetArea => '東京都',
+    text  => '　日本海に中心を持つ高気圧が本州付近を覆っています。'
 };
 ```
 
