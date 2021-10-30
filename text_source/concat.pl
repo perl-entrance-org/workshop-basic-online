@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 # usage
-# perl cat.pl title.md header.md hoge.md fuga.md ... footer.md > slide.md
+# perl concat.pl title.md header.md reference.md regex.md footer.md > ../4th/slide.md
 
 while (my $file = shift @ARGV) {
 
