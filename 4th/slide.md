@@ -81,7 +81,7 @@ Perlの変数として以下の 3 種類について学んできました。
 
 例えば以下のようなデータです。　
 
-|  name   | Japanese | math |
+|  Name   | Japanese | Math |
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
@@ -246,7 +246,7 @@ my $alice_score_ref = \@alice_socre;    # バックスラッシュをつけて�
 ```
 
 ```perl
-my %alice = ( name => 'Alice', japanese => 60, math => 90 );
+my %alice     = ( name => 'Alice', japanese => 60, math => 90 );
 my $alice_ref = \%alice;    # バックスラッシュをつけて代入
 ```
 
@@ -261,7 +261,7 @@ my $alice_ref = \%alice;    # バックスラッシュをつけて代入
 - 配列の場合（右辺のリストが <ruby>`[ ]`<rt>角かっこ</rt></ruby> で囲われていることに注意！）
 
 ```perl
-my $alice_score_ref     = [ 60, 90 ];
+my $alice_score_ref = [ 60, 90 ];
 ```
 
 - ハッシュの場合（右辺のリストが <ruby>`{ }`<rt>波かっこ</rt></ruby> で囲われていることに注意！）
@@ -279,15 +279,15 @@ my $alice_ref = { name => 'Alice', japanese => 60, math => 90 };
 リファレンスは配列やハッシュをスカラーにしたものですが、そのまま `print` しても中身を表示することができません。
 
 ```perl
-my @alice = ( 60, 90 );
-my $alice_score_ref = \@alice;    # バックスラッシュをつけて代入
+my @alice           = ( 60, 90 );
+my $alice_score_ref = \@alice;      # バックスラッシュをつけて代入
 
 # 直接ハッシュリファレンスを作成
 my $alice_ref = { name => 'Alice', japanese => 60, math => 90 };
 
-print $alice_score_ref . "\n";   #ARRAY(0x7fc9fa012898)
+print $alice_score_ref . "\n";      #ARRAY(0x7fc9fa012898)
 
-print $alice_ref . "\n";   #HASH(0x7fc9fa00e3b8)
+print $alice_ref . "\n";            #HASH(0x7fc9fa00e3b8)
 ```
 
 リファレンスの中身を確認したいときは、ハッシュの中身を確認するときに利用した `Data::Dumper` モジュールを利用します。
@@ -301,8 +301,8 @@ print $alice_ref . "\n";   #HASH(0x7fc9fa00e3b8)
 ```perl
 use Data::Dumper;
 
-my @alice = ( 60, 90 );
-my $alice_score_ref = \@alice;    # バックスラッシュをつけて代入
+my @alice           = ( 60, 90 );
+my $alice_score_ref = \@alice;      # バックスラッシュをつけて代入
 
 print Dumper $alice_score_ref;
 ```
@@ -331,9 +331,9 @@ print Dumper $alice_ref;
 
 ```perl
 $VAR1 = {
-          'math' => 90,
+          'name' => 'Alice',
           'japanese' => 60,
-          'name' => 'Alice'
+          'math' => 90
         };
 ```
 
@@ -381,9 +381,9 @@ print Dumper \@array;
 ```perl
 $VAR1 = [
           {
-            'math' => 90,
             'japanese' => 60,
-            'name' => 'Alice'
+            'name' => 'Alice',
+            'math' => 90
           },
           {
             'name' => 'Bob',
@@ -391,8 +391,8 @@ $VAR1 = [
             'math' => 90
           },
           {
-            'name' => 'Charie',
             'math' => 90,
+            'name' => 'Charie',
             'japanese' => 60
           }
         ];
@@ -440,7 +440,7 @@ my $alice_score_ref = \@alice_score;
 
 # デリファレンスして配列に戻す
 my @alice_score_deref = @{$alice_score_ref};    # リファレンスを @{ } で囲んでいる
-print $alice_score_deref[0] . "\n";    # 60
+print $alice_score_deref[0] . "\n";             # 60
 ```
 
 ---
@@ -468,7 +468,8 @@ print $alice_deref{name} . "\n";    # Alice
 
 ### 配列リファレンスをデリファレンスせずにデータを扱う
 
-アロー記法を用いると、デリファレンスをすることなくデータを取り出すことが可能です。
+アロー記法を用いると、参照元に対応したシジルをつけることなく、簡易な記法でデータを取り出すことが可能です。
+
 
 ```perl
 my @alice_score     = ( 60, 90 );
@@ -498,7 +499,7 @@ print $alice_ref->{name} . "\n";    # Alice
 print ${$alice_ref}{name} . "\n";    # Alice
 ```
 
-アロー記法でも、添字 `[0]` や ハッシュの名前 `{name}` など、それぞれの変数に応じた記法を用います。デリファレンスと同様に、元データが配列であるかハッシュであるかを意識しておくことが大事です。
+アロー記法でも、配列の添字 `[0]` や ハッシュのキー名 `{name}` など、それぞれの変数に応じた記法を用います。デリファレンスと同様に、元データが配列であるかハッシュであるかを意識しておくことが大事です。
 
 ---
 
@@ -594,17 +595,17 @@ $VAR1 = [
 
 ---
 
-## 練習問題（http_response.pl）
+## 練習問題（weather_report.pl）
 
-以下はあるサービスの応答をハッシュリファレンスにしたものです。
+以下は天気予報の応答をハッシュリファレンスにしたものです。
 
 それぞれの項目の key と value を表示してください。
 
 ```perl
-my $response = {
-    protocol => 'HTTP/1.1',
-    status   => '200',
-    content  => 'weather forcast'
+my $content = {
+    publishingOffice => '気象庁',
+    targetArea => '東京都',
+    text  => '　日本海に中心を持つ高気圧が本州付近を覆っています。'
 };
 ```
 
@@ -678,7 +679,7 @@ my @members = (
 
 Perl は他のプログラミング言語と比べて正規表現が書きやすい言語です。
 
-また、Perl の記述法を利用して正規表現機能を提供しているソフトもあり、これらで提供している正規表現は PCRE(Perl Compatible Regular Expressions) と呼ばれています。
+また、Perl から生まれた有益な正規表現の文法を提供しているソフトもあり、これらで提供している正規表現は PCRE(Perl Compatible Regular Expressions) と呼ばれています。
 
 Perl の正規表現でデータを取得、きれいに整形した後で他のプログラムで利用する、というように、組み合わせて利用されることも多い機能です。
 
@@ -704,7 +705,7 @@ Perl 入学式のみで全て紹介することはできませんが、コード
 
 - **マッチする**
 
-    対象の文字列を、正規表現で表せること。
+    正規表現に合致する文字列を見つけること。
 
 具体性が欠けるのでイメージしづらいと思うのですが、このあと実践して学習していきます。
 
@@ -820,6 +821,8 @@ if ('perl' =~ /p[abcd]rl/){
 ## メタ文字 `[■]` 文字クラス
 
 連続した文字であれば、`[a-e]`のように書くことも可能です。
+
+ただし、ここでいう「連続した文字」とは **文字コード** というコンピュータ上での文字の並びになることに注意してください。
 
 ```perl
 if ('perl' =~ /p[a-e]rl/){
@@ -1031,7 +1034,6 @@ if ('perl girl' =~ /(p..l)/){
 
 複数キャプチャすることも可能で、そのときはマッチした文字列が $1, $2 ... と順番に変数に格納されます。
 
-
 複数キャプチャする時はこのようになります。
 
 ```perl
@@ -1166,18 +1168,18 @@ if ('perl' =~ /(r.by|p.rl)/){
 正規表現の位置によって、マッチするかどうかを判定することも可能です。まずは冒頭からです。
 
 ```perl
-if ('perl' =~ /^p/){    # 冒頭に p があるか？
-    print "match" . "\n";   # こちらが表示される
+if ('perl' =~ /^r/){    # 冒頭に r があるか？
+    print "match" . "\n";
 }else{
-    print "no match" . "\n";
+    print "no match" . "\n";   # こちらが表示される
 }
 ```
 
 ```perl
-if ('ruby' =~ /^p/){
-    print "match" . "\n";
+if ('ruby' =~ /^r/){
+    print "match" . "\n";   # こちらが表示される
 }else{
-    print "no match" . "\n";   # こちらが表示される
+    print "no match" . "\n";
 }
 ```
 
