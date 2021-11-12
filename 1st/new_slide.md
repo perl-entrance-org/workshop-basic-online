@@ -64,7 +64,7 @@
 
 ### 利用するツール
 
-それぞれのツールへのリンクは <a href="https://perl-entrance.connpass.com/event/228086s/" target="_blank">connpass のイベントページ</a>に掲載しています。
+それぞれのツールへのリンクは <a href="https://perl-entrance.connpass.com/event/228086/" target="_blank">connpass のイベントページ</a>に掲載しています。
 
 - 動画の中継：Youtube Live
 
