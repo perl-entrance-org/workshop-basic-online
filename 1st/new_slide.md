@@ -64,7 +64,7 @@
 
 ### 利用するツール
 
-それぞれのツールへのリンクは <a href="https://perl-entrance.connpass.com/event/189331/" target="_blank">connpass のイベントページ</a>に掲載しています。
+それぞれのツールへのリンクは <a href="https://perl-entrance.connpass.com/event/228086s/" target="_blank">connpass のイベントページ</a>に掲載しています。
 
 - 動画の中継：Youtube Live
 
@@ -76,7 +76,7 @@
 
 - コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
 
-- 講義スライド共有：<a href="https://appslideshare.tugougaii.site/slide/Online2020?p=1&c=pre-left&cf=1" target="_blank">スライド同期くん</a>
+- 講義スライド共有：<a href="https://appslideshare.tugougaii.site/slide/Online2021?p=1&c=pre-left&cf=1" target="_blank">スライド同期くん</a>
 
 ---
 
@@ -364,7 +364,7 @@ sample デスクトップ ダウンロード (以下略)
 
 ---
 
-## コマンド集（cd）
+## コマンド集（`cd`）
 
 ```bash
 $ cd sample
@@ -382,7 +382,7 @@ $ pwd
 
 ---
 
-## コマンド集（touch）
+## コマンド集（`touch`）
 
 ```bash
 $ touch sample1 sample2
@@ -395,7 +395,7 @@ sample1 sample2
 
 ---
 
-## コマンド集（rm）
+## コマンド集（`rm`）
 
 ```bash
 $ ls
@@ -412,7 +412,7 @@ sample2
 
 ---
 
-## コマンド集（rmdir）
+## コマンド集（`rmdir`）
 
 ```bash
 $ mkdir del_sample
@@ -432,7 +432,7 @@ $
 
 ---
 
-## コマンド集（cp）
+## コマンド集（`cp`）
 
 ```bash
 $ ls
@@ -449,7 +449,7 @@ sample1 sample2
 
 ---
 
-## コマンド集（mv）
+## コマンド集（`mv`）
 
 ```bash
 $ ls
@@ -466,7 +466,7 @@ sample_text sample2
 
 ---
 
-## コマンド集（start）
+## コマンド集（`start`）
 
 ### [Windowsユーザ向け]
 
@@ -481,7 +481,7 @@ $ start .
 
 ---
 
-## コマンド集（open）
+## コマンド集（`open`）
 
 ### [macOSユーザ向け]
 

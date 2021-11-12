@@ -123,7 +123,7 @@ sample デスクトップ ダウンロード (以下略)
 
 ---
 
-## コマンド集（cd）
+## コマンド集（`cd`）
 
 ```bash
 $ cd sample
@@ -141,7 +141,7 @@ $ pwd
 
 ---
 
-## コマンド集（touch）
+## コマンド集（`touch`）
 
 ```bash
 $ touch sample1 sample2
@@ -154,7 +154,7 @@ sample1 sample2
 
 ---
 
-## コマンド集（rm）
+## コマンド集（`rm`）
 
 ```bash
 $ ls
@@ -171,7 +171,7 @@ sample2
 
 ---
 
-## コマンド集（rmdir）
+## コマンド集（`rmdir`）
 
 ```bash
 $ mkdir del_sample
@@ -191,7 +191,7 @@ $
 
 ---
 
-## コマンド集（cp）
+## コマンド集（`cp`）
 
 ```bash
 $ ls
@@ -208,7 +208,7 @@ sample1 sample2
 
 ---
 
-## コマンド集（mv）
+## コマンド集（`mv`）
 
 ```bash
 $ ls
@@ -225,7 +225,7 @@ sample_text sample2
 
 ---
 
-## コマンド集（start）
+## コマンド集（`start`）
 
 ### [Windowsユーザ向け]
 
@@ -240,7 +240,7 @@ $ start .
 
 ---
 
-## コマンド集（open）
+## コマンド集（`open`）
 
 ### [macOSユーザ向け]
 
