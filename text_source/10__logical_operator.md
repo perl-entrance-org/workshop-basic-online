@@ -108,7 +108,7 @@ if ( $small < $medium <= $large ) { # Perl 5.30までのバージョンではエ
 }
 ```
 
-不等号をはじめ、演算子には[優先順位](https://perldoc.jp/docs/perl/perlop.pod)があります。
+不等号をはじめ、演算子には [優先順位](https://perldoc.jp/docs/perl/perlop.pod) があります。
 
 上記の例の場合、以下のように解釈されます。
 
@@ -128,7 +128,7 @@ $small < $medium <= $large
 
 この 3 つ以上の値の比較は Perl 5.32 から導入されました。
 
-<a href="https://perldoc.perl.org/perl5320delta#Chained-comparisons-capability">chained comparison</a> = **連鎖比較** とよびます。
+<a href="https://perldoc.perl.org/perl5320delta#Chained-comparisons-capability">chained comparison</a> 、 **連鎖比較** とよびます。
 
 Perl 5.30 以前では、連鎖比較を利用することはできません。下記のようなエラーとなります。
 
