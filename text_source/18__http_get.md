@@ -16,13 +16,13 @@
 
 ### Web API と GET / POST
 
-API をホームページの閲覧などで利用する HTTP / HTTPS で利用できるようにしたものが Web API です。
+API をホームページの閲覧などで利用する HTTP / HTTPS 上で利用できるようにしたものが Web API です。
 
 Web API を利用することで、Web サービスが提供している情報をプログラムで利用することができます。
 
-HTTP / HTTP には 様々な種類の通信リクエスト方法（メソッド）がありますが、今回はよく利用される <ruby>GET<rt>ゲット</rt></ruby> メソッド 、 <ruby>POST<rt>ポスト</rt></ruby> メソッド を体験していきます。
+HTTP / HTTPS には 様々な種類の通信リクエスト方法（メソッド）がありますが、今回はよく利用される <ruby>GET<rt>ゲット</rt></ruby> メソッド 、 <ruby>POST<rt>ポスト</rt></ruby> メソッド を体験していきます。
 
-まずは GET メソッド です。GET メソッド は主にインターネットから情報を入手する、表示するために利用されます。
+まずは GET メソッド です。GET メソッドは主にインターネットを介してサーバから情報を受信するために利用されます。
 
 ---
 
@@ -32,9 +32,9 @@ HTTP / HTTP には 様々な種類の通信リクエスト方法（メソッド�
 
 では、早速 Web API を利用してみましょう。
 
-今回は Perl の標準モジュールである <ruby>HTTP::Tiny<rt>エイチティティピー タイニー</rt></ruby> を利用します。
+今回は <ruby>`HTTP::Tiny`<rt>エイチティティピー タイニー</rt></ruby> を利用します。
 
-[HTTP::Tiny - 小さく、シンプルで、正しい HTTP/1.1 クライアント - perldoc.jp](https://perldoc.jp/docs/modules/HTTP-Tiny-0.017/Tiny.pod)
+[HTTP::Tiny - 小さく、シンプルで、正しい HTTP/1.1 クライアント - perldoc.jp](https://perldoc.jp/HTTP::Tiny)
 
 HTTP::Tiny は Web API に限らず、HTTPで提供されているデータを Perl で利用する時に用います。
 
@@ -46,11 +46,24 @@ HTTP::Tiny は Web API に限らず、HTTPで提供されているデータを P
 
 ### モジュール
 
-HTTP::Tiny をはじめ、Perl にはモジュールという機能追加の仕組みがあります。
+`HTTP::Tiny` をはじめ、Perl にはモジュールという機能追加の仕組みがあります。
 
 同様の仕組みは他のプログラム言語にもあり、Ruby であれば <ruby>Gem<rt>ジェム</rt></ruby>、Python ではライブラリ、JavaScript ではモジュール、という名前で提供されています。
 
-Perl のモジュールには Perl インストール時に一緒にインストールされる標準モジュールと、インストールが必要な外部モジュールがあります。
+---
+
+## Web API を使う（GET）
+
+### 標準モジュールと外部モジュール
+
+Perl のモジュールには大きく分けて 2 種類あります。
+
+- 標準モジュール：Perl インストール時に一緒にインストールされる。
+
+- 外部モジュール：インストールが必要。
+
+`HTTP::Tiny` は Perl 5.14 以降に含まれている標準モジュールです。ハッシュのところで学習した `Data::Dumper`
+ も標準モジュールです。
 
 Perl のモジュールは metacpan や GitHub で探すことができます。
 [Search the CPAN - metacpan.org](https://metacpan.org/)
@@ -112,7 +125,7 @@ use HTTP::Tiny;
 
 `use` することで、そのモジュールをプログラムの中で利用できるようになります。
 
-データ表示用にハッシュの回で解説した `Data::Dumper` 、そして先に紹介した `HTTP::Tiny` です。
+データ表示用に `Data::Dumper` 、そして先に紹介した `HTTP::Tiny` です。
 
 ---
 
@@ -192,7 +205,7 @@ print $response->{content};
 
 ## Web API を使う（GET）
 
-### Web API の共通言語 JSON
+### Web API の共通データ形式 JSON
 
 さて、ここから更に `targetArea` の情報を抜き出します。
 
@@ -210,12 +223,12 @@ Perl のハッシュに似た、"キー名"<ruby>:<rt>コロン</rt></ruby>"値"
 
 ## Web API を使う（GET）
 
-### Web API の共通言語 JSON
+### Web API の共通データ形式 JSON
 
 JSON 形式のデータは JavaScript のオブジェクト表記法の一部です。
 軽易で軽量かつ人間にも理解しやすい形式として Web API でよく利用されるようになりました。
 
-Perl が JSON 形式のデータを読み、ハッシュリファレンスなどの Perl のデータ形式に変換するためには、`JSON::PP` モジュールを利用します。
+Perl が JSON 形式のデータを読み、ハッシュリファレンスなどの Perl のデータ形式に変換するためには、標準モジュールの `JSON::PP` モジュールを利用します。
 
 先のプログラムを一部改修します。
 
@@ -237,11 +250,8 @@ my $url
 my $response = HTTP::Tiny->new()->get($url);
 my $content = $response->{content};
 
-my $decoded_content = decode_json($content); #追加
+my $decoded_content = JSON::PP->new->decode($content); #追加
 print $decoded_content->{targetArea};   #追加
-
-# Wide character in print at temp.pl line 20.
-# 東京都
 ```
 
 ---
@@ -253,6 +263,9 @@ print $decoded_content->{targetArea};   #追加
 追加したコードを解説していきます。
 
 `JSON::PP` は、Perl で JSON 形式のデータを扱うモジュールです。
+
+JSON 形式のデータを Perl のハッシュリファレンスにしたり（`decode`）、逆に Perl のハッシュリファレンスを JSON 形式のデータにしたり（`encode`）することができます。
+
 なお、モジュールはプログラムの先頭にまとめて書いておくことが多いです。
 
 ```perl
@@ -267,14 +280,12 @@ use JSON::PP;   # 追加
 
 ### JSON からデータを取り出す
 
-decode_json 関数は引数の JSON 形式のデータを Perl のハッシュリファレンスに変換します。
-
-この時に Perl が内部で文字を扱う「テキスト文字列」に変換していますが、Perl 入学式では後ほど簡単に説明します。
+`JSON::PP->new->decode($content)` で、引数である JSON 形式のデータ `$content` を Perl のハッシュリファレンスに変換しています。
 
 コード中では `$content` をハッシュリファレンスに変換してスカラー変数 `$decoded_content` に代入しています。
 
 ```perl
-my $decoded_content = decode_json($content); #追加
+my $decoded_content = JSON::PP->new->decode($content); #追加
 ```
 
 ---
@@ -291,48 +302,7 @@ print $decoded_content->{targetArea};   #追加
 
 実行結果
 ```perl
-Wide character in print at temp.pl line 22.
 東京都
-```
-
-この時、実行結果に `Wide character in print at temp.pl line 22.` という警告がつきます。
-
----
-
-## Web API を使う（GET）
-
-### Wide character in print at 〜
-
-この警告は、`decode_json` で JSON 形式のデータを Perl のハッシュリファレンスに変更した際の「テキスト文字列」をターミナルにそのまま表示しようとした際に表示されるものです。
-
-この警告は、プログラムから見て「外部」であるインターネット（今回の Web API 含む）やデータベース、ファイルなどから入手・入力したデータをターミナルに表示しようとした時に発せられることが多いものです。
-
-この警告が出た時は、`Encode` モジュールを利用して、ターミナルの環境の文字コードでエンコードして表示します。
-
----
-
-## Web API を使う（GET）
-
-### 警告なしにデータを表示する
-
-お約束の3行を省略したコードです。コピペして実行してみてください。警告なしで「東京都」と出たら成功です。[GitHub Gist](https://gist.github.com/sironekotoro/03923f8676ad1c8c6890b894a8b936ab/40a21a34705e8840de62dd373fafb605dd633144)
-
-```perl
-use Data::Dumper;
-use HTTP::Tiny;
-use JSON::PP;
-use Encode; #追加
-
-my $url
-    = "https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json";
-
-my $response = HTTP::Tiny->new()->get($url);
-my $content = $response->{content};
-my $decoded_content = decode_json($content);
-
-my $target_area = $decoded_content->{targetArea}; # スカラー変数に格納
-
-print encode( 'utf8', $target_area );   # 追加
 ```
 
 ---
@@ -347,7 +317,7 @@ print encode( 'utf8', $target_area );   # 追加
 
 余裕のある人は、URLの `130000` を他の地域の番号に変えて試してみたり、標準入力から番号を入れられるよう改造してみましょう。（例：大阪は `270000`）
 
-http://www.jma.go.jp/bosai/common/const/area.json
+[全拠点のJSON](http://www.jma.go.jp/bosai/common/const/area.json)
 
 ---
 
