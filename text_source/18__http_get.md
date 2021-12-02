@@ -74,7 +74,7 @@ Perl のモジュールは metacpan や GitHub で探すことができます。
 
 ### 気象庁非公式 Web API
 
-今回は気象庁の非公式 Web API を利用してみます。`weather_report.pl` というファイルを作成し、以下のコードをコピーして実行してみてください。[GitHub Gist](https://gist.github.com/sironekotoro/03923f8676ad1c8c6890b894a8b936ab/b22a8eaf2489dfa316dfeaa6aacd5ced47262177)
+今回は気象庁の非公式 Web API を利用してみます。`weather_report.pl` というファイルを作成し、以下のコードをコピーして実行してみてください。[GitHub Gist](https://gist.github.com/sironekotoro/09954632ea3c79f899139e808bbda2ca/3a6bcbb097adfbf9958d8591a58d10c122cf1827)
 
 ```perl
 #!/usr/bin/env perl
@@ -238,10 +238,9 @@ Perl が JSON 形式のデータを読み、ハッシュリファレンスなど
 
 ### JSON からデータを取り出す
 
-お約束の3行を省略したコードです。コピペして実行してみてください。[GitHub Gist](https://gist.github.com/sironekotoro/03923f8676ad1c8c6890b894a8b936ab/7d7328b69b3106bc9e65c551dc0a64af88c1e53a)
+お約束の3行を省略したコードです。コピペして実行してみてください。[GitHub Gist](https://gist.github.com/sironekotoro/09954632ea3c79f899139e808bbda2ca/69c6cfce2c3dc67ccce28ce7c6922892cb408955)
 
 ```perl
-use Data::Dumper;
 use HTTP::Tiny;
 use JSON::PP;   # 追加
 
@@ -315,7 +314,7 @@ print $decoded_content->{targetArea};   #追加
 
 ヒント2：ハッシュの全てのキー名を返す関数は `keys` である。
 
-余裕のある人は、URLの `130000` を他の地域の番号に変えて試してみたり、標準入力から番号を入れられるよう改造してみましょう。（例：大阪は `270000`）
+余裕のある人は、URLの `130000` を他の地域の番号に変えて試してみたり、コマンドライン引数から番号を入れられるよう改造してみましょう。（例：大阪は `270000`）
 
 [全拠点のJSON](http://www.jma.go.jp/bosai/common/const/area.json)
 

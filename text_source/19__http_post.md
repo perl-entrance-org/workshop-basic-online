@@ -123,7 +123,7 @@ my $response = HTTP::Tiny->new()->post( $webhook_url, $options );
 
 ### POST で日本語を投稿する
 
-さて、投稿メッセージに日本語を使いたくなるのは当然のことだと思います。早速やってみましょう。[GitHub Gist](https://gist.github.com/sironekotoro/af7cad7dfe0165727bf46364e6fce541/5e7d24cd5d78295b7a54c3cbe157e3cdc631f07f)
+さて、投稿メッセージに日本語を使いたくなるのは当然のことだと思います。早速やってみましょう。
 
 ```perl
 use HTTP::Tiny;
