@@ -181,7 +181,7 @@ print $greet . "\n";   # Wide character in print at 〜
 
 これで、警告がなくなりました。
 
-```
+```perl
 #!/usr/bin/env perl
 use strict;
 use warnings;
