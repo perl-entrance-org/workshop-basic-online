@@ -1,192 +1,380 @@
-# Perl 入学式
+# Perl 入学式 第 5 回
 
-### 第 5 回 ハッシュの操作 / サブルーチン
+## 〜アプリ作成実践編〜
+
+
 
 ---
 
 ## 諸注意
 
-- 講義中の疑問点は Discord で質問して下さい。サポーターが適宜回答やアドバイスを行える様にスタンバイしています。
+### 会場について
 
-- うまくプログラムが動かない、分からない時は Discord #講義部屋 でサポーターにヘルプを要請してください。Discord のテキスト及び音声チャットにて個別にサポートします。
+- 飲食の可否
 
-- <a href="https://discord.com/" target="_blank">Discord | 会話や交流が楽しめるプラットフォーム</a>
+- 手洗いの場所
 
----
-
-## 今日の流れ
-
-- ハッシュの操作
-
-- サブルーチン
+- 喫煙場所
 
 ---
 
-# ハッシュの操作
+## 諸注意
+
+### 講義の進行について
+
+- 講義中の疑問点
+
+- うまくプログラムが動かない
+
+- 分からない
+
+上記についてはサポーターが適宜回答やアドバイスを Discord でおこないます。
+
+テキストまたは音声チャットにて個別にサポートしますので、気軽に質問してください。
+
+- <a href="https://discord.gg/2QNqVyk" target="_blank">Discord | 会話や交流が楽しめるプラットフォーム</a>
 
 ---
 
-## ハッシュの操作
+## 諸注意
 
-### keys, delete, exists
+### 講義環境について
 
-ハッシュを便利に扱うための関数について説明します。
+- Youtube
 
-- keys
+- スライド共有ツール
 
-  - ハッシュの名前（key）の集合を返す。
-
-- delete
-
-  - ハッシュの要素を削除する。
-
-- exists
-  - ハッシュの要素が存在するかしないかを返す。
+- Discord
 
 ---
 
-## ハッシュの操作
+## 諸注意
 
-### keys
+### 本日のサポーター紹介
 
-`keys` 関数はハッシュの名前（key）を配列にして返します。
 
-```perl
-my %hash = (
-    name  => 'Larry',
-    birth => 1954,
-    lang  => 'Perl',
-);
-my @keys = keys %hash;
-print "@keys\n";    # birth name lang （順不同）
-```
-
-ただし、この `keys` は名前（key）を **順不同、順番が不定** で返します。
-
-ハッシュに書かれた順番で返ってくるとは限りません。
 
 ---
 
-## ハッシュの操作
-
-### 名前（key）を決まった順番で受け取る
-
-名前（key）を同じ順番で受け取りたい場合は、 `sort` 関数を使って並び替えます。
-
-```perl
-my %hash = (
-    name  => 'Larry',
-    birth => 1954,
-    lang  => 'Perl',
-);
-my @keys = keys %hash;      # この時点では順不同
-my @sorted = sort @keys;    # sort で並び替える
-print "@sorted\n";            # birth lang name （常にこの順番）
-```
+# Web API を使う（GET）
 
 ---
 
-## ハッシュの操作
+## Web API を使う（GET）
 
-### 名前（key）を決まった順番で受け取る
+### API とは
 
-値のみを順不同で受け取る `values` 関数もありますが、Perl 入学式のカリキュラムでは使いません。
+<ruby>API<rt>エーピーアイ</rt></ruby> とは Application Programming Interface の略です。
 
-[Perl 入門ゼミ values 関数 - ハッシュのすべての値の取得](https://tutorial.perlzemi.com/blog/20100222126425.html)
-
----
-
-## 練習問題(hash_keys.pl)
-
-次のハッシュの key を全て取り出して、画面に出力してみよう。
-
-```perl
-#!/usr/bin/env perl
-use strict;
-use warnings;
-
-my %users = (
-    'Alice'  => 1,
-    'Bob'    => 2,
-    'Carol'  => 3,
-    'Daiana' => 4,
-);
-```
+>APIの重要な役割は、システム／サービス提供者が公式に仕様（外部仕様）を定義し、管理している各種機能を利用するための操作方法（インタフェース）を提供することである（Wikipedia より）
 
 ---
 
-## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
+## Web API を使う（GET）
+
+### Web API と GET / POST
+
+API をホームページの閲覧などで利用する HTTP / HTTPS 上で利用できるようにしたものが Web API です。
+
+Web API を利用することで、Web サービスが提供している情報をプログラムで利用することができます。
+
+HTTP / HTTPS には 様々な種類の通信リクエスト方法（メソッド）がありますが、今回はよく利用される <ruby>GET<rt>ゲット</rt></ruby> メソッド 、 <ruby>POST<rt>ポスト</rt></ruby> メソッド を体験していきます。
+
+まずは GET メソッド です。GET メソッドは主にインターネットを介してサーバから情報を受信するために利用されます。
 
 ---
 
-## ハッシュの操作
+## Web API を使う（GET）
 
-### delete
+### HTTP::Tiny
 
-`delete` 関数は、指定したハッシュの名前（key）と、それに対応する値（value）を削除します。
+では、早速 Web API を利用してみましょう。
 
-```perl
-my %hash = (
-    name  => 'Larry',
-    birth => 1954,
-    lang  => 'Perl',
-);
-delete $hash{lang};     # lang という名前（key）を指定して削除
-print "$hash{lang}\n";  # Use of uninitialized value ... 警告が表示される
-```
+今回は <ruby>`HTTP::Tiny`<rt>エイチティティピー タイニー</rt></ruby> を利用します。
+
+[HTTP::Tiny - 小さく、シンプルで、正しい HTTP/1.1 クライアント - perldoc.jp](https://perldoc.jp/HTTP::Tiny)
+
+HTTP::Tiny は Web API に限らず、HTTPで提供されているデータを Perl で利用する時に用います。
+
+同様のモジュールとして `LWP（libwww-perl）`, `LWP::Simple`, `Furl` 等があります。
 
 ---
 
-## ハッシュの操作
+## Web API を使う（GET）
 
-### delete
+### モジュール
 
-この例では、最後の行で削除した名前（key）に対応する値（value）を表示しようとしています。
+`HTTP::Tiny` をはじめ、Perl にはモジュールという機能追加の仕組みがあります。
 
-このとき、しっかり「おまじない」を書いていれば、存在しないキーを print しようとしている、と警告してくれます。
-
----
-
-## ハッシュの操作
-
-### exists
-
-`exists` 関数は、指定したハッシュの名前（key）が存在するか確認します。
-
-```perl
-my %hash = (
-    name  => 'Larry',
-);
-if ( exists $hash{name} ) { print "exists\n" }    # exists
-if ( exists $hash{foo} )  { print "exists\n" }    # 何も出てこない
-```
-
-- 名前（key）が存在すれば `1`（真）を返します。
-
-- 名前（key）が存在しなければ `' '`(空文字、偽)を返します。
+同様の仕組みは他のプログラム言語にもあり、Ruby であれば <ruby>Gem<rt>ジェム</rt></ruby>、Python ではライブラリ、JavaScript ではモジュール、という名前で提供されています。
 
 ---
 
-## 練習問題(menu.pl)
+## Web API を使う（GET）
 
-次のハッシュはカフェのメニュー一覧を表しています。
+### 標準モジュールと外部モジュール
 
-1. `icecream` のメニューを削除してみよう。
+Perl のモジュールには大きく分けて 2 種類あります。
 
-2. `icecream` のメニューが削除されていれば、"夏期メニューは終了しました"と画面に表示してみよう。
+- 標準モジュール：Perl インストール時に一緒にインストールされる。
+
+- 外部モジュール：インストールが必要。
+
+`HTTP::Tiny` は Perl 5.14 以降に含まれている標準モジュールです。ハッシュのところで学習した `Data::Dumper`
+ も標準モジュールです。
+
+Perl のモジュールは metacpan や GitHub で探すことができます。
+[Search the CPAN - metacpan.org](https://metacpan.org/)
+
+---
+
+## Web API を使う（GET）
+
+### 気象庁非公式 Web API
+
+今回は気象庁の非公式 Web API を利用してみます。`weather_report.pl` というファイルを作成し、以下のコードをコピーして実行してみてください。[GitHub Gist](https://gist.github.com/sironekotoro/09954632ea3c79f899139e808bbda2ca/3a6bcbb097adfbf9958d8591a58d10c122cf1827)
 
 ```perl
 #!/usr/bin/env perl
 use strict;
 use warnings;
 
-my %menu = (
-    'coffee'   => 380,
-    'icecream' => 200,
-    'salad'    => 600,
-    'cake'     => 400,
-);
+use Data::Dumper;
+use HTTP::Tiny;
+
+my $url
+    = 'https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json';
+
+my $response = HTTP::Tiny->new()->get($url);
+
+print Dumper $response;
 ```
+
+---
+
+## Web API を使う（GET）
+
+### 気象庁非公式 Web API
+
+アクセスに成功すると、ターミナルに東京地方の天気予報といくつかの情報が表示されます。
+
+アクセスがうまくいかなかった方は、エラーメッセージを Discord に貼り付けるなどして、サポーターへ報告をお願いします。
+
+---
+
+## Web API を使う（GET）
+
+### 気象庁非公式 Web API
+
+では、コードを解説します。1 〜 3 行目までは毎回のお約束です。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+```
+
+次に、今回利用するモジュールを `use` します。
+
+```perl
+use Data::Dumper;
+use HTTP::Tiny;
+```
+
+`use` することで、そのモジュールをプログラムの中で利用できるようになります。
+
+データ表示用に `Data::Dumper` 、そして先に紹介した `HTTP::Tiny` です。
+
+---
+
+## Web API を使う（GET）
+
+### 気象庁非公式 Web API
+
+スカラー変数 `$url` にはアクセス先の URL を代入します。
+
+```perl
+my $url
+    = 'https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json';
+```
+
+この URL に対し、HTTP::Tiny が GET でアクセスして応答をスカラー変数 `$response` に格納します。
+
+```perl
+my $response = HTTP::Tiny->new()->get($url);
+```
+
+最後に、 `$response` を Data::Dumper の Dumper 関数で表示しています。
+
+```perl
+print Dumper $response;
+```
+
+---
+
+## Web API を使う（GET）
+
+### 気象庁非公式 Web API の応答を取り出す
+
+`Dumper` しただけでも、人間であれば必要な情報を取り出すことが可能です。
+
+しかし、プログラムの場合には Web API の応答から必要な部分だけを取り出すための工程が必要です。
+
+今回は Web API からの応答のうち、地域名を取り出してみます。地域名は `content` 内の `targetArea` になります。
+
+---
+
+## Web API を使う（GET）
+
+### 気象庁非公式 Web API の応答を取り出す
+
+ところで、先の Web API にアクセスするコードの最後で `Dumper` を利用して中身を見ていました。
+
+この `Dumper` を削除し、 `$response` をそのまま `print` してみると以下のように表示されます。
+
+```bash
+$ perl weather_report.pl
+HASH(0x7fb4102d11c0)
+```
+
+この `$response` はハッシュリファレンスであることがわかります。
+
+そのうち、`Dumper` を見ただけでわかったり、あるいはモジュールのドキュメントをみてわかるようになります。
+
+---
+
+## Web API を使う（GET）
+
+### 気象庁非公式 Web API の応答を取り出す
+
+さて、改めて `Dumper` 時の応答を見ると、ハッシュリファレンス `$response` の キー名 `content` に今回ほしいデータがあります。
+
+まず、`content` の部分だけを表示してみましょう。
+
+ハッシュリファレンスからキー名を指定して表示するには、アロー記法を使って<ruby>{ }<rt>波かっこ</rt></ruby>でアクセスするのでした。
+
+```perl
+print $response->{content};
+```
+
+これで、 `content` だけが表示されるようになりました。
+
+---
+
+## Web API を使う（GET）
+
+### Web API の共通データ形式 JSON
+
+さて、ここから更に `targetArea` の情報を抜き出します。
+
+この `content` の中身を抜粋すると、以下のようになっています。
+
+```json
+"publishingOffice":"気象庁","targetArea":"東京都", ...
+```
+
+Perl のハッシュに似た、"キー名"<ruby>:<rt>コロン</rt></ruby>"値", "キー名":"値", というデータ構造になっています。
+
+これは Web API でよく利用される <ruby>JSON<rt>ジェイソン</rt></ruby> 形式のデータです。
+
+---
+
+## Web API を使う（GET）
+
+### Web API の共通データ形式 JSON
+
+JSON 形式のデータは JavaScript のオブジェクト表記法の一部です。
+軽易で軽量かつ人間にも理解しやすい形式として Web API でよく利用されるようになりました。
+
+Perl が JSON 形式のデータを読み、ハッシュリファレンスなどの Perl のデータ形式に変換するためには、標準モジュールの `JSON::PP` モジュールを利用します。
+
+先のプログラムを一部改修します。
+
+---
+
+## Web API を使う（GET）
+
+### JSON からデータを取り出す
+
+お約束の3行を省略したコードです。コピペして実行してみてください。[GitHub Gist](https://gist.github.com/sironekotoro/09954632ea3c79f899139e808bbda2ca/69c6cfce2c3dc67ccce28ce7c6922892cb408955)
+
+```perl
+use HTTP::Tiny;
+use JSON::PP;   # 追加
+
+my $url
+    = "https://www.jma.go.jp/bosai/forecast/data/overview_forecast/130000.json";
+my $response = HTTP::Tiny->new()->get($url);
+my $content = $response->{content};
+
+my $decoded_content = JSON::PP->new->decode($content); #追加
+print $decoded_content->{targetArea};   #追加
+```
+
+---
+
+## Web API を使う（GET）
+
+### JSON からデータを取り出す
+
+追加したコードを解説していきます。
+
+`JSON::PP` は、Perl で JSON 形式のデータを扱うモジュールです。
+
+JSON 形式のデータを Perl のハッシュリファレンスにしたり（`decode`）、逆に Perl のハッシュリファレンスを JSON 形式のデータにしたり（`encode`）することができます。
+
+なお、モジュールはプログラムの先頭にまとめて書いておくことが多いです。
+
+```perl
+use Data::Dumper;
+use HTTP::Tiny;
+use JSON::PP;   # 追加
+```
+
+---
+
+## Web API を使う（GET）
+
+### JSON からデータを取り出す
+
+`JSON::PP->new->decode($content)` で、引数である JSON 形式のデータ `$content` を Perl のハッシュリファレンスに変換しています。
+
+コード中では `$content` をハッシュリファレンスに変換してスカラー変数 `$decoded_content` に代入しています。
+
+```perl
+my $decoded_content = JSON::PP->new->decode($content); #追加
+```
+
+---
+
+## Web API を使う（GET）
+
+### JSON からデータを取り出す
+
+次の行で、ハッシュリファレンスのキー名 `targetArea` を指定して `print` します。
+
+```perl
+print $decoded_content->{targetArea};   #追加
+```
+
+実行結果
+```perl
+東京都
+```
+
+---
+
+## 練習問題 `weather_report_all.pl`
+
+では、先のコードを改造して、`decoded_content` の全ての情報を表示してみましょう。
+
+ヒント1：`decoded_content` はハッシュリファレンスである。
+
+ヒント2：ハッシュの全てのキー名を返す関数は `keys` である。
+
+余裕のある人は、URLの `130000` を他の地域の番号に変えて試してみたり、コマンドライン引数から番号を入れられるよう改造してみましょう。（例：大阪は `270000`）
+
+[全拠点のJSON](http://www.jma.go.jp/bosai/common/const/area.json)
 
 ---
 
@@ -194,70 +382,558 @@ my %menu = (
 
 ---
 
-## ハッシュの操作
+## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（5 〜 10 分）
 
-### 添字には変数が利用可能
-
-ハッシュの名前（key）は文字列が入ったスカラー変数でも指定可能です。
-
-```perl
-my %hash = (
-    name  => 'Larry',
-    birth => 1954,
-    lang  => 'Perl',
-);
-my $key = 'lang';
-print $hash{$key};    # Perl
-```
-
-- `{foo}` であれば foo という文字列が名前（key）となります。
-
-- `{$foo}` であればスカラー変数 `$foo` に代入された文字列が名前（key）となります。
 
 ---
 
-## ハッシュの操作
-
-### ハッシュのすべての要素を処理する
-
-`keys` 関数は配列を返します。これを for 文と組み合わせて、ハッシュのすべての要素を処理することができます。
-
-```perl
-my %hash = (
-    name  => 'Larry',
-    birth => 1954,
-    lang  => 'Perl',
-);
-
-for my $key ( keys %hash ) {
-    my $value = $hash{$key};
-    print "$key is $value\n";
-}
-```
-
-どのような結果になるでしょうか？
+# Web API を使う（POST）
 
 ---
 
-## 練習問題（menu_print.pl）
+## Web API を使う（POST）
 
-以下のハッシュをコピペして利用してください。ハッシュのデータを全て `"<<商品名>> の価格は <<金額>> 円です。"` の形式で出力してみよう。
+### POST
 
-出力する順番は商品名を ABC 順(昇順)で出力しよう。また、1 品目毎に改行して見やすく出力しよう。
+GET メソッドは主にインターネットを介してサーバから情報を受信するために利用されます。
+
+それに対し、POST メソッドはインターネットを介して情報を送信するために利用します。Web上のフォームを利用して送信したり、画像のアップロードなどに利用されます。
+
+今回は Perl 入学式で利用している Discord にプログラムから書き込んでみます。
+
+---
+
+## Web API を使う（POST）
+
+### Discord から ウェブフックURL を入手する
+
+Discord に POST するためには URL が必要です。Discord ではこの URL を「ウェブフックURL」と呼んでいます。
+
+1. Discord の #webhook実習室 をクリックし、すぐ右にある歯車マーク ⚙ をクリックする
+
+1. 左側のメニューから「連携サービス」をクリックし、右側の「ウェブフック」をクリックする
+
+1. 「新しいウェブフック」ボタンをクリックする
+
+1. 名前を `Spidey Bot` から `（受講生名） Bot` に変更する
+
+1. 「ウェブフックURL」ボタンを押してURLをコピーし、画面最下部にある「変更を保存する」ボタンを押す。
+
+---
+
+## Web API を使う（POST）
+
+### POST で投稿する
+
+現在、手元のパソコンのクリップボードには Discord のウェブフックURL が保存されています。
+
+この ウェブフックURL に投稿したいデータを付与して送信します。
+
+POSTで投稿する時は、投稿先の要求に備えた設定を行う必要があります。Discord の場合には以下のドキュメントが参考になります。
+
+- [タイトル: Webhooksへの序章](https://support.discord.com/hc/ja/articles/228383668-%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB-Webhooks%E3%81%B8%E3%81%AE%E5%BA%8F%E7%AB%A0)
+
+- [Execute Webhook](https://discord.com/developers/docs/resources/webhook#execute-webhook)
+
+
+---
+
+## Web API を使う（POST）
+
+### POST で投稿する
+
+以下のコードが Discord に送信するためのプログラムです。`discord_webhook.pl` という名前で保存し、先に発行したウェブフックURL をスカラー変数 $webhook_url に代入するよう右辺に貼り付けて実行してみましょう。[GitHub Gist](https://gist.github.com/sironekotoro/af7cad7dfe0165727bf46364e6fce541/72095ad5914cecb8d9fceb17592b693c5471e4fe)
+
+```perl
+use HTTP::Tiny;
+use JSON::PP;
+
+my $webhook_url = 'ここに貼り付ける';
+
+my $options = {
+    headers => { 'Content-Type' => 'application/json'},
+    content => JSON::PP->new()->encode({ content => 'Hello, Discord!' }),
+};
+
+my $response = HTTP::Tiny->new()->post( $webhook_url, $options );
+```
+
+Discord の `#webhook実習室` に書き込みされれば成功です。
+
+---
+
+## Web API を使う（POST）
+
+### POST で投稿する
+
+では、コードの解説です。
+
+POSTで投稿する時は、投稿先の要求に備えた設定を行う必要があります。それが以下の部分です。
+
+HTTP で通信する際のヘッダ情報 `headers` に `'Content-Type' => 'application/json'` を指定しています。
+
+投稿する本文 `content` はハッシュリファレンスを `JSON::PP->new()->encode` で JSON 形式にしています。
+
+```perl
+my $options = {
+    headers => { 'Content-Type' => 'application/json'},
+    content => JSON::PP->new()->encode( 'Hello, Discord!' ),
+};
+```
+
+---
+
+## Web API を使う（POST）
+
+### POST で投稿する
+
+先の投稿先の要求に備えた設定ですが、最初は公式ドキュメントなどから読み取るのは難しいかもしれません。
+
+そういった時は、他の言語での実装やブログ、Qiita などの記事も参考になります。Perl入学式の Discord チャンネルで聞いてみるのも良いでしょう。
+
+---
+
+## Web API を使う（POST）
+
+### POST で投稿する
+
+最後の行で、投稿先の要求に備えた設定であるハッシュリファレンス `$option` を添えて `HTTP::Tiny` で通信します。
+
+```perl
+my $response = HTTP::Tiny->new()->post( $webhook_url, $options );
+```
+
+この `$response` の中身は HTTP ステータスコードや通信日時などの情報が入っています。`Data::Dumper` などで中身を表示してみましょう。
+
+
+---
+
+## Web API を使う（POST）
+
+### POST で日本語を投稿する
+
+さて、投稿メッセージに日本語を使いたくなるのは当然のことだと思います。早速やってみましょう。
+
+```perl
+use HTTP::Tiny;
+use JSON::PP;
+
+my $webhook_url = 'ここに貼り付ける';
+
+my $options = {
+    headers => { 'Content-Type' => 'application/json'},
+    content => JSON::PP->new()->encode({ content => 'こんにちは！' }), #　日本語で挨拶
+};
+
+my $res = HTTP::Tiny->new()->post( $webhook_url, $options );
+```
+
+---
+
+## 練習問題 `webhook.pl`
+
+先に作成した気象庁 Web API のコードを利用して、明日の天気予報などを Discord の `#webhook実験室` に投稿してみましょう。
+
+---
+
+## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
+
+---
+
+## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（5 〜 10 分）
+
+
+---
+
+# コラム：YAPC::Japan::Online 2022年03月04日 〜 05 日開催！
+
+---
+
+## コラム：YAPC::Japan::Online 2022年03月04日 〜 05 日開催！
+
+年に一度、Perl のお祭りが開かれます。それが YAPC::Japan です。
+
+来年 3 月にオンラインでの開催が告知されました。
+
+YAPC::Japan::Online 2022の開催が決定しました - YAPC::Japan 運営ブログ
+https://blog.yapcjapan.org/entry/yapc-japan-online-2022-is-comming-soon
+
+---
+
+## コラム：YAPC::Japan::Online 2022年03月04日 〜 05 日開催！
+
+このコロナ禍のなかで、Perl 使いである <ruby>Perl Monger<rt>パール モンガー</rt></ruby>達はどう過ごしていたのか？
+
+また Perl が企業やサービスの中でどのように息づいているのか？を知る良い機会です。
+
+ぜひ参加ください！
+
+申し込み開始の際には、Perl 入学式公式 Twitter や Discord などでも告知します。
+
+
+
+---
+
+# Perl と日本語
+
+---
+
+## Perl と日本語
+
+これまで、Perl でプログラムの基礎を学習してきました。
+
+Perl を学習する上での最初の大きな壁はリファレンスですが、それと共に立ち塞がるのが日本語です。
+
+ここからは Perl入学式 での学習環境（linux/mac/msys2）を前提に学習していきます。
+
+---
+
+## Perl と日本語
+
+### プログラム中の日本語
+
+早速試してみましょう。`length` 関数は引数の文字数を返します。
+
+半角文字列 `hello` であれば、 5 と返します。
 
 ```perl
 #!/usr/bin/env perl
 use strict;
 use warnings;
 
-my %menu = (
-    'coffee'   => 380,
-    'tea'      => 380,
-    'sandwich' => 800,
-    'icecream' => 200,
-    'salada'   => 600,
-    'cake'     => 400,
-);
+my $greet = 'hello';
+
+print 'length: ' . length($greet) . "\n";   # 5
+```
+
+[Perlの組み込み関数 length の翻訳 - perldoc.jp](https://perldoc.jp/func/length)
+
+---
+
+## Perl と日本語
+
+### プログラム中の日本語
+
+しかし、日本語で試すと意図しない結果になります。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $greet = 'こんにちは';
+
+print 'length: ' . length($greet) . "\n";   # 15
+```
+
+---
+
+## Perl と日本語
+
+### バイト列（バイナリ文字列）
+
+これは、Perl が 'こんにちは' という日本語の文字列を、人間が読むように「5 文字の平仮名」とは認識しないためです。
+
+Perl は入力、プログラム中の文字列、出力を **バイト列（バイナリ文字列）** として扱います。
+
+この 'こんにちは' という文字列は Perl からは以下のような16進数の連なりとして見えています。
+
+`E3 81 93 E3 82 93 E3 81 AB E3 81 A1 E3 82 AF`
+
+このため、`length` 関数は 15 文字と文字数を返したのです。
+
+---
+
+## Perl と日本語
+
+### テキスト文字列
+
+プログラム中にある「こんにちは」という文字列をひらがな 5 文字として認識するためには、`use utf8` を利用します。
+
+この `use utf8` によって、Perl はバイト列（バイナリ文字列）を、 **テキスト文字列** として扱い、書いてあるままに解釈します。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use utf8;
+
+my $greet = 'こんにちは';
+
+print 'length: ' . length($greet) . "\n";   # 5
+```
+
+---
+
+## Perl と日本語
+
+### `use utf8` がいらない場合
+
+プログラムは半角英語と数字、記号の組み合わせで書かれています。
+
+正規表現風に書くと、文字は `a-zA-Z` で 26 文字 * 2 で 52 文字。これに数字が `0-9` で 10 文字、`+-/%\?=$@% .,` などの記号が数十種類あります。
+
+これらは 2 桁の 16 進数（ 1 バイト）で表される 256 個の範囲で割り当てられています。一例を挙げるとこのような感じです。
+
+```perl
+a => 61 # 16進数の61
+z => 7a # 16進数の7a
+```
+
+このため、英数字と記号だけでプログラムを書いている場合は、`use utf8` をしなくても、問題はありません。
+
+---
+
+## Perl と日本語
+
+### `use utf8` が必要な場合
+
+しかし、1 バイトで表現できる 256 個の空間では、膨大な数の日本語（ひらがな、カタカナ、漢字）を表現するに足りません。
+
+このため、日本語 1 文字に複数のバイトを割り当てることで日本語を処理することにしました。このルールが **エンコーディング** と呼ばれるものです。
+
+```perl
+こ => E3 81 93
+ん => E3 82 93
+に => E3 81 AB
+ち => E3 81 A1
+は => E3 82 AF
+```
+
+`use utf8` を使うことで、Perl はプログラムに書かれている文字が `utf8` エンコード であることを前提に文字を処理するようになります。
+
+---
+
+
+## Perl と日本語
+
+### 入力された日本語を正しく扱う
+
+コマンドライン引数から「こんにちは」と入力した時も同様の問題が発生します。
+
+`use utf8` を使うことで、Perl はプログラムに書かれた文字をテキスト文字列として解釈します。しかし、今回はコマンドライン引数から入力されるバイト列（バイナリ文字列）なので効果がありません。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use utf8; # あってもなくても同じ
+
+my $input = shift @ARGV;
+
+print 'length: ' . length($input) . "\n"; # 引数に日本語を入れるとカウント失敗
+```
+
+---
+
+## Perl と日本語
+
+### 入力された日本語を正しく扱う
+
+コマンドライン引数から入力されたバイト列（バイナリ文字列）をテキスト文字列にするには <ruby>`Encode`<rt>エンコード</rt></ruby> モジュールの <ruby>decode<rt>デコード</rt></ruby> を使います。
+
+これで、正しく日本語入力を受け取ることができました。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use Encode;     # 追加
+
+my $input = shift @ARGV;
+my $decoded_input = decode('utf8', $input); # utf8 で デコードする
+
+print 'length: ' . length($decoded_input) . "\n";
+```
+
+---
+
+## Perl と日本語
+
+### 出力する日本語を正しく扱う
+
+これまで、「プログラム中に日本語が書いてある場合」「日本語の入力を受け付ける場合」の２つのパターンを学んできました。
+
+最後は「プログラムで処理した日本語を出力する場合」です。
+
+---
+
+## Perl と日本語
+
+### 出力する日本語を正しく扱う
+
+`use utf8` を使った以下のプログラムで、日本語が代入されている `$greet` をそのまま `print` すると警告が出ます。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use utf8;
+
+my $greet = 'こんにちは';
+
+print 'length: ' . length($greet) . "\n";   # 5
+print $greet . "\n";   # Wide character in print at 〜
+```
+
+---
+
+## Perl と日本語
+
+### 出力する日本語を正しく扱う
+
+これは `use utf8` することでテキスト文字列になった 'こんにちは' （を代入した `$greet`）を、テキスト文字列のまま表示しようとしたためです。
+
+> Perl は入力、プログラム中の処理、出力をこの**バイト列（バイナリ文字列）**で扱います。
+
+
+---
+
+## Perl と日本語
+
+### 出力する日本語を正しく扱う
+
+入力を受け取った後にデコードをしたように、出力する前に Encode モジュールの <ruby>encode<rt>エンコード</rt></ruby> を行うことで、対象の文字列をバイト列（バイナリ文字列）に変換できます。
+
+これで、警告がなくなりました。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use utf8;
+use Encode; # 追加
+
+my $greet = 'こんにちは';
+
+print 'length: ' . length($greet) . "\n";   # 5
+print encode('utf8', $greet) . "\n";        # utf8 でエンコード こんにちは
+```
+
+---
+
+## Perl と日本語
+
+### 日本語の入出力まとめ
+
+今まで見てきた通り、Perl の日本語処理は以下のようになります。
+
+1. プログラム中に日本語を書いたり、日本語を対象にした正規表現などを書くときは `use utf8` してバイト列（バイナリ文字列）をテキスト文字列にする。
+
+2. コマンドライン引数などで日本語の入力を受け付けて、それを 1 のような加工や、`use utf8` した日本語との比較をする場合には、 `decode` してバイト列（バイナリ文字列）をテキスト文字列にする。
+
+3. 上記 1, 2 のような処理をした文字列を出力するときは、 `encode` してテキスト文字列をバイト列（バイナリ文字列）にする。
+
+---
+
+## Perl と日本語
+
+### 日本語の入出力まとめ
+
+日本語を入出力したり、単純な比較のみであれば、`use utf8` は不要です。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $input = shift @ARGV;    # バイト列（バイナリ文字列）で受け取る
+
+if ($input eq 'こんにちは'){ #  バイト列（バイナリ文字列）のまま比較する
+    print "同じ文字列です";    # バイト列（バイナリ文字列）を出力する。
+}else{
+    print "違う文字列です";    # バイト列（バイナリ文字列）を出力する。
+}
+```
+
+---
+
+## Perl と日本語
+
+### 日本語の入出力まとめ
+
+しかし、テキストで学習した `length` や、以下のような日本語を対象にした正規表現を利用する場合には、エンコードの処理が必要です。
+
+```perl
+my $input = shift @ARGV;    # バイト列（バイナリ文字列）で受け取る
+
+if ($input =~ /^(.)/ ){ # バイト列（バイナリ文字列）のまま正規表現！
+                        # 正規表現 ^(.) で先頭の 1 文字をキャプチャする
+                        # でも、decode していないから・・・？
+
+    print "先頭の文字は $1 です";    # バイト列（バイナリ文字列）を出力する。
+}
+```
+
+---
+
+## Perl と日本語
+
+### 練習問題 `greet_and_length.pl`
+
+以下のプログラムはコマンドライン引数に名前を入力すると、挨拶と文字数を表示するプログラムです。
+
+これを改修して、コマンドライン引数に日本語を入力しても、正しく表示や文字数カウントができるようにしてください。`print` 文内の `$input` は各自で設定した変数に置き換えてください。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use utf8;
+
+my $input = shift @ARGV;
+
+print 'こんにちは！' . $input . "さん。\n";
+print 'あなたの名前は' . length($input) . "文字です。\n";
+```
+
+---
+
+## Perl と日本語
+
+### 練習問題 `first_and_last_letter.pl`
+
+以下のプログラムはコマンドライン引数に文字列を入力すると、先頭の文字と末尾の文字を教えてくれるプログラムです。
+
+これを改修して、コマンドライン引数に日本語を入力しても、正しく表示ができるようにしてください。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $input = shift @ARGV;    # バイト列（バイナリ文字列）で受け取る
+
+if ($input =~ /^(.).*(.)$/){   # バイト列のまま正規表現！
+                               # 入力された文字の先頭 1 字と末端 1 字をキャプチャ
+    print "$1 ではじまって $2 で終わります";
+    # バイト列（バイナリ文字列）を出力する
+}
+```
+
+---
+
+## Perl と日本語
+
+### 練習問題 `use_utf8.pl`
+
+以下のプログラムはコマンドライン引数に `こんにちは` と入力しても、同じ文字列とは判定されません。また、`Wide character in print at 〜` の警告も表示されます。
+
+これを `use utf8;` は残したまま改修して、正しく判定され、警告も出ないようにしてください。
+
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use utf8;   # use utf8 しているので、プログラムに書かれているのはテキスト文字列
+
+my $input = shift @ARGV;    # バイト列（バイナリ文字列）で受け取る
+
+if ($input eq 'こんにちは'){ #  バイト列（バイナリ文字列）とテキスト文字列を比較？
+    print "同じ文字列です";    # テキスト文字列を出力する。
+}else{
+    print "違う文字列です";    # テキスト文字列を出力する。
+}
 ```
 
 ---
@@ -266,494 +942,21 @@ my %menu = (
 
 ---
 
-## 練習問題（hash_func.pl）
+## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（5 〜 10 分）
 
-以下のハッシュをコピペして利用してください。
-
-```perl
-my %hash = (
-    name  => 'Larry',
-    birth => 1954,
-    lang  => 'Perl',
-);
-```
-
-1. ハッシュに以下の要素を追加してください。
-   - 名前（key）: software
-   - 値（value）: patch
-
----
-
-## 練習問題（hash_func.pl）
-
-以下のハッシュをコピペして利用してください。
-
-2. `keys` 関数を使って, `%hash` の名前（key）をすべて出力してください。
-
-3. `delete` 関数を使って, 1 で使ったハッシュから birth の要素を削除してください。
-
----
-
-## 練習問題（hash_func2.pl）
-
-１つ前の練習問題で作成した `hash_func.pl` を利用します。
-
-`exists` 関数を使って、`name`, `birth`, `lang`, `software` の各要素が存在するか確認してください。`名前（key）`は各要素の key 名が入るものとします。
-
-- 存在している場合は `名前（key） exists.` と表示する。
-
-- 存在しない場合は `名前（key） does not exist.` と表示しする。
-
----
-
-## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
-
----
-
-# サブルーチン
-
----
-
-## サブルーチン
-
-### サブルーチンとは?
-
-プログラムの中で、意味や内容がまとまっている作業をひとかたまりにしたものを **サブルーチン** と呼びます。
-
-Perl におけるサブルーチンは、「関数」とほぼ同義です。
-
----
-
-## サブルーチン
-
-### サブルーチンと組み込み関数
-
-Perl には、これまで使ってきた `print` や `join` など、Perl が提供する関数(組み込み関数)が用意されています。
-
-サブルーチンを使うことで、 `print` や `join` のように、「特定の処理を行うプログラム」をひとかたまりにして、 簡単に呼ぶことが出来るようになります。
-
----
-
-## サブルーチン
-
-### サブルーチンの定義
-
-それでは、早速サブルーチンを定義していきましょう。
-
-今回は、末尾に自動的に改行(`\n`)を付与しながら文字列を表示する `say` というサブルーチンを定義してみます。
-
----
-
-## サブルーチン
-
-### サブルーチンの定義
-
-```perl
-sub say {               # -┐
-    my $str = shift @_; #  │ サブルーチン say を
-    print "$str\n";     #  │ 定義しているところ
-}                       # -┘
-say("hello, world!"); # hello, world!
-```
-
-Perl でサブルーチンを定義する為には、以下のように書きます。
-
-定義時に末尾に `;` は不要です。
-
-```perl
-sub サブルーチン名 { ... }
-```
-
-それでは、詳しく見て行きましょう。
-
----
-
-## サブルーチン
-
-### サブルーチンの命名規則
-
-```perl
-sub say { ... }
-```
-
-- サブルーチン名として使える文字は以下です。
-
-  - 大文字・小文字の英数字
-  - アンダースコア(`_`)
-
-- ただし、サブルーチン名の先頭文字には以下の制限があります。
-  - 英文字
-  - `_`
-
-これは変数名と同じルールです。
-
----
-
-## サブルーチン
-
-### Perl におけるサブルーチンの命名規則
-
-```perl
-sub say_hello_world { ... }
-
-sub say_good_morning { ... }
-```
-
-複数の単語でサブルーチン名を構築する時は、このように単語間を `_` で繋げる場合が多いです。
-
-このような `_` で単語をつなげる記法をスネークケース（snake_case）といいます。
-
-Perl では基本的にスネークケースを推奨しています。
-
----
-
-## サブルーチン
-
-### サブルーチン命名規則クイズ
-
-```perl
-sub hoge!    { ... }
-
-sub _hoge    { ... }
-
-sub 123_hoge    { ... }
-
-sub hoge_123 { ... }
-```
-
-この中で、サブルーチン名として正しいものはどれでしょうか？
-
----
-
-## サブルーチン
-
-### サブルーチン命名規則クイズの正解
-
-```perl
-sub hoge!    { ... }    # 記号 '!' はサブルーチン名に使えない
-
-sub _hoge    { ... }
-
-sub 123_hoge    { ... } # 先頭は 英字 or '_' のみ
-                        # 数字は先頭に使えない
-sub hoge_123 { ... }
-```
-
-正解は `_hoge` と `hoge_123` です。
-
----
-
-## サブルーチン
-
-### サブルーチンの呼び出し
-
-```perl
-say();
-```
-
-定義したサブルーチンは、定義したサブルーチン名の後ろに `()` を付けることで利用できます。
-
-行末に書く場合には、 `;` が必要です。
-
-このようにサブルーチンを利用することを「**サブルーチンの呼び出し**」といいます。
-
----
-
-## サブルーチン
-
-### サブルーチンの呼び出し
-
-```perl
-say('Hello Perl!');
-```
-
-サブルーチンに値(引数)を渡したい場合、 `()` の中に書きます。
-
-`()` を使わずに, サブルーチン名の先頭に `&` を付けて `&say` という書き方で呼びだすこともできますが、古い書き方なので使わないようにしましょう。
-
----
-
-## 練習問題（subroutine.pl）
-
-- 以下に書かれた Perl プログラムをコピペして、すでに定義されたサブルーチン `notice_event` を呼び出してみよう。
-
-- すでに定義されたサブルーチン `greeting` に引数として自分のニックネームを渡して呼び出してみよう。
-
-```perl
-sub notice_event {
-    print "2月18日(木), 19日(金)の17:00から\n";
-    print "PerlのイベントJapan.pmがオンラインで開催されます!\n";
-}
-
-sub greeting {
-    my $name = shift;
-    print "$name さん、Perl入学式へようこそ!\n";
-}
-
-```
-
----
-
-## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
-
----
-
-## サブルーチン
-
-### サブルーチンの引数
-
-```perl
-sub say {
-    my $str = shift @_; # ←┐
-    print "$str\n";     #  │ サブルーチンの引数 'Hello Perl' は
-}                       #  │ @_ という配列に格納される
-                        #  │
-say('Hello Perl');      # ─┘
-```
-
-サブルーチンに与えられた引数は、 `@_` という配列に格納されます。
-
-2 行目では、`shift` を使って、この　`@_` の先頭の要素を取得しています。
-
-このサブルーチンを `say('hoge');` のように呼んだ場合、 `@_` の中身は`('hoge')` となり、 `$str` には `hoge` という文字列が入ります。
-
----
-
-## サブルーチン
-
-### サブルーチンの引数
-
-```perl
-sub say {
-    my $str = shift;  # @_ が省略されている
-    print "$str\n";
-}
-
-say('Hello Perl');    # Hello Perl
-```
-
-`@_` は、省略することができます。
-
-その為、2 行目の `my $str = shift;` は、 `my $str = shift @_;` と同じ意味になります。
-
----
-
-## サブルーチン
-
-### サブルーチンの位置
-
-```perl
-say('Hello Perl');  # Hello Perl
-
-sub say {
-    my $str = shift;
-    print "$str\n";
-}
-```
-
-同じファイル内であれば、サブルーチンの位置にかかわらず `say('hoge');` として呼び出すことができます。
-
-ファイル末尾にサブルーチンがまとまっている方が見やすい場合は、このスタイルで書きましょう。
-
----
-
-## 練習問題（call_subroutine.pl）
-
-- 呼び出すと画面に `サブルーチンが呼び出されました` と表示されるサブルーチン `call_subroutine` を定義してみよう。そして呼び出すプログラムを書いてみましょう。
-
-- 引数で渡した文字列をそのまま画面に出力するサブルーチン `echo` を定義してみましょう。そして呼び出すプログラムを書いてみましょう。
-
----
-
-## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
-
----
-
-## サブルーチン
-
-### サブルーチンに複数の引数を渡す
-
-```perl
-sub add {
-    my ($left, $right) = @_;  # @_ の中に 2, 5が入る
-    return $left + $right;    # ↑
-}                             # │
-                              # │
-my $result = add(2, 5);       # ┘ add の引数 2, 5
-print $result . "\n";   # 7
-```
-
-サブルーチンに複数の引数が与えられた場合(この場合は `2` と `5` )、サブルーチン側ではこのようにして受け取ることができます。
-
-サブルーチンに複数の引数を与える時は、`( )` の中で配列のようにカンマ　`,` で区切って渡します。
-
----
-
-## サブルーチン
-
-### サブルーチン側の引数の受け取り方
-
-```perl
-sub add {
-                        # @_ を省略した場合
-    my $left  = shift;  # @_ の先頭から1つ取り出して変数に入れている
-    my $right = shift;  # @_ の先頭から1つ取り出して変数に入れている
-    return $left + $right;
-}
-my $result = add(2, 5);
-```
-
-```perl
-sub add {
-    my $left  = $_[0];  # $_[0] : @_ の最初の要素
-    my $right = $_[1];  # $_[1] : @_ の次の要素
-    return $left + $right;
-}
-my $result = add(2, 5);
-```
-
-先程の引数の受け取り方は、上記のプログラムと同じ意味になります。
-
----
-
-## サブルーチン
-
-### 返り値と return
-
-```perl
-sub add {
-    my ($left, $right) = @_;
-    return $left + $right;  # $left + $right の結果を返す
-}
-my $result = add(2, 5);
-print $result . "\n";   # 7
-```
-
-サブルーチンは, `return` を使うことで、任意のデータを呼び出し元へ返すことができます。
-
-サブルーチンや関数の処理結果のことを **<ruby>返り値<rt>かえりち</rt></ruby>** といいます。
-
-この場合、 `$left + $right` の計算結果が呼び出し元へ返され、 `$result` に格納されます。
-
----
-
-## 練習問題（add_brackets.pl）
-
-- 引数で渡した文字列の先頭に `(` 、末尾に `)` を付け加えて返り値で戻すサブルーチン `add_brackets` を定義してみましょう。そして呼び出すプログラムを書いてみましょう。
-
-- 例：引数に `Perl` を渡すと `(Perl)` になる。
-
----
-
-## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
-
----
-
-## サブルーチン
-
-### 複数の return
-
-```perl
-sub is_same {
-    my ( $left, $right ) = @_;
-    if ( $left eq $right ) {
-        print "true\n";    # $left と $right が等しければ表示
-        return 1;
-    }
-    else {
-        print "false\n";    # $left と $right が異なれば表示
-        return 0;
-    }
-    print "YOU WILL NEVER SEE IT\n"; # 絶対に表示されない!
-    return;
-}
-```
-
-`return`に到達した場合、それ以降の処理は一切行われず、すぐさま値を返してサブルーチンの実行を終了します。（ガード節といいます）
-
----
-
-## サブルーチン
-
-### 複数の返り値
-
-```perl
-sub add_and_min {
-    my ( $left, $right ) = @_;
-    return ( $left + $right, $left - $right );
-}
-my ( $add, $min ) = add_and_min( 5, 4 );
-```
-
-サブルーチンは、このようにリストを返すことで複数個の値を返すこともできます。
-
-引数がどのようにサブルーチンに渡されて処理されるか、追ってみましょう。
-
----
-
-## 練習問題（return_numbers.pl）
-
-- 引数で渡した 1 つの数字に対して、3 つの数字のリストを返り値として戻すサブルーチンを定義しましょう。リストの最初の数は引数で渡された数より 2 少ない数、リストの 2 番目の数は渡された数、リスト 3 番目の数は渡された数より 2 多い数としてください。(例) 引数で `3` が渡される -> `(1, 3, 5)` のリストが返り値となる)
-
-- そして呼び出すプログラムを書いてみましょう。
-
----
-
-## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
-
----
-
-## サブルーチン
-
-## return がない場合の返り値
-
-```perl
-sub add {
-    my ($left, $right) = @_;
-    $left + $right;         # サブルーチンの中で最後に評価された行
-}
-
-my $result = add(2, 5);
-print $result . "\n";   # 7
-```
-
-サブルーチンの中に `return` がない場合、サブルーチンの返り値は最後に評価された処理の結果(この場合、 `$left + $right`の計算結果)を返します。
-
-値を返すという意図を明確にするため、 `return` は書くようにしましょう。
-
----
-
-## 練習問題
-
-次のようなサブルーチンを持つプログラムを `simple_calc.pl` という名前で作成しよう。
-
-- 2 つの引数の和（足し算）を計算する `add`
-- 2 つの引数の差（引き算）を計算する `min`
-- 2 つの引数の積（掛け算）を計算する `mul`
-- 2 つの引数の商（割り算）を計算する `div`
-
----
-
-## 練習問題
-
-これらのサブルーチンが正しく実装できているか(与えた 2 つの引数に対して, 適切な値を返すか)を確認するプログラムも一緒に書くこと。
-
-- 時間の余った人は「0」で割った際のエラーを回避する仕組みを入れてみよう
-
-- さらに時間の余った人はコマンドライン引数から 2 つの数字を受け取り計算する仕組みをいれてみよう
-
----
-
-## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
 
 ---
 
 ## お疲れ様でした!
 
-Perl 入学式オンライン版の参加、ありがとうございました。
+サポーターや参加者の皆さんと交流しましょう。
 
-これで 2020 年度のオンライン版講義は終了となります。
+不明点は Discord #雑談部屋 で是非質問してください。
 
-是非 Perl 入学式の Discord #雑談部屋 でサポーターや参加者の皆さんと交流しましょう。
+「●●をやりたいが、何から手をつけていいかわからない」といった質問にも、何かしらアドバイスやヒントを提供できる場になればと考えています。
 
-不明点も Discord #雑談部屋 で是非質問してください。
+次回以降の参加もお待ちしております!
+
+
+---
+
