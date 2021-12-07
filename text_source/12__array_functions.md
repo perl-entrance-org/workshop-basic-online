@@ -234,12 +234,12 @@ my @numbers = (10, 3, 21, 7, 1, 100);
 
 ### push, pop, unshift, shift
 
-配列のデータを処理するパターンとして <ruby>LIFO<rt>ライフォ</rt></ruby> ,<ruby>FIFO<rt>フィフォ</rt></ruby> があります。
+配列のデータを処理するパターンとして <ruby>LIFO<rt>ライフォ,リフォ</rt></ruby> と <ruby>FIFO<rt>フィフォ, ファイフォ</rt></ruby> があります。
 
 LIFO: Last In First Out
 
 - 最後に入ってきたデータを、一番最初に処理する
-- 現実世界でいうと、積み上がった書類の山の頂上から処理していく
+- 現実世界でいうと、積み上がった書類の山を上から処理していく
 - `pop` と `push` で実現が可能
 
 FIFO: First In First Out
