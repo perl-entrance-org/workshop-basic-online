@@ -866,3 +866,12 @@ for my $city (@cities) {
 
 第58回　正規表現の勘所―わかりづらい記法の覚え方，先読みや後読みの実践（1）：Perl Hackers Hub｜gihyo.jp … 技術評論社
 https://gihyo.jp/dev/serial/01/perl-hackers-hub/005801
+
+
+---
+
+## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
+
+---
+
+## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（5 〜 10 分）
