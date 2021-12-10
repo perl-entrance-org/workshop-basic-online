@@ -332,7 +332,7 @@ print $result . "\n";   # 7
 
 ## 練習問題
 
-### fizzbuzz
+### fizzbuzz fizzbuzz_sub.pl
 
 配列の項で学習した fizzbuzz のルールをサブルーチンで実装した fizzbuzz サブルーチンを作ってください。
 
