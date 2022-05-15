@@ -38,13 +38,11 @@ macOS も Linux も、Windows と同じく <ruby>GUI<rt>ジーユーアイ</rt><
 
 ### ターミナルの開き方
 
-Launchpadから「ターミナル」を選択し、起動します。
+Windowsの方はインストールした `MSY2 MSYS` を 、 Mac ユーザーの方は Launchpad から「ターミナル」を選択し、起動します。
 
-<small>ターミナルは頻繁に起動するため、Dockへ追加しておくことをおすすめします。</small>
+<small>ターミナルは頻繁に起動するため、タスクバーやDockへ追加しておくことをおすすめします。</small>
 
 ![ターミナルのアイコン](https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/1st/image/terminal.png)
-
-↑ターミナルのアイコン
 
 ---
 
@@ -288,7 +286,4 @@ $ open .
 
 2. 作った `perl-entrance` ディレクトリの中に移動しましょう。
 
-3. **カレントディレクトリ**のパスを `pwd` で表示し、その後に、 `start` もしくは `open` を使って、ファイルマネージャで開いてみましょう。
-
-    現在いるディレクトリをカレントディレクトリと言います。
-
+3. **カレントディレクトリ（現在いるディレクトリ）**のパスを `pwd` で表示し、その後に、 `start` もしくは `open` を使って、ファイルマネージャで開いてみましょう。
