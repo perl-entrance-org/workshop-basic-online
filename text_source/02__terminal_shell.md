@@ -252,11 +252,11 @@ sample_text sample2
 ```bash
 $ start .
 ```
-`start DIRECTORY` で、`DIRECTORY` を Windows　標準の Explorer というファイルマネージャで開きます。
+`start DIRECTORY` で、`DIRECTORY` を Windows　標準の Explorer というファイルマネージャで開きます。`start` は対象となるファイルの種類によって動作が変わります。
 
-`start` は対象となるファイルの種類によって動作が変わります。
+例えばディレクトリが対象ならば上記のように Explorer で表示、エクセルファイルなら Excel で開く、という動作をします。
 
-例えばディレクトリが対象ならば上記のように Explorer で表示、テキストならばテキストエディタで表示、エクセルファイルなら Excel で開く、という動作をします。
+![Explorer](https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/image_source/explorer.png)
 
 ---
 
