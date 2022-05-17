@@ -38,7 +38,7 @@ macOS も Linux も、Windows と同じく <ruby>GUI<rt>ジーユーアイ</rt><
 
 ### ターミナルの開き方
 
-Windowsの方はインストールした `MSY2 MSYS` を 、 Mac ユーザーの方は Launchpad から「ターミナル」を選択し、起動します。
+Windowsの方はインストールした `MSYS2 MSYS` を 、 Mac ユーザーの方は Launchpad から「ターミナル」を選択し、起動します。
 
 <small>ターミナルは頻繁に起動するため、タスクバーやDockへ追加しておくことをおすすめします。</small>
 

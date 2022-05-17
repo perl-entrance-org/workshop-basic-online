@@ -105,6 +105,6 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 1. `touch` コマンドを使い、`profile.txt` を作成する
 
-1. Windows（msys2）の場合は `start . ` で Explorer を 、macOS の場合は `open . ` で Finder を開き、中の `profile.txt` を Visual Studio Code にドラッグ＆ドロップする
+1. Windows（MSYS2）の場合は `start . ` で Explorer を 、macOS の場合は `open . ` で Finder を開き、中の `profile.txt` を Visual Studio Code にドラッグ＆ドロップする
 
 1. 編集が終わったら Visual Studio Code の上にある ファイル メニューから 保存 を選択する
