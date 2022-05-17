@@ -70,7 +70,7 @@
 
 - Perl 実行環境
 
-  - Windows：msys2 上の Perl（<a href="https://github.com/perl-entrance-org/workshop-basic-online/blob/master/0th/slide.md" target="_blank">第 0 回 環境構築編</a>）
+  - Windows：MSYS2 上の Perl（<a href="https://github.com/perl-entrance-org/workshop-basic-online/blob/master/0th/slide.md" target="_blank">第 0 回 環境構築編</a>）
   - macOS：システムにインストールされている Perl
 
 - コミュニケーション：<a href="https://discord.com/channels/741610576609935430/741610901303721998" target="_blank"><ruby>Discord<rt>ディスコード</rt></ruby></a>
@@ -176,7 +176,7 @@ macOS も Linux も、Windows と同じく <ruby>GUI<rt>ジーユーアイ</rt><
 
 ### ターミナルの開き方
 
-Windowsの方はインストールした `MSY2 MSYS` を 、 Mac ユーザーの方は Launchpad から「ターミナル」を選択し、起動します。
+Windowsの方はインストールした `MSYS2 MSYS` を 、 Mac ユーザーの方は Launchpad から「ターミナル」を選択し、起動します。
 
 <small>ターミナルは頻繁に起動するため、タスクバーやDockへ追加しておくことをおすすめします。</small>
 
@@ -390,11 +390,11 @@ sample_text sample2
 ```bash
 $ start .
 ```
-`start DIRECTORY` で、`DIRECTORY` を Windows　標準の Explorer というファイルマネージャで開きます。
+`start DIRECTORY` で、`DIRECTORY` を Windows　標準の Explorer というファイルマネージャで開きます。`start` は対象となるファイルの種類によって動作が変わります。
 
-`start` は対象となるファイルの種類によって動作が変わります。
+例えばディレクトリが対象ならば上記のように Explorer で表示、エクセルファイルなら Excel で開く、という動作をします。
 
-例えばディレクトリが対象ならば上記のように Explorer で表示、テキストならばテキストエディタで表示、エクセルファイルなら Excel で開く、という動作をします。
+![Explorer](https://raw.githubusercontent.com/perl-entrance-org/workshop-basic-online/master/image_source/explorer.png)
 
 ---
 
@@ -414,7 +414,9 @@ $ open .
 
 ---
 
-## 練習問題：ターミナル操作のおさらい
+## ターミナルとシェル入門
+
+### 練習問題：ターミナル操作のおさらい
 
 1. **ホームディレクトリ**に `perl-entrance` というディレクトリを作りましょう。
 
@@ -424,7 +426,17 @@ $ open .
 
 2. 作った `perl-entrance` ディレクトリの中に移動しましょう。
 
+続きます
+
+---
+
+## ターミナルとシェル入門
+
+### 練習問題：ターミナル操作のおさらい
+
 3. **カレントディレクトリ（現在いるディレクトリ）**のパスを `pwd` で表示し、その後に、 `start` もしくは `open` を使って、ファイルマネージャで開いてみましょう。
+
+4. `touch` で `text.txt` というファイルを作成し、 `open` コマンドで開いてみましょう。
 
 
 ---
@@ -536,7 +548,7 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 1. `touch` コマンドを使い、`profile.txt` を作成する
 
-1. Windows（msys2）の場合は `start . ` で Explorer を 、macOS の場合は `open . ` で Finder を開き、中の `profile.txt` を Visual Studio Code にドラッグ＆ドロップする
+1. Windows（MSYS2）の場合は `start . ` で Explorer を 、macOS の場合は `open . ` で Finder を開き、中の `profile.txt` を Visual Studio Code にドラッグ＆ドロップする
 
 1. 編集が終わったら Visual Studio Code の上にある ファイル メニューから 保存 を選択する
 
