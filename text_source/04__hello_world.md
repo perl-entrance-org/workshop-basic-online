@@ -1,8 +1,8 @@
-# Hello, world!
+# Hello,world!
 
 ---
 
-## Hello, World!
+## Hello,World!
 
 ### 最初のプログラム
 
@@ -16,9 +16,9 @@
 
 ---
 
-## Hello, World!
+## Hello,World!
 
-### ローカル開発環境でのプログラム作成
+### プログラム作成
 
 ```perl
 print "Hello, world!\n";
@@ -35,9 +35,9 @@ print "Hello, world!\n";
 
 ---
 
-## Hello, World!
+## Hello,World!
 
-### ローカル開発環境でのプログラム作成
+### プログラム実行
 
 プログラムの保存が終わったら、ターミナルで以下のように打ち込みます。
 
@@ -56,39 +56,7 @@ Hello, world!
 
 ---
 
-## Hello, World!
-
-### wandbox でのプログラム作成
-
-```perl
-print "Hello, world!\n";
-```
-
-Wandbox の画面上部にあるエディタ（入力欄）に上記の文字を入力します。
-
-- `print`は、ターミナルに文字を出力する Perl の命令です。
-
-- <ruby>`\n`<rt>バックスラッシュ エヌ</rt></ruby>は改行を意味します。
-
-- Mac の日本語キーボードの場合、`\`は Option + `￥`キーで入力できます。
-
-- 文の最後にはセミコロン( `;` )が必要です。文の区切りという意味です。
-
----
-
-## Hello, World!
-
-### wandbox でのプログラム作成
-
-Wandbox の入力欄の下にある [Run (or Ctrl+Enter)] ボタンを押します。
-
-入力欄の下にあるターミナルに `Hello, world!` と表示されていれば成功です。
-
-<a href="https://wandbox.org/permlink/noU3msxlbzeUY4OO" target="_brank">hello.pl [wandbox] での作成例</a>
-
----
-
-## Hello, World!
+## Hello,World!
 
 ### おまじない
 
@@ -104,9 +72,9 @@ Perl では上記の 3 行が「おまじない」となります。
 
 ---
 
-## Hello, World!
+## Hello,World!
 
-### おまじない
+### おまじない解説
 
 - `#!/usr/bin/env perl` ... <ruby>shebang<rt>シバン</rt></ruby> と呼ばれるもので、このプログラムが perl で動くことを明示する
 
@@ -120,7 +88,9 @@ Perl では上記の 3 行が「おまじない」となります。
 
 ---
 
-## 練習問題 `entrance.pl`
+## Hello,World!
+
+### 練習問題：entrance
 
 「この勉強会の名前」と「今日の日付」を表示するプログラム `entrance.pl` を書いてみましょう。
 
@@ -136,7 +106,9 @@ Perl では上記の 3 行が「おまじない」となります。
 
 ---
 
-## 練習問題 `newline.pl`
+## Hello,World!
+
+### 練習問題：newline
 
 ```perl
 print "hello! \n\n\n\n\n world!";
@@ -145,6 +117,8 @@ print "hello! \n\n\n\n\n world!";
 上記のプログラムはどのような結果になるか考えてみてください。
 
 また、上記のプログラムを入力、またはコピペして実行し、どのような結果になるかを確認してください。
+
+ファイル名は `newline.pl` とするのが良いでしょう。
 
 ---
 

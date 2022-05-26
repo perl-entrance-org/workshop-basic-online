@@ -1,8 +1,8 @@
-# Visual Studio Code 入門
+# エディタ入門
 
 ---
 
-## Visual Studio Code 入門
+## エディタ入門
 
 ### エディタ
 
@@ -16,7 +16,7 @@
 
 ---
 
-## Visual Studio Code 入門
+## エディタ入門
 
 ### ダウンロード
 
@@ -24,9 +24,9 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 ---
 
-## Visual Studio Code 入門
+## エディタ入門
 
-### インストール（Windows）
+### インストール：Windows
 
 ダウンロードした `VSCodeUserSetup-**.exe` をダブルクリックすると、インストールが開始されます。
 
@@ -38,9 +38,9 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 ---
 
-## Visual Studio Code 入門
+## エディタ入門
 
-### インストール（macOS）
+### インストール：macOS
 
 ダウンロードした `VSCode-darwin-stable.zip` をダブルクリックすると、`Visual Studio Code.app` が生成されます。
 
@@ -50,7 +50,7 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 ---
 
-## Visual Studio Code 入門
+## エディタ入門
 
 ### 日本語化
 
@@ -68,7 +68,7 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 ---
 
-## Visual Studio Code 入門
+## エディタ入門
 
 ### ファイルを開く
 
@@ -82,7 +82,7 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 ---
 
-## Visual Studio Code 入門
+## エディタ入門
 
 ### ファイルを保存する
 
@@ -95,7 +95,7 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 ---
 
-## Visual Studio Code 入門
+## エディタ入門
 
 ### ファイル編集手順
 
@@ -105,6 +105,6 @@ Visual Studio Code の公式ページ <a href="https://code.visualstudio.com/" t
 
 1. `touch` コマンドを使い、`profile.txt` を作成する
 
-1. Windows（msys2）の場合は `start . ` で Explorer を 、macOS の場合は `open . ` で Finder を開き、中の `profile.txt` を Visual Studio Code にドラッグ＆ドロップする
+1. Windows（MSYS2）の場合は `start . ` で Explorer を 、macOS の場合は `open . ` で Finder を開き、中の `profile.txt` を Visual Studio Code にドラッグ＆ドロップする
 
 1. 編集が終わったら Visual Studio Code の上にある ファイル メニューから 保存 を選択する
