@@ -35,7 +35,7 @@ if ( !$theme || $opt{"print-pdf"} ) {
     $theme = "original";
 }
 
-my $port = $opt{port} || 5000;
+my $port = $opt{port} || 5080;
 
 my $uri_abs = $opt{"print-pdf"} ? "/?print-pdf#/" : "/";
 
@@ -123,7 +123,7 @@ slideup.pl - Perl入学式のスライドサーバを起動する
 
 =head1 SYNOPSIS
 
-  $ perl slideup.pl [--port=5000] [--theme=original] [--silent] [--print-pdf] path/to/slide.md
+  $ perl slideup.pl [--port=5080] [--theme=original] [--silent] [--print-pdf] path/to/slide.md
 
   普通に起動したい場合（デフォルトでブラウザも開きます）
   $ perl slideup.pl path/to/slide.md
@@ -137,9 +137,9 @@ C<revealup> の起動コマンドを忘れがちなこともあり、それの�
 
 =head1 OPTIONS
 
-=head2 --port=5000 | -p 5000
+=head2 --port=5080 | -p 5080
 
-ポート番号指定です。デフォルトは revealup のもの。たぶん 5000 番です。
+ポート番号指定です。revealup はデフォルト 5000 ですが、macOS Monterey では 5000 がシステムで使われているので、slideup.pl でコマンドライン指定がない場合は明示的に 5080 で revealup します。
 
 =head2 --silent | -s
 
