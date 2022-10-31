@@ -307,7 +307,7 @@ my $url
 my $response = HTTP::Tiny->new()->get($url);
 my $content = $response->{content};
 
-my $decoded_content = JSON::PP->new->decode($content); #追加
+my $decoded_content = JSON::PP->new()->decode($content); #追加
 print $decoded_content->{targetArea};   #追加
 ```
 
@@ -337,12 +337,12 @@ use JSON::PP;   # 追加
 
 ### JSON からデータを取り出す
 
-`JSON::PP->new->decode($content)` で、引数である JSON 形式のデータ `$content` を Perl のハッシュリファレンスに変換しています。
+`JSON::PP->new()->decode($content)` で、引数である JSON 形式のデータ `$content` を Perl のハッシュリファレンスに変換しています。
 
 コード中では `$content` をハッシュリファレンスに変換してスカラー変数 `$decoded_content` に代入しています。
 
 ```perl
-my $decoded_content = JSON::PP->new->decode($content); #追加
+my $decoded_content = JSON::PP->new()->decode($content); #追加
 ```
 
 ---
