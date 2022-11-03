@@ -12,13 +12,6 @@ usage:
 	@echo "  make ../4th/new_slide.md"
 	@echo "  make ../5th/new_slide.md"
 
-all:
-	perl concat.pl $(FILES_DAY1) > $@
-	perl concat.pl $(FILES_DAY2) > $@
-	perl concat.pl $(FILES_DAY3) > $@
-	perl concat.pl $(FILES_DAY4) > $@
-	perl concat.pl $(FILES_DAY5) > $@
-
 ../1st/new_slide.md: $(FILES_DAY1)
 	perl concat.pl $(FILES_DAY1) > $@
 
