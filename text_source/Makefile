@@ -7,10 +7,15 @@ FILES_DAY5  = title5.md header.md 18__http_get.md 19__http_post.md 20__perl_and_
 usage:
 	@echo "Usage:"
 	@echo "  make ../1st/new_slide.md"
-	@echo "  make ../2nd/new_slide.md"
-	@echo "  make ../3rd/new_slide.md"
-	@echo "  make ../4th/new_slide.md"
-	@echo "  make ../5th/new_slide.md"
+	@echo "  or"
+	@echo "  make all"
+
+all:
+	$(MAKE) ../1st/new_slide.md
+	$(MAKE) ../2nd/new_slide.md
+	$(MAKE) ../3rd/new_slide.md
+	$(MAKE) ../4th/new_slide.md
+	$(MAKE) ../5th/new_slide.md
 
 ../1st/new_slide.md: $(FILES_DAY1)
 	perl concat.pl $(FILES_DAY1) > $@
