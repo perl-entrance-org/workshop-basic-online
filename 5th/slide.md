@@ -1,6 +1,6 @@
 # Perl 入学式 第 5 回
 
-## 〜アプリ作成実践編〜
+## Web API 操作編
 
 
 
@@ -307,7 +307,7 @@ my $url
 my $response = HTTP::Tiny->new()->get($url);
 my $content = $response->{content};
 
-my $decoded_content = JSON::PP->new()->decode($content); #追加
+my $decoded_content = JSON::PP->new->decode($content); #追加
 print $decoded_content->{targetArea};   #追加
 ```
 
@@ -337,12 +337,12 @@ use JSON::PP;   # 追加
 
 ### JSON からデータを取り出す
 
-`JSON::PP->new()->decode($content)` で、引数である JSON 形式のデータ `$content` を Perl のハッシュリファレンスに変換しています。
+`JSON::PP->new->decode($content)` で、引数である JSON 形式のデータ `$content` を Perl のハッシュリファレンスに変換しています。
 
 コード中では `$content` をハッシュリファレンスに変換してスカラー変数 `$decoded_content` に代入しています。
 
 ```perl
-my $decoded_content = JSON::PP->new()->decode($content); #追加
+my $decoded_content = JSON::PP->new->decode($content); #追加
 ```
 
 ---
@@ -541,35 +541,6 @@ my $res = HTTP::Tiny->new()->post( $webhook_url, $options );
 ---
 
 ## 休憩 ＆ 質問 ＆ 雑談 タイム<br>（5 〜 10 分）
-
-
----
-
-# コラム：YAPC::Japan::Online 2022年03月04日 〜 05 日開催！
-
----
-
-## コラム：YAPC::Japan::Online 2022年03月04日 〜 05 日開催！
-
-年に一度、Perl のお祭りが開かれます。それが YAPC::Japan です。
-
-来年 3 月にオンラインでの開催が告知されました。
-
-YAPC::Japan::Online 2022の開催が決定しました - YAPC::Japan 運営ブログ
-https://blog.yapcjapan.org/entry/yapc-japan-online-2022-is-comming-soon
-
----
-
-## コラム：YAPC::Japan::Online 2022年03月04日 〜 05 日開催！
-
-このコロナ禍のなかで、Perl 使いである <ruby>Perl Monger<rt>パール モンガー</rt></ruby>達はどう過ごしていたのか？
-
-また Perl が企業やサービスの中でどのように息づいているのか？を知る良い機会です。
-
-ぜひ参加ください！
-
-申し込み開始の際には、Perl 入学式公式 Twitter や Discord などでも告知します。
-
 
 
 ---

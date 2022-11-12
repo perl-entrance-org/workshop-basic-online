@@ -63,15 +63,16 @@ print "$num2\n";    # 18
 ### 数値演算と文字列連結の混合
 
 ```perl
-my $now                 = 2021;
+my $now                 = 2022;
 
 my $start_perl_entrance = 2012;
 
 print "Perl入学式は開講" . $now - $start_perl_entrance . "年です\n";
+# Argument "PerlM-eM-^EM-%M-eM--M-&M-eM-<M-^OM-cM-^AM-/M-iM-^VM-^KM-h..." isn't numeric in subtraction (-) at / line 8.
 # -2012年です
 ```
 
-上のプログラムは、「-2012 年です」と、おかしな結果になります。
+上のプログラムは、警告が出た上に「-2012 年です」と、おかしな結果になります。
 
 これは数値演算と文字列連結を混ぜた「アンチパターン（良くない例）」です。
 
@@ -81,9 +82,9 @@ print "Perl入学式は開講" . $now - $start_perl_entrance . "年です\n";
 
 ### 数値演算と文字列連結の混合
 
-1. まず 「`Perl入学式は開講`」（文字列） と 「`2021`」（数字） が文字連結されます。（結果：「今年は開講 2021」）
+1. まず 「`Perl入学式は開講`」（文字列） と 「`2022`」（数字） が文字連結されます。（結果：「今年は開講 2022」）
 
-1. 次に、「`今年は開講2021`」（文字列） から 「`2012`」（数字）を引き算しようとし、おかしな結果になります。
+1. 次に、「`今年は開講2022`」（文字列） から 「`2012`」（数字）を引き算しようとし、おかしな結果になります。
 
 ---
 
@@ -92,11 +93,11 @@ print "Perl入学式は開講" . $now - $start_perl_entrance . "年です\n";
 ### 数値演算と文字列連結は分ける
 
 ```perl
-my $now                 = 2021;
+my $now                 = 2022;
 
 my $start_perl_entrance = 2012;
 
-print "Perl入学式は開講" . ($now - $start_perl_entrance ). "年です\n"; # Perl入学式は開講9年です
+print "Perl入学式は開講" . ($now - $start_perl_entrance ). "年です\n"; # Perl入学式は開講10年です
 ```
 
 文字と数値計算は `( )` を用いて明確に分け、その後に連結するのが確実です。
@@ -108,12 +109,12 @@ print "Perl入学式は開講" . ($now - $start_perl_entrance ). "年です\n"; 
 ### 数値演算と文字列連結は分ける
 
 ```perl
-my $now                 = 2021;
+my $now                 = 2022;
 
 my $start_perl_entrance = 2012;
 
 my $period = $now - $start_perl_entrance;
-print "Perl入学式は開講" . $period . "年です\n"; # Perl入学式は開講9年です
+print "Perl入学式は開講" . $period . "年です\n"; # Perl入学式は開講10年です
 ```
 
 計算結果を別の変数に入れてから連結するのも良い手法です。
