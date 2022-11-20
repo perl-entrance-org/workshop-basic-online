@@ -84,7 +84,7 @@ print "$array[0]" . "\n";    # 1
 
 これは **取り出す要素の数が 1 つだけなのでスカラー変数となる** ためです。
 
-配列から複数の要素を取り出すときには perldoc の[perldata](https://perldoc.jp/docs/perl/5.16.1/perldata.pod#Slices)を利用します。この時のシジルは `@` になります。Perl 入学式では説明しません。
+配列から複数の要素を取り出すときには **[スライス](https://perldoc.jp/docs/perl/5.16.1/perldata.pod#Slices)** を利用します。この時のシジルは `@` になります。Perl 入学式では説明しません。
 
 ---
 
