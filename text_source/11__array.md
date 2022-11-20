@@ -288,3 +288,23 @@ for my $i ( 1 .. 50 ) {
 > コンピュータサイエンス学科卒業生の過半数にはそれ(fizzbuzz)ができないのだ<br> > [どうしてプログラマに・・・プログラムが書けないのか?](http://www.aoky.net/articles/jeff_atwood/why_cant_programmers_program.htm)
 
 ---
+
+`fizzbuzz_for.pl` の実行例
+```
+1
+2
+Fizz
+4
+Buzz
+# 中略
+14
+FizzBuzz
+16
+# 中略
+98
+Fizz
+Buzz
+# 終了
+```
+
+---
