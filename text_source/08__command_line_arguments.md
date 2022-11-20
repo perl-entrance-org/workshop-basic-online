@@ -22,16 +22,16 @@
 
 ターミナルの場合には、以下のようにしてコマンドライン引数を設定します。
 
-`"arg"` とあるのが引数です。（`arg` は 引数 `argument` という語の略語です）
+`arg` とあるのが引数です。（`arg` は 引数 `argument` という語の略語です）
 
 ```bash
-$ perl single.pl "arg"
+$ perl single.pl arg
 ```
 
 複数の引数を受け取る場合には、空白で区切って列挙します。
 
 ```bash
-$ perl multi.pl "arg1" "arg2"
+$ perl multi.pl arg1 arg2
 ```
 
 この `arg` や `arg1`, `arg2` にある文字や数字がプログラムに入力されます。
@@ -76,7 +76,7 @@ print 'second is ' . "$second\n";    # $second を表示する
 ターミナルでコマンドライン引数をつけて実行
 
 ```bash
-$ perl season.pl "autumn"
+$ perl season.pl autumn
 ```
 
 コマンドライン引数を受け取るプログラム例
