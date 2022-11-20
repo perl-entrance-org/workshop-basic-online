@@ -178,7 +178,7 @@ print "$sum\n"    # 4
 ### 配列の要素数
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
 my $count_array_element = scalar @array;    # 要素の数を取得
 print "$count_array_element\n";             # 3
