@@ -330,11 +330,9 @@ print $result . "\n";   # 7
 
 ---
 
-## 練習問題
+## 練習問題 `fizzbuzz_sub.pl`
 
-### fizzbuzz fizzbuzz_sub.pl
-
-配列の項で学習した fizzbuzz のルールをサブルーチンで実装した fizzbuzz サブルーチンを作ってください。
+配列の項で学習した fizzbuzz をサブルーチンで実装した fizzbuzz サブルーチンを作ってください。
 
 - その数字が `3` で割り切れるなら `Fizz` を返す。
 - その数字が `5` で割り切れるなら `Buzz` を返す。
