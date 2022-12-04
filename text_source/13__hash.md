@@ -268,6 +268,21 @@ print Dumper \%hash;  # ハッシュリファレンス（第4回で説明）
    - [ラリー・ウォール](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%AA%E3%83%BC%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%BC%E3%83%AB)
 
 ---
+### 練習問題 `hash_profile.pl`
+
+以下は実行例です。実際にはハッシュの要素の表示順は順不同になります。
+
+```perl
+$ perl hash_profile.pl
+$VAR1 = {
+          'name' => 'Larry Wall',
+          'birth' => 1954,
+          'lang' => 'Perl',
+          'wear' => 'hat'
+        };
+```
+
+---
 
 ## 出来た方は、Discord のテキストチャットで「出来た！」とリアクションお願いします！
 
