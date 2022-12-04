@@ -298,9 +298,9 @@ print "$member" . "\n";    # Carol
 
 1. ('Alice', 'Bob', 'Carol') という配列 `@members` を作ってください。
 
-2. 配列 `@members` から 'Carol' を取り出し、出力してください。
+2. 配列 `@members` から末尾の要素を取り出し、出力してください。
 
-3. 配列 `@members` から 'Alice' を取り出し、出力してください。
+3. 配列 `@members` から先頭の要素を取り出し、出力してください。
 
 ---
 
