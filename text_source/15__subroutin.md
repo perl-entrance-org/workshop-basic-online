@@ -303,7 +303,9 @@ sub plus_and_minus {
     # 複数の値を return で返す
     return ( $first + $second, $first - $second );
 }
-my ( $plus, $minus ) = plus_and_minus( 5, 4 );
+my @results = plus_and_minus( 5, 4 );
+print $results[0] . "\n";    # 足し算の結果
+print $results[1] . "\n";    # 引き算の結果
 ```
 
 サブルーチンは、このようにリストを返すことで複数個の値を返すこともできます。
