@@ -332,14 +332,30 @@ print $result . "\n";   # 7
 
 ## 練習問題 `fizzbuzz_sub.pl`
 
-配列の項で学習した fizzbuzz をサブルーチンで実装した fizzbuzz サブルーチンを作ってください。
+配列の項で学習した fizzbuzz をサブルーチンで実装した fizzbuzz サブルーチンを作理、呼び出した結果を表示してください。
 
 - その数字が `3` で割り切れるなら `Fizz` を返す。
 - その数字が `5` で割り切れるなら `Buzz` を返す。
 - その数字が `3` でも `5` でも割り切れるなら `FizzBuzz` を返す。
 - その数字が `3` でも `5` でも割り切れないなら その数字 を返す。
 
-余裕がある人は、for 文と組み合わせて 1 から 100 までを fizzbuzz してみましょう
+余裕がある人は、for 文と組み合わせて 1 から 100 までを fizzbuzz してみましょう。
+
+---
+
+## 練習問題 `fizzbuzz_sub.pl`
+
+コード例です。
+
+```perl
+print fizzbuzz(1) . "\n";   # 1
+print fizzbuzz(2) . "\n";   # 2
+print fizzbuzz(3) . "\n";   # Fizz
+print fizzbuzz(4) . "\n";   # 4
+print fizzbuzz(5) . "\n";   # Buzz
+# 中略
+print fizzbuzz(15) . "\n";  # FizzBuzz
+```
 
 ---
 
