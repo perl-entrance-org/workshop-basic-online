@@ -21,12 +21,12 @@
 まずは、右辺に注目してください。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 ```
 
-`( )` の中の `1`, `"foo"`, `3` それぞれを **要素** といいます。要素は `,` で区切られています。
+`( )` の中の `"foo"`, `"bar"`, `"baz"` それぞれを **要素** といいます。要素は `,` で区切られています。
 
-右辺の `( 1, "foo", 3 )` の部分を **リスト** といいます。
+右辺の要素の集まり `( "foo", "bar", "baz" )` の部分を **リスト** といいます。
 
 このリストはスクリプトに書かれている通りの「要素の集合」でしかなく、要素を加えたり減らしたりすることができません。
 
@@ -39,7 +39,7 @@ my @array = ( 1, "foo", 3 );
 左辺に注目してください。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 ```
 
 スカラー変数と同じく、初めてその配列を使うときは `my` で宣言します。
@@ -50,6 +50,8 @@ my @array = ( 1, "foo", 3 );
 
 `@` は `アレイ(array)`、 `@rray` 、と覚えるとよいでしょう。 （array は配列を意味する英単語です）
 
+リストを配列に代入することで、要素を加えたり減らすことができるようになります。
+
 ---
 
 ## 配列
@@ -57,9 +59,9 @@ my @array = ( 1, "foo", 3 );
 ### 配列の展開
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
-print "@array" . "\n";    # 1 foo 3
+print "@array" . "\n";    # foo bar baz
 ```
 
 配列はスカラー変数と同じく `" "` ダブルクォーテーションで囲むことで変数展開が可能です。
@@ -73,7 +75,7 @@ print "@array" . "\n";    # 1 foo 3
 配列の要素を利用する方法です。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
 print "$array[0]" . "\n";    # 1
 ```
@@ -84,7 +86,7 @@ print "$array[0]" . "\n";    # 1
 
 これは **取り出す要素の数が 1 つだけなのでスカラー変数となる** ためです。
 
-配列から複数の要素を取り出すときには perldoc の[perldata](https://perldoc.jp/docs/perl/5.16.1/perldata.pod#Slices)を利用します。この時のシジルは `@` になります。Perl 入学式では説明しません。
+配列から複数の要素を取り出すときには **[スライス](https://perldoc.jp/docs/perl/5.16.1/perldata.pod#Slices)** を利用します。この時のシジルは `@` になります。Perl 入学式では説明しません。
 
 ---
 
@@ -95,18 +97,20 @@ print "$array[0]" . "\n";    # 1
 配列から要素を利用する際には、 <ruby>**添字**<rt>そえじ</rt></ruby> を使います。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
-print "$array[0]\n";    # 1
-print "$array[1]\n";    # foo
-print "$array[2]\n";    # 3
+print "$array[0]\n";    # foo
+print "$array[1]\n";    # bar
+print "$array[2]\n";    # baz
 ```
 
 配列の 1 つ 1 つの要素にアクセスする場合は `$変数名[添字]` を使います。
 
-配列の添字は数字で指定します。
+配列の添字は数字で指定します。配列の先頭（左側）の要素の添字は 0 となり、末尾（右側）に向けて 1 ずつ増えます。
 
-配列の先頭の要素の添字は 0 となり、末尾に向けて 1 ずつ増えます。
+| 添字 | [0] | [1] | [2] |
+| --- | :-: | :-: | :-: |
+| 要素 | "foo" | "bar" | "baz" |
 
 ---
 
@@ -117,10 +121,10 @@ print "$array[2]\n";    # 3
 配列の添字には、数値が入ったスカラー変数を置くこともできます。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 my $i = 1;
 
-print "$array[$i]" . "\n";    # foo
+print "$array[$i]" . "\n";    # bar
 ```
 
 ---
@@ -132,10 +136,10 @@ print "$array[$i]" . "\n";    # foo
 配列の要素に代入することも可能です。
 
 ```perl
-my @array = ( 1, "foo", 3 );
-$array[0] = "bar";    # 先頭の要素に文字列 "bar" を代入する
+my @array = ( "foo", "bar", "baz" );
+$array[0] = "piyo";    # 先頭の要素に文字列 "piyo" を代入する
 
-print "@array" . "\n";       # bar foo 3
+print "@array" . "\n";       # piyo foo bar
 ```
 
 ---
@@ -162,7 +166,7 @@ print "@array_numbers" . "\n";    # 1 2 3
 配列の要素はスカラ変数と同じように扱うことが可能です。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( 1, 2, 3 );
 
 my $sum = $array[0] + $array[2];     # my $sum = 1 + 3
 
@@ -178,7 +182,7 @@ print "$sum\n"    # 4
 ### 配列の要素数
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
 my $count_array_element = scalar @array;    # 要素の数を取得
 print "$count_array_element\n";             # 3
@@ -218,21 +222,31 @@ print scalar @array2 . "\n";    # 0
 
 ## 配列
 
+ここまで、配列の中の要素を 1 つ取り出したり、代入する方法を紹介してきました。
+
+しかし、配列で最もよく使われるのは **配列要素を、順番に「すべて」処理する** 処理です。
+
+配列に格納された **すべての要素** に対して、繰り返し同じ処理をする方法をこれから紹介します。
+
+---
+
+## 配列
+
 ### for ループ
 
 配列の要素を、順番に「すべて」処理する方法として、**for 文** があります。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
 for my $element (@array) {
-    print "$element\n";  # 1 foo 3 がそれぞれ改行されて表示される
+    print "$element\n";  # foo bar baz がそれぞれ改行されて表示される
 }
 ```
 
 この場合、変数 `$element` に 配列 `@array` の先頭から順番に要素が格納されていきます。
 
-最初に `$array[0]` , `$array[1]`, `$array[2]` とスカラー値が順番に代入され、処理（print）が行われます。
+最初に `$array[0]`, `$array[1]`, `$array[2]` とスカラー値が順番に代入され、処理（print）が行われます。
 
 ---
 
@@ -260,6 +274,22 @@ for my $i ( 1 .. 50 ) {
 
 ---
 
+## 練習問題 `count_up.pl`
+
+1 から 100 までの数字について、for 文を利用して 1 つずつ表示して改行する `count_up.pl` を作成しましょう。
+
+`count_up.pl` の実行例
+```
+1
+2
+3
+4
+# 中略
+100
+```
+
+---
+
 ## 練習問題 `fizzbuzz_for.pl`
 
 1 から 100 までの数字について、以下のようなルールに従って表示を行う `fizzbuzz_for.pl` を作成しましょう。
@@ -270,5 +300,25 @@ for my $i ( 1 .. 50 ) {
 - その数字が `3` でも `5` でも割り切れないなら その数字 を表示する。
 
 > コンピュータサイエンス学科卒業生の過半数にはそれ(fizzbuzz)ができないのだ<br> > [どうしてプログラマに・・・プログラムが書けないのか?](http://www.aoky.net/articles/jeff_atwood/why_cant_programmers_program.htm)
+
+---
+
+`fizzbuzz_for.pl` の実行例
+```
+1
+2
+Fizz
+4
+Buzz
+# 中略
+14
+FizzBuzz
+16
+# 中略
+98
+Fizz
+Buzz
+# 終了
+```
 
 ---

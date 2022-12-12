@@ -56,7 +56,7 @@ say("hello, world!"); # hello, world!
 
 Perl でサブルーチンを定義する為には、以下のように書きます。
 
-サブルーチンの末尾に `;` は不要です。
+サブルーチンの末尾 `}` の後に `;` は不要です。
 
 ```perl
 sub サブルーチン名 { ... }
@@ -171,11 +171,11 @@ say('Hello Perl');    # Hello Perl
 
 `@_` は、省略することができます。
 
-`my $str = shift;` 
+`my $str = shift;`
 
 は、
 
- `my $str = shift @_;` 
+ `my $str = shift @_;`
 
  と同じ意味になります。
 
@@ -288,7 +288,7 @@ sub is_same {
 }
 ```
 
-`return`に到達した場合、それ以降の処理は一切行われず、すぐさま値を返してサブルーチンの実行を終了します。（ガード節といいます）
+`return` に到達した場合、それ以降の処理は一切行われず、すぐさま値を返してサブルーチンの実行を終了します。（ガード節といいます）
 
 ---
 
@@ -303,7 +303,9 @@ sub plus_and_minus {
     # 複数の値を return で返す
     return ( $first + $second, $first - $second );
 }
-my ( $plus, $minus ) = plus_and_minus( 5, 4 );
+my @results = plus_and_minus( 5, 4 );
+print $results[0] . "\n";    # 足し算の結果
+print $results[1] . "\n";    # 引き算の結果
 ```
 
 サブルーチンは、このようにリストを返すことで複数個の値を返すこともできます。
@@ -312,7 +314,7 @@ my ( $plus, $minus ) = plus_and_minus( 5, 4 );
 
 ## サブルーチン
 
-## return がない場合の返り値
+### return がない場合の返り値
 
 ```perl
 sub plus {
@@ -330,18 +332,101 @@ print $result . "\n";   # 7
 
 ---
 
-## 練習問題
+## サブルーチン
 
-### fizzbuzz fizzbuzz_sub.pl
+### 副作用を避ける
 
-配列の項で学習した fizzbuzz のルールをサブルーチンで実装した fizzbuzz サブルーチンを作ってください。
+サブルーチンの返り値に改行を加えて返すこともできます。`plus` 関数と `say` 関数を合わせたようなものです。
+
+```perl
+sub plus {
+    my ($first, $second) = @_;
+    my $sum = $first + $second;
+    return $sum . "\n";
+}
+
+my $result = plus(2, 5);
+print $result;   # 7 を表示して改行
+```
+
+一見、改行を加える手間が省けてよく見えるかもしれません。
+
+しかし、このような実装は避けましょう。
+
+---
+
+## サブルーチン
+
+### 副作用を避ける
+
+サブルーチンは「FizzBuzzの結果を返す」「引数に改行を加えて返す」などの単機能で実装しましょう。
+
+複数の機能が合わさった関数は、問題発生時の切り分けが難しくなります。
+
+そして、今回のように `plus` というサブルーチン名から、返り値に改行が加わることは予見できません。
+
+書いた時は良くても、3日後の自分、まして他人が予見することはできません。
+
+このように、意図しない動作が加わることを **副作用** と呼びます。
+
+関数は副作用がないよう、単機能で作り、組み合わせて利用しましょう。
+
+---
+
+## サブルーチン
+
+### 副作用を避ける
+
+単機能のサブルーチンを組み合わせた例です。
+
+```perl
+# 足し算した結果を返すだけの関数
+sub plus {
+    my ( $first, $second ) = @_;
+    return $first + $second;
+}
+
+# 改行を加えて print するだけの関数
+sub say {
+    my $arg = shift;
+    print $arg . "\n";
+}
+
+my $result = plus( 2, 5 );
+say($result);    # 7 を表示して改行
+
+# 関数の中に関数を入れることもできる
+say( plus( 2, 5 ) );    # 7 を表示して改行
+```
+
+---
+
+## 練習問題 `fizzbuzz_sub.pl`
+
+配列の項で学習した FizzBuzz をサブルーチンで実装した FizzBuzz サブルーチンを作り、呼び出した結果を表示してください。
 
 - その数字が `3` で割り切れるなら `Fizz` を返す。
 - その数字が `5` で割り切れるなら `Buzz` を返す。
 - その数字が `3` でも `5` でも割り切れるなら `FizzBuzz` を返す。
 - その数字が `3` でも `5` でも割り切れないなら その数字 を返す。
 
-余裕がある人は、for 文と組み合わせて 1 から 100 までを fizzbuzz してみましょう
+余裕がある人は、for 文と組み合わせて 1 から 100 までを fizzbuzz してみましょう。
+
+---
+
+## 練習問題 `fizzbuzz_sub.pl`
+
+コード例です。
+
+```perl
+print fizzbuzz(1) . "\n";   # 1
+print fizzbuzz(2) . "\n";   # 2
+print fizzbuzz(3) . "\n";   # Fizz
+print fizzbuzz(4) . "\n";   # 4
+print fizzbuzz(5) . "\n";   # Buzz
+# 中略
+print fizzbuzz(15) . "\n";  # FizzBuzz
+```
 
 ---
 

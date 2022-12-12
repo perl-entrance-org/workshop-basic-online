@@ -90,7 +90,7 @@ Perl では上記の 3 行が「おまじない」となります。
 
 ## Hello,World!
 
-### 練習問題：entrance
+### 練習問題：`entrance.pl`
 
 「この勉強会の名前」と「今日の日付」を表示するプログラム `entrance.pl` を書いてみましょう。
 
@@ -108,7 +108,7 @@ Perl では上記の 3 行が「おまじない」となります。
 
 ## Hello,World!
 
-### 練習問題：newline
+### 練習問題：`newline.pl`
 
 ```perl
 print "hello! \n\n\n\n\n world!";

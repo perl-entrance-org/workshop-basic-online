@@ -537,7 +537,7 @@ $VAR1 = [
 
 ---
 
-## 練習問題（weather_report.pl）
+## 練習問題 `weather_report.pl`
 
 以下は天気予報の応答をハッシュリファレンスにしたものです。
 
@@ -553,7 +553,7 @@ my $content = {
 
 ---
 
-## 練習問題（use_reference.pl）
+## 練習問題 `use_reference.pl`
 
 以下の表を、配列 @members にハッシュリファレンスを格納して作成しました。各メンバーの名前、 japanese と math の値を合計したものを表示してください。（例：Alice => 150）
 
