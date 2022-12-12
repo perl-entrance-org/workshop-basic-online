@@ -5,7 +5,7 @@
 ## コラム：配列の出力について
 
 ```perl
-my @array = ( 'Alice', "Bob", 'Carol' );
+my @array = ( 'Alice', 'Bob', 'Carol' );
 
 print "@array"; # Alice Bob Carol
 ```
@@ -21,7 +21,7 @@ print "@array"; # Alice Bob Carol
 ## コラム：配列の出力について
 
 ```perl
-my @array = ( 'Alice', "Bob", 'Carol' );
+my @array = ( 'Alice', 'Bob', 'Carol' );
 
 print @array; # AliceBobCarol
 ```
@@ -33,7 +33,7 @@ print @array; # AliceBobCarol
 ## コラム：配列の出力について
 
 ```perl
-my @array = ( 'Alice', "Bob", 'Carol' );
+my @array = ( 'Alice', 'Bob', 'Carol' );
 
 print @array, "\n";    # AliceBobCarol
 ```
@@ -47,7 +47,7 @@ print @array, "\n";    # AliceBobCarol
 ## コラム：配列の出力について
 
 ```perl
-my @array = ( 'Alice', "Bob", 'Carol' );
+my @array = ( 'Alice', 'Bob', 'Carol' );
 
 print @array . "\n";    # 3
 ```
