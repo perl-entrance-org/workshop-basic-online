@@ -698,12 +698,12 @@ FizzBuzz
 まずは、右辺に注目してください。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 ```
 
-`( )` の中の `1`, `"foo"`, `3` それぞれを **要素** といいます。要素は `,` で区切られています。
+`( )` の中の `"foo"`, `"bar"`, `"baz"` それぞれを **要素** といいます。要素は `,` で区切られています。
 
-右辺の `( 1, "foo", 3 )` の部分を **リスト** といいます。
+右辺の要素の集まり `( "foo", "bar", "baz" )` の部分を **リスト** といいます。
 
 このリストはスクリプトに書かれている通りの「要素の集合」でしかなく、要素を加えたり減らしたりすることができません。
 
@@ -716,7 +716,7 @@ my @array = ( 1, "foo", 3 );
 左辺に注目してください。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 ```
 
 スカラー変数と同じく、初めてその配列を使うときは `my` で宣言します。
@@ -736,9 +736,9 @@ my @array = ( 1, "foo", 3 );
 ### 配列の展開
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
-print "@array" . "\n";    # 1 foo 3
+print "@array" . "\n";    # foo bar baz
 ```
 
 配列はスカラー変数と同じく `" "` ダブルクォーテーションで囲むことで変数展開が可能です。
@@ -752,7 +752,7 @@ print "@array" . "\n";    # 1 foo 3
 配列の要素を利用する方法です。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
 print "$array[0]" . "\n";    # 1
 ```
@@ -774,11 +774,11 @@ print "$array[0]" . "\n";    # 1
 配列から要素を利用する際には、 <ruby>**添字**<rt>そえじ</rt></ruby> を使います。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
-print "$array[0]\n";    # 1
-print "$array[1]\n";    # foo
-print "$array[2]\n";    # 3
+print "$array[0]\n";    # foo
+print "$array[1]\n";    # bar
+print "$array[2]\n";    # baz
 ```
 
 配列の 1 つ 1 つの要素にアクセスする場合は `$変数名[添字]` を使います。
@@ -787,7 +787,7 @@ print "$array[2]\n";    # 3
 
 | 添字 | [0] | [1] | [2] |
 | --- | :-: | :-: | :-: |
-| 要素 | 1  | "foo" | 3 |
+| 要素 | "foo" | "bar" | "baz" |
 
 ---
 
@@ -798,10 +798,10 @@ print "$array[2]\n";    # 3
 配列の添字には、数値が入ったスカラー変数を置くこともできます。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 my $i = 1;
 
-print "$array[$i]" . "\n";    # foo
+print "$array[$i]" . "\n";    # bar
 ```
 
 ---
@@ -813,10 +813,10 @@ print "$array[$i]" . "\n";    # foo
 配列の要素に代入することも可能です。
 
 ```perl
-my @array = ( 1, "foo", 3 );
-$array[0] = "bar";    # 先頭の要素に文字列 "bar" を代入する
+my @array = ( "foo", "bar", "baz" );
+$array[0] = "piyo";    # 先頭の要素に文字列 "piyo" を代入する
 
-print "@array" . "\n";       # bar foo 3
+print "@array" . "\n";       # piyo foo bar
 ```
 
 ---
@@ -843,7 +843,7 @@ print "@array_numbers" . "\n";    # 1 2 3
 配列の要素はスカラ変数と同じように扱うことが可能です。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( 1, 2, 3 );
 
 my $sum = $array[0] + $array[2];     # my $sum = 1 + 3
 
@@ -914,16 +914,16 @@ print scalar @array2 . "\n";    # 0
 配列の要素を、順番に「すべて」処理する方法として、**for 文** があります。
 
 ```perl
-my @array = ( 1, "foo", 3 );
+my @array = ( "foo", "bar", "baz" );
 
 for my $element (@array) {
-    print "$element\n";  # 1 foo 3 がそれぞれ改行されて表示される
+    print "$element\n";  # foo bar baz がそれぞれ改行されて表示される
 }
 ```
 
 この場合、変数 `$element` に 配列 `@array` の先頭から順番に要素が格納されていきます。
 
-最初に `$array[0]` , `$array[1]`, `$array[2]` とスカラー値が順番に代入され、処理（print）が行われます。
+最初に `$array[0]`, `$array[1]`, `$array[2]` とスカラー値が順番に代入され、処理（print）が行われます。
 
 ---
 
@@ -1010,7 +1010,7 @@ Buzz
 ## コラム：配列の出力について
 
 ```perl
-my @array = ( 'Alice', "Bob", 'Carol' );
+my @array = ( 'Alice', 'Bob', 'Carol' );
 
 print "@array"; # Alice Bob Carol
 ```
@@ -1026,7 +1026,7 @@ print "@array"; # Alice Bob Carol
 ## コラム：配列の出力について
 
 ```perl
-my @array = ( 'Alice', "Bob", 'Carol' );
+my @array = ( 'Alice', 'Bob', 'Carol' );
 
 print @array; # AliceBobCarol
 ```
@@ -1038,7 +1038,7 @@ print @array; # AliceBobCarol
 ## コラム：配列の出力について
 
 ```perl
-my @array = ( 'Alice', "Bob", 'Carol' );
+my @array = ( 'Alice', 'Bob', 'Carol' );
 
 print @array, "\n";    # AliceBobCarol
 ```
@@ -1052,7 +1052,7 @@ print @array, "\n";    # AliceBobCarol
 ## コラム：配列の出力について
 
 ```perl
-my @array = ( 'Alice', "Bob", 'Carol' );
+my @array = ( 'Alice', 'Bob', 'Carol' );
 
 print @array . "\n";    # 3
 ```
