@@ -27,7 +27,7 @@ Perlの変数として以下の 3 種類について学んできました。
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
-|  Charie |    80    |  80  |
+|  Carol  |    80    |  80  |
 
 
 ---
@@ -40,7 +40,7 @@ Perlの変数として以下の 3 種類について学んできました。
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
-|  Charie |    80    |  80  |
+|  Carol  |    80    |  80  |
 
 
 スカラー変数で頑張る場合（生徒数×3の変数宣言が必要）
@@ -61,7 +61,7 @@ my $alice_math     = 90;
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
-|  Charie |    80    |  80  |
+|  Carol  |    80    |  80  |
 
 
 配列で頑張る場合（生徒の数だけ配列の宣言が必要）
@@ -82,7 +82,7 @@ my @carol = ( 'Carol', 80, 80 );
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
-|  Charie |    80    |  80  |
+|  Carol  |    80    |  80  |
 
 
 ハッシュで頑張る場合（配列と同じく生徒の数だけハッシュの宣言が必要）
@@ -92,7 +92,7 @@ my @carol = ( 'Carol', 80, 80 );
 ```perl
 my %alice  = ( name => 'Alice',  japanese => 60, math => 90 );
 my %bob    = ( name => 'Bob',    japanese => 70, math => 70 );
-my %charie = ( name => 'Charie', japanese => 80, math => 80 );
+my %carol  = ( name => 'Carol',  japanese => 80, math => 80 );
 ```
 
 ---
@@ -105,7 +105,7 @@ my %charie = ( name => 'Charie', japanese => 80, math => 80 );
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
-|  Charie |    80    |  80  |
+|  Carol  |    80    |  80  |
 
 この複雑なデータ構造は、「配列の中にハッシュが入っている」と見ることができます。
 
@@ -113,7 +113,7 @@ my %charie = ( name => 'Charie', japanese => 80, math => 80 );
 (
     ( name => 'Alice',  japanese => 60, math => 90 ),
     ( name => 'Bob',    japanese => 70, math => 70 ),
-    ( name => 'Charie', japanese => 80, math => 80 ),
+    ( name => 'Carol',  japanese => 80, math => 80 ),
 )
 ```
 
@@ -129,7 +129,7 @@ my %charie = ( name => 'Charie', japanese => 80, math => 80 );
 (
     ( name => 'Alice',  japanese => 60, math => 90 ),
     ( name => 'Bob',    japanese => 70, math => 70 ),
-    ( name => 'Charie', japanese => 80, math => 80 ),
+    ( name => 'Carol',  japanese => 80, math => 80 ),
 )
 ```
 
@@ -138,11 +138,11 @@ my %charie = ( name => 'Charie', japanese => 80, math => 80 );
 ```perl
 my @array = (
     ( name => 'Alice', japanese => 60, math => 90 ),
-    ( name => 'Bob',    japanese => 70, math => 70 ),
-    ( name => 'Charie', japanese => 80, math => 80 ),
+    ( name => 'Bob',   japanese => 70, math => 70 ),
+    ( name => 'Carol', japanese => 80, math => 80 ),
 );
 
-print "@array"; # name Alice japanese 60 math 90 name Bob japanese 70 math 70 name Charie japanese 80 math 80
+print "@array"; # name Alice japanese 60 math 90 name Bob japanese 70 math 70 name Carol japanese 80 math 80
 ```
 
 ---
@@ -289,7 +289,7 @@ $VAR1 = {
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
-|  Charie |    80    |  80  |
+|  Carol  |    80    |  80  |
 
 
 ---
@@ -307,10 +307,10 @@ my $alice_ref = \%alice;
 my %bob     = ( name => 'Bob', japanese => 60, math => 90 );
 my $bob_ref = \%bob;
 
-my %charie     = ( name => 'Charie', japanese => 60, math => 90 );
-my $charie_ref = \%charie;
+my %Carol     = ( name => 'Carol', japanese => 60, math => 90 );
+my $Carol_ref = \%Carol;
 
-my @array = ( $alice_ref, $bob_ref, $charie_ref );
+my @array = ( $alice_ref, $bob_ref, $carol_ref );
 print Dumper \@array;
 ```
 
@@ -334,7 +334,7 @@ $VAR1 = [
           },
           {
             'math' => 90,
-            'name' => 'Charie',
+            'name' => 'Carol',
             'japanese' => 60
           }
         ];
@@ -352,7 +352,7 @@ $VAR1 = [
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
-|  Charie |    80    |  80  |
+|  Carol  |    80    |  80  |
 
 2. リファレンス化したデータを `Data::Dumper` モジュールを利用して中身を表示してください。
 
@@ -561,14 +561,14 @@ my $content = {
 | ------- | -------- | ---- |
 |  Alice  |    60    |  90  |
 |  Bob    |    70    |  70  |
-|  Charie |    80    |  80  |
+|  Carol  |    80    |  80  |
 
 
 ```perl
 my @members = (
     { name => 'Alice',  japanese => 60, math => 90 },
     { name => 'Bob',    japanese => 70, math => 70 },
-    { name => 'Charie', japanese => 80, math => 80 },
+    { name => 'Carol',  japanese => 80, math => 80 },
 );
 ```
 
