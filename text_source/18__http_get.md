@@ -74,7 +74,7 @@ Perl のモジュールは metacpan や GitHub で探すことができます。
 
 ### 気象庁非公式 Web API
 
-今回は気象庁の非公式 Web API を利用してみます。`weather_report.pl` というファイルを作成し、以下のコードをコピーして実行してみてください。[GitHub Gist](https://gist.github.com/sironekotoro/09954632ea3c79f899139e808bbda2ca/3a6bcbb097adfbf9958d8591a58d10c122cf1827)
+今回は気象庁の非公式 Web API を利用してみます。`weather_report_api.pl` というファイルを作成し、以下のコードをコピーして実行してみてください。[GitHub Gist](https://gist.github.com/sironekotoro/09954632ea3c79f899139e808bbda2ca/3a6bcbb097adfbf9958d8591a58d10c122cf1827)
 
 ```perl
 #!/usr/bin/env perl
@@ -175,7 +175,7 @@ print Dumper $response;
 この `Dumper` を削除し、 `$response` をそのまま `print` してみると以下のように表示されます。
 
 ```bash
-$ perl weather_report.pl
+$ perl weather_report_api.pl
 HASH(0x7fb4102d11c0)
 ```
 
