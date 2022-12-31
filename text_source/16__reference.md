@@ -307,8 +307,8 @@ my $alice_ref = \%alice;
 my %bob     = ( name => 'Bob', japanese => 60, math => 90 );
 my $bob_ref = \%bob;
 
-my %Carol     = ( name => 'Carol', japanese => 60, math => 90 );
-my $Carol_ref = \%Carol;
+my %carol     = ( name => 'carol', japanese => 60, math => 90 );
+my $carol_ref = \%carol;
 
 my @array = ( $alice_ref, $bob_ref, $carol_ref );
 print Dumper \@array;
