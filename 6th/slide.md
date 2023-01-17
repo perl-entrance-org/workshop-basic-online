@@ -98,7 +98,7 @@ ___
 ## 最初に
 - この入門では、難しい表現を避けるために、厳密には正しくない事も書いてあります。
 - この入門に書いていない沢山の引数やコマンドについては、本家サイトなどのリファレンスをご覧ください。
-- この入門の記載内容は、Mojolicious のバージョン8.12に基づいて作成されています。
+- この入門の記載内容は、Mojolicious のバージョン9.31に基づいて作成されています。
 
 ___
 ## ひな形を作る
@@ -130,22 +130,23 @@ ___
 ## コード解説（Line 1 - 2）
 ```
 #!/usr/bin/env perl
-use Mojolicious::Lite;
+use Mojolicious::Lite -signatures;
 ```
 
 - ``Mojolicious::Lite`` は ``Mojolicious`` を簡単に使うためのモジュールです。
-- `use Mojolicious::Lite;` とすることで、自動的に``strict``、``warnings``、``utf8``、``Perl 5.10 feature``が有効になります。
-
+- `use Mojolicious::Lite;` とすることで、自動的に``strict``、``warnings``、``utf8``、``Perl 5.16 feature``が有効になります。
+- また、 ` -signatures` は後述する ``シグネチャ`` という機能をONにするオプションです。
 ___
 ## コード解説（Line 1 - 2）
 ```
 use strict;
 use warnings;
 use utf8;
-use feature ':5.10';
+use feature ':5.16';
+use fearuture 'signatures';
 ```
 
-- つまり、``use Mojolicious::Lite;``を書くだけで、ついでに上記のように書いているのと同じということです。
+- つまり、``use Mojolicious::Lite -signatures;``を書くだけで、ついでに上記のように書いているのと同じということです。
 
 ___
 ## コード解説（Line 4 - 7）
@@ -282,7 +283,7 @@ ___
 ___
 ## テンプレートの中の特殊記号
 
-    % if ($num1 == 1 ) { 
+    % if ($num1 == 1 ) {
     %= 'hoge';
         <% if ($num2 == 1 ) { %>
             <%= $hoge %>
