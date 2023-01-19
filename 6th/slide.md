@@ -213,7 +213,7 @@ ___
 ```
 % layout 'default';
 % title 'Welcome';
-Welcome to the Mojolicious real-time web framework!
+<h1>Welcome to the Mojolicious real-time web framework!</h1>
 ```
 
 - ``%``は、その行をPerlのコードとして実行したい時に書きます。ここでは出てきませんがHTMLタグのように``<% Perlのコード... %>``と書くこともできます。
@@ -224,7 +224,7 @@ ___
 ## コード解説（Line 13 - 15）
 - ``layout``はレイアウトを指定します。ここでは``default``を指定しています。（後ほど詳しく説明します）
 - ``title``はタイトルを指定します。ここでは``Welcome``を指定しています。（後ほど詳しく説明します）
-- それ以外の通常の文字列は、そのままHTMLとして表示されます。
+- ``<h1> ... </h1>`` は見出しを表すのHTMLタグです。そのままHTMLとして表示されます。
 
 ___
 ## コード解説（Line 17）
