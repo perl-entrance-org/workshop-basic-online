@@ -256,14 +256,19 @@ ___
 
 ___
 ## 変数を渡す
-    get '/' => sub {
-      my $c = shift;
+    get '/' => sub ($c) {
       $c->stash(title => 'Hello');
-      $c->render('index');
+      $c->render(template => 'index');
     };
     % title 'Welcome'; # => 削除する
 
 - `$c->stash` で, テンプレート内の変数に変数を渡せる
+
+___
+## 変数を渡す
+- `stash()` でテンプレート内の変数に値を渡す時の書き方は、ハッシュのキーとバリューの形式で記述します。
+  - キーの文字列がテンプレート内の変数名となります。
+- `my` の宣言は不要です。
 
 ___
 ## 練習問題
@@ -336,7 +341,7 @@ ___
 
 ___
 ## FORM 作成
-    Welcome to the Mojolicious real-time web framework! # 削除
+    <h1>Welcome to the Mojolicious real-time web framework!</h1> # 削除
 
 - `index` テンプレートにある, もともとの文字列を削除する
 
@@ -367,10 +372,9 @@ ___
 
 ___
 ## GET
-    get '/' => sub {
-      my $c = shift;
+    get '/' => sub ($c) {
       my $entry = $c->param('body'); # 追加
-      $c->render('index');
+      $c->render(template => 'index');
     };
 
 - form の情報を取得するために, 上記のように 1 行追加する
@@ -378,8 +382,7 @@ ___
 
 ___
 ## GET
-    get '/' => sub {
-      my $c = shift;
+    get '/' => sub ($c) {
       my $entry = $c->param('body');
       $c->stash(entry => $entry); # 追加
       $c->render('index');
