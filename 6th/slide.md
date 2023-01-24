@@ -506,8 +506,7 @@ ___
 
 ___
 ## redirect\_to
-    post '/post' => sub {
-      my $c = shift;
+    post '/post' => sub ($c) {
       my $entry = $c->param('body');
       push @entries, $entry;
                                # '/'へ移る為、'post'へのstash は不要となるので削除
