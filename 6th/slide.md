@@ -436,16 +436,14 @@ ___
 
 ___
 ## POST
-    get '/' => sub {
-      my $c = shift;
-      $c->render('index');
+    get '/' => sub ($c) {
+      $c->render(template => 'index');
     };
 
-    post '/post' => sub {
-      my $c = shift;
+    post '/post' => sub ($c) {
       my $entry = $c->param('body');
       $c->stash(entry => $entry);
-      $c->render('post');
+      $c->render(template => 'post');
     };
 
 - perl コードも変更しよう
