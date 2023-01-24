@@ -481,18 +481,16 @@ ___
 ___
 ## 記事を蓄える
     my @entries = (); # 空の配列を宣言
-    get '/' => sub {
-      my $c = shift;
+    get '/' => sub ($c) {
       $c->stash(entries => \@entries); # 配列のリファレンスをテンプレートに渡す
-      $c->render('index');
+      $c->render(template => 'index');
     };
 
-    post '/post' => sub {
-      my $c = shift;
+    post '/post' => sub ($c) {
       my $entry = $c->param('body');
       push @entries, $entry; # 配列に格納
       $c->stash(entry => $entry);
-      $c->render('post');
+      $c->render(template => 'post');
     };
 
 ___
