@@ -47,7 +47,7 @@ ___
 $ curl -L cpanmin.us -o cpanm
 $ chmod +x cpanm
 $ ./cpanm -l ~/extlib local::lib
-$ perl -I ~/extlib/lib/perl5 -Mlocal::lib=~/extlib | tee -a ~/.bash_profile
+$ perl -I ~/extlib/lib/perl5 -Mlocal::lib=~/extlib | tee -a ~/.zshrc
 $ exec $SHELL -l
 $ ./cpanm -n Mojolicious
 ```
@@ -146,7 +146,7 @@ use feature ':5.16';
 use fearuture 'signatures';
 ```
 
-- つまり、``use Mojolicious::Lite -signatures;``を書くだけで、ついでに上記のように書いているのと同じということです。
+- つまり、``use Mojolicious::Lite -signatures;``を書くだけで、上記のように書いているのと同じということです。
 
 ___
 ## コード解説（Line 4 - 6）
@@ -224,7 +224,7 @@ ___
 ## コード解説（Line 13 - 15）
 - ``layout``はレイアウトを指定します。ここでは``default``を指定しています。（後ほど詳しく説明します）
 - ``title``はタイトルを指定します。ここでは``Welcome``を指定しています。（後ほど詳しく説明します）
-- ``<h1> ... </h1>`` は見出しを表すのHTMLタグです。そのままHTMLとして表示されます。
+- ``<h1> ... </h1>`` は見出しを表すHTMLタグです。そのままHTMLとして表示されます。
 
 ___
 ## コード解説（Line 17）
