@@ -39,9 +39,44 @@ ___
   この講義では、自分のホームディレクトリ配下にモジュールをインストールします。
 
 ___
+## cpanm インストールのための準備
+cpanm をインストールするために、シェルの設定を行います。シェルは色々な種類のものがあります。（bash, zsh, その他色々）
+シェルの設定を行うには、まず、現在自分の使っているシェル（デフォルトで使用されているシェル）の種類を調べる必要があります。
+ログインシェル（ターミナルを立ち上げた時、デフォルトで選択されるシェル）は次のようにコマンドを打って調べることができます。
+
+```
+$ echo $SHELL
+```
+
+コマンドを打つと、次の例のような出力が返ってきます。
+
+```
+/usr/local/bin/zsh
+```
+
+```
+/bin/bash
+```
+
+___
+## cpanm インストールのための準備
 ## Mojolicious のインストール
 
-以下のコマンドを一つずつ打っていきます。
+使っているシェルが bash の場合は以下のコマンドを一つずつ打っていきます。
+
+```
+$ curl -L cpanmin.us -o cpanm
+$ chmod +x cpanm
+$ ./cpanm -l ~/extlib local::lib
+$ perl -I ~/extlib/lib/perl5 -Mlocal::lib=~/extlib | tee -a ~/.bash_profilet
+$ exec $SHELL -l
+$ ./cpanm -l ~/extlib -n Mojolicious
+```
+___
+## cpanm インストールのための準備
+## Mojolicious のインストール
+
+使っているシェルが zsh の場合は以下のコマンドを一つずつ打っていきます。
 
 ```
 $ curl -L cpanmin.us -o cpanm
