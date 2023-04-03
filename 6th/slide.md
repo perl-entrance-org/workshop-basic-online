@@ -178,7 +178,7 @@ use strict;
 use warnings;
 use utf8;
 use feature ':5.16';
-use fearuture 'signatures';
+use feature 'signatures';
 ```
 
 - つまり、``use Mojolicious::Lite -signatures;``を書くだけで、上記のように書いているのと同じということです。
