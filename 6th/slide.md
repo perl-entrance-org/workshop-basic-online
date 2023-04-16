@@ -51,7 +51,7 @@ $ echo $SHELL
 コマンドを打つと、次の例のような出力が返ってきます。
 
 ```
-/usr/local/bin/zsh
+/usr/bin/zsh
 ```
 
 ```
