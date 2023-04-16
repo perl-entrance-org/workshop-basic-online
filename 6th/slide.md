@@ -68,7 +68,7 @@ ___
 $ curl -L cpanmin.us -o cpanm
 $ chmod +x cpanm
 $ ./cpanm -l ~/extlib local::lib
-$ perl -I ~/extlib/lib/perl5 -Mlocal::lib=~/extlib | tee -a ~/.bash_profilet
+$ perl -I ~/extlib/lib/perl5 -Mlocal::lib=~/extlib | tee -a ~/.bash_profile
 $ exec $SHELL -l
 $ ./cpanm -l ~/extlib -n Mojolicious
 ```
@@ -189,7 +189,7 @@ ___
 use feature ':5.16';
 ```
 
-- ただし一点注意が必要で、このコードはPerlのバージョン5.16までの新機能が使える様になるおまじない（プラグマ）ですが、 ``use fearure 'signatures' `` を実行するには、Perl5.20以上のバージョンが必要となります。
+- ただし一点注意が必要で、このコードはPerlのバージョン5.16までの新機能が使える様になるおまじない（プラグマ）ですが、 ``use feature 'signatures' `` を実行するには、Perl5.20以上のバージョンが必要となります。
 - Perlの実行環境が5.20以上であれば問題ありません。
 
 ___
