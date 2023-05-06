@@ -10,10 +10,10 @@
 
 2015年までは東京で、2016年からは日本各地で会場を移しつつ開催しています。
 
-次回は 2023年3月19日に京都で開催予定です。
+前回は 2023年3月19日に京都で開催されました。
 
-    YAPC::KyotoをRebootします - YAPC::Japan 運営ブログ
-    https://blog.yapcjapan.org/entry/2022/10/26/161847
+    YAPC::Kyoto 2023
+    https://yapcjapan.org/2023kyoto/
 
 YAPC では Perl や Perl を利用したシステムについての発表が行われます。
 
@@ -49,6 +49,9 @@ https://yapcjapan.org/2019tokyo/
 
 Japan.pm 2021
 https://yapcjapan.connpass.com/event/198170/
+
+YAPC::Kyoto 2023
+https://yapcjapan.org/2023kyoto/
 
 ---
 
