@@ -77,7 +77,7 @@ print "@array" . "\n";    # foo bar baz
 ```perl
 my @array = ( "foo", "bar", "baz" );
 
-print "$array[0]" . "\n";    # 1
+print "$array[0]" . "\n";    # foo
 ```
 
 配列 `@array` の最初の要素は `$array[0]` となります。
